@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 
 /** Envision Wraps — Chirps AI assistant (https://chirps.cc). */
-const CHIRPS_ASSISTANT_ID = "58461717-0fbb-44cf-a1fd-78d085c66480";
+const CHIRPS_ASSISTANT_ID = "214e8a8e-5a3f-4f3c-92b0-190b810bd960";
 const CHIRPS_SCRIPT_ID = "chirps-embed-script";
 const CHIRPS_SCRIPT_SRC = "https://chirps.cc/embed.js";
 
@@ -16,13 +16,14 @@ const ChirpsEmbed = () => {
   useEffect(() => {
     window.chirpsConfig = { assistantId: CHIRPS_ASSISTANT_ID };
 
-    if (!document.getElementById(CHIRPS_SCRIPT_ID)) {
-      const script = document.createElement("script");
-      script.id = CHIRPS_SCRIPT_ID;
-      script.src = CHIRPS_SCRIPT_SRC;
-      script.async = true;
-      document.body.appendChild(script);
-    }
+    const existing = document.getElementById(CHIRPS_SCRIPT_ID);
+    if (existing) existing.remove();
+
+    const script = document.createElement("script");
+    script.id = CHIRPS_SCRIPT_ID;
+    script.src = CHIRPS_SCRIPT_SRC;
+    script.async = true;
+    document.body.appendChild(script);
 
     return () => {
       delete window.chirpsConfig;

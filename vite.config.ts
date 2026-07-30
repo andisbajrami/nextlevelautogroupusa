@@ -21,7 +21,6 @@ export default defineConfig(({ mode }) => {
   const ogImage = origin ? `${origin}/og-image.png` : "/og-image.png";
 
   return {
-    // Default cache is node_modules/.vite; if node_modules was installed with sudo, writes fail (EACCES).
     cacheDir: path.resolve(__dirname, ".vite"),
     server: {
       host: "::",
