@@ -1,0 +1,76 @@
+{
+  "generatedAt": "2026-07-30T00:40:00.000Z",
+  "site": {
+    "name": "Envision Wraps",
+    "legalName": "Envision Wraps",
+    "tagline": "Professional automotive personalization — wraps, tint, paint protection, and custom builds."
+  },
+  "contact": {
+    "phone": "",
+    "email": "",
+    "address": "",
+    "hours": "Mon - Fri: 8:00 AM - 5:00 PM · Sat: By Appointment",
+    "officeHours": [
+      { "days": "Monday – Friday", "hours": "8:00 AM - 5:00 PM" },
+      { "days": "Saturday", "hours": "By Appointment" },
+      { "days": "Sunday", "hours": "Closed" }
+    ],
+    "locations": "Serving drivers across our local area",
+    "mapEmbedUrl": ""
+  },
+  "pages": [
+    { "id": "home", "label": "Home", "path": "/", "description": "" },
+    { "id": "services", "label": "Services", "path": "/services", "description": "" },
+    { "id": "projects", "label": "Gallery", "path": "/projects", "description": "" },
+    { "id": "about", "label": "About", "path": "/about", "description": "" },
+    { "id": "contact", "label": "Contact", "path": "/contact", "description": "" },
+    { "id": "faq", "label": "FAQ", "path": "/faq", "description": "" }
+  ],
+  "about": {
+    "intro": "Here at Envision you will find the standard in Automotive Personalization.",
+    "stats": [
+      { "label": "Years personalizing", "value": "15+" },
+      { "label": "Core services", "value": "10+" }
+    ],
+    "values": [
+      { "title": "Craftsmanship", "description": "Prep, alignment, and edges that look factory-clean." },
+      { "title": "Design first", "description": "We help you envision the finish before install day." }
+    ],
+    "certifications": [
+      { "label": "Wrap Specialists", "sub": "Color · Graphics · Fleet" },
+      { "label": "Tint Pros", "sub": "Ceramic · Performance" }
+    ]
+  },
+  "services": [
+    { "id": "vehicle-wraps", "title": "Vehicle Wraps", "description": "Full color-change, accents, and custom graphics.", "detailPath": "/services/vehicle-wraps" },
+    { "id": "window-tint", "title": "Window Tint", "description": "Ceramic and performance tint for heat and privacy.", "detailPath": "/services/window-tint" },
+    { "id": "paint-protection", "title": "Paint Protection Film", "description": "PPF for high-impact zones or full front coverage.", "detailPath": "/services/paint-protection" },
+    { "id": "auto-detail", "title": "Auto Detail", "description": "Correction and ceramic coatings.", "detailPath": "/services/auto-detail" }
+  ],
+  "serviceSections": [],
+  "capabilities": [],
+  "projects": [],
+  "team": [],
+  "testimonials": [],
+  "faq": [
+    { "question": "What services does Envision offer?", "answer": "Wraps, window tint, paint protection film, detail, body kits/aero, custom design, commercial/fleet, and full visual builds." },
+    { "question": "How do I book a consult?", "answer": "Use the contact form or call the shop to set up a consult." }
+  ],
+  "pricing": {
+    "summary": "Every quote is project-specific. Share your vehicle and goals and we’ll confirm materials, scope, and timeline.",
+    "bullets": ["Free design consults", "Wrap, tint & PPF quotes", "Custom build packages"]
+  },
+  "process": [
+    { "label": "Consult", "description": "Design goals and material choices." },
+    { "label": "Quote", "description": "Clear scope and timeline." },
+    { "label": "Install", "description": "Precision prep and professional install." }
+  ],
+  "hero": {
+    "headline": "Your Trusted Wraps & Tint Shop",
+    "body": "Anything you can Envision — wraps, tint, paint protection, and custom builds."
+  },
+  "actions": [
+    { "id": "open_contact_form", "description": "Open the contact form." },
+    { "id": "navigate", "description": "Navigate to an internal path.", "args": { "path": "/services" } }
+  ]
+}

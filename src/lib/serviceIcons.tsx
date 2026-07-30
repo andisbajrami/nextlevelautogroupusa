@@ -1,0 +1,55 @@
+import {
+  Droplets,
+  CircleDot,
+  Cog,
+  Cpu,
+  Calendar,
+  Wrench,
+  Zap,
+  ClipboardCheck,
+  Gauge,
+  Hammer,
+  Palette,
+  Sun,
+  Shield,
+  Sparkles,
+  PenTool,
+  Truck,
+  Eye,
+  Heart,
+  Award,
+  ShieldCheck,
+  Tag,
+  type LucideIcon,
+} from "lucide-react";
+
+export const SERVICE_ICON_MAP: Record<string, LucideIcon> = {
+  Droplets,
+  CircleDot,
+  Cog,
+  Cpu,
+  Calendar,
+  Wrench,
+  Zap,
+  ClipboardCheck,
+  Gauge,
+  Hammer,
+  Palette,
+  Sun,
+  Shield,
+  Sparkles,
+  PenTool,
+  Truck,
+  Eye,
+  Heart,
+  Award,
+  ShieldCheck,
+  Tag,
+};
+
+export const DEFAULT_SERVICE_ICON: LucideIcon = Palette;
+
+export function getServiceIcon(name: string | undefined): LucideIcon {
+  if (!name) return DEFAULT_SERVICE_ICON;
+  return SERVICE_ICON_MAP[name] ?? DEFAULT_SERVICE_ICON;
+}

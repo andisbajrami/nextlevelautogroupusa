@@ -1,0 +1,19 @@
+{
+  "generatedAt": "2026-07-30T00:25:00.000Z",
+  "clientId": "envision-wraps",
+  "clientName": "Envision Wraps",
+  "theme": {
+    "logoUrl": "/envision-wraps-logo.png",
+    "faviconUrl": "/envision-wraps-logo.png",
+    "mutedColor": "#e8eef8",
+    "teamImages": {},
+    "primaryColor": "#0a0a0f",
+    "projectImages": {},
+    "serviceImages": {},
+    "secondaryColor": "#2b7fff",
+    "backgroundColor": "#f5f7fb",
+    "foregroundColor": "#0f172a",
+    "serviceSectionImages": {}
+  },
+  "content": {}
+}
