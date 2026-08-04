@@ -25,7 +25,7 @@ const HomeFaqSection = () => {
               Common Questions
             </h2>
             <p className="mt-4 text-muted-foreground leading-relaxed">
-              Straight answers about wraps, tint, paint protection, booking, and what makes Envision a go-to personalization shop.
+              Straight answers about services, scheduling, estimates, discounts, and what makes Elshadai J&N a trusted Orlando auto shop.
             </p>
             <Button
               asChild

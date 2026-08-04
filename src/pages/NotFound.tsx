@@ -1,26 +1,26 @@
 import { Helmet } from "react-helmet-async";
 import { Link, useLocation } from "react-router-dom";
 import { useEffect } from "react";
-import { ArrowRight, Home, Phone, Palette, Sun, Shield } from "lucide-react";
+import { ArrowRight, Home, Phone, Wrench, CircleDot, Cpu } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { useSiteContent } from "@/contexts/SiteContentContext";
 
 const QUICK_LINKS = [
   {
-    label: "Wraps & Services",
+    label: "Our Services",
     to: "/services",
-    description: "Color-change wraps, ceramic tint, PPF, detail, and custom builds.",
+    description: "Maintenance, brakes, diagnostics, engine, transmission, suspension, and AC.",
   },
   {
     label: "Gallery",
     to: "/projects",
-    description: "See real wraps, tint packages, and builds from our shop.",
+    description: "See recent repair work from our Orlando shop.",
   },
   {
-    label: "Start Your Build",
+    label: "Schedule Now",
     to: "/contact",
-    description: "Book a consult — tell us the look you want for your vehicle.",
+    description: "Book an appointment — Mon–Sat 9 AM–6 PM EST.",
   },
 ] as const;
 
@@ -40,7 +40,7 @@ const NotFound = () => {
         <meta name="robots" content="noindex, nofollow" />
         <meta
           name="description"
-          content={`This page doesn’t exist. Return to ${COMPANY.name} for wraps, tint, and paint protection.`}
+          content={`This page doesn’t exist. Return to ${COMPANY.name} for Orlando auto repair.`}
         />
       </Helmet>
 
@@ -70,7 +70,7 @@ const NotFound = () => {
               </h1>
               <p className="text-base md:text-lg text-white/75 leading-relaxed max-w-xl mb-8">
                 The URL you followed isn&apos;t on our site. It may have moved or never existed —
-                let&apos;s get you back to wraps, tint, and builds.
+                let&apos;s get you back to service and scheduling.
               </p>
 
               {location.pathname && location.pathname !== "/" ? (
@@ -98,9 +98,9 @@ const NotFound = () => {
                   variant="outline"
                   className="minhs-btn-outline-on-dark rounded-sm font-display font-bold uppercase px-8"
                 >
-                  <Link to="/contact" aria-label="Start your build">
-                    <Palette className="h-4 w-4 mr-2" />
-                    Start Your Build
+                  <Link to="/contact" aria-label="Schedule service">
+                    <Phone className="h-4 w-4 mr-2" />
+                    Schedule Now
                   </Link>
                 </Button>
               </div>
@@ -116,13 +116,13 @@ const NotFound = () => {
               </span>
               <div className="absolute inset-0 flex items-center justify-center gap-3">
                 <span className="flex h-14 w-14 items-center justify-center rounded-full bg-[hsl(var(--secondary))] text-[hsl(var(--secondary-foreground))] shadow-[0_20px_60px_-20px_hsl(var(--secondary)/0.6)]">
-                  <Palette className="h-6 w-6" strokeWidth={1.75} />
+                  <Wrench className="h-6 w-6" strokeWidth={1.75} />
                 </span>
                 <span className="flex h-14 w-14 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white">
-                  <Sun className="h-6 w-6" strokeWidth={1.75} />
+                  <CircleDot className="h-6 w-6" strokeWidth={1.75} />
                 </span>
                 <span className="flex h-14 w-14 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white">
-                  <Shield className="h-6 w-6" strokeWidth={1.75} />
+                  <Cpu className="h-6 w-6" strokeWidth={1.75} />
                 </span>
               </div>
             </div>

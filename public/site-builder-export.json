@@ -1,18 +1,18 @@
 {
-  "generatedAt": "2026-07-30T00:25:00.000Z",
-  "clientId": "envision-wraps",
-  "clientName": "Envision Wraps",
+  "generatedAt": "2026-08-04T12:52:00.000Z",
+  "clientId": "elshadai-jn-auto-repair",
+  "clientName": "Elshadai J&N Auto Repair LLC",
   "theme": {
-    "logoUrl": "/envision-wraps-logo.png",
-    "faviconUrl": "/envision-wraps-logo.png",
-    "mutedColor": "#e8eef8",
+    "logoUrl": null,
+    "faviconUrl": "/favicon.svg",
+    "mutedColor": "#f3f0e6",
     "teamImages": {},
-    "primaryColor": "#0a0a0f",
+    "primaryColor": "#0a0a0a",
     "projectImages": {},
     "serviceImages": {},
-    "secondaryColor": "#2b7fff",
-    "backgroundColor": "#f5f7fb",
-    "foregroundColor": "#0f172a",
+    "secondaryColor": "#f5c517",
+    "backgroundColor": "#faf9f5",
+    "foregroundColor": "#0a0a0a",
     "serviceSectionImages": {}
   },
   "content": {}

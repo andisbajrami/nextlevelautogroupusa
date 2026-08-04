@@ -3,6 +3,7 @@ import { Phone, Mail, MapPin, ShieldCheck, Facebook, Instagram, Youtube } from "
 import { useTheme } from "@/contexts/ThemeContext";
 import { useSiteContent } from "@/contexts/SiteContentContext";
 import MinhsLogo from "./MinhsLogo";
+import NewsletterSignup from "@/components/home/NewsletterSignup";
 import { SERVICE_AREAS } from "@/data/siteData";
 
 const GoogleIcon = ({ className }: { className?: string }) => (
@@ -48,16 +49,17 @@ const Footer = () => {
                   </span>
                   <div className="leading-none">
                     <span className="block font-display text-lg font-bold uppercase tracking-wide group-hover:text-[hsl(var(--secondary))] transition-colors">
-                      {(COMPANY.name || "Envision Wraps").split(" ")[0]}
+                      {(COMPANY.name || "Elshadai").split(" ")[0]}
                     </span>
                     <span className="block text-[10px] font-semibold tracking-[0.2em] text-white/50 uppercase">
-                      {(COMPANY.name || "Envision Wraps").split(" ").slice(1).join(" ") || "Wraps"}
+                      {(COMPANY.name || "Elshadai J&N Auto Repair LLC").split(" ").slice(1).join(" ") || "J&N Auto Repair"}
                     </span>
                   </div>
                 </>
               )}
             </Link>
             <p className="text-sm text-white/60 leading-relaxed mt-4">{COMPANY.tagline}</p>
+            <NewsletterSignup />
             <div className="flex items-center gap-2 mt-5">
               {socialIcons.map(({ Icon, href, label }) => (
                 <a
@@ -156,7 +158,7 @@ const Footer = () => {
               )}
               <li className="flex items-center gap-2 text-[hsl(var(--secondary))] font-display font-bold uppercase text-xs tracking-wider">
                 <ShieldCheck className="h-4 w-4 shrink-0" />
-                <span>{SITE_TOP.line || "Automotive Personalization"}</span>
+                <span>{SITE_TOP.line || "Orlando Auto Repair"}</span>
               </li>
             </ul>
           </div>

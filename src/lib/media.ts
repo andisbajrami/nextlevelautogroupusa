@@ -75,7 +75,7 @@ const ALLOWED_UNSPLASH_IDS = new Set(
     .filter((id): id is string => Boolean(id)),
 );
 
-/** Legacy repair-shop / electrical ids that must never appear on Envision Wraps. */
+/** Legacy electrical / wrap-shop ids that must never appear on Elshadai J&N. */
 const LEGACY_ELECTRICAL_SERVICE_IDS = new Set([
   "emergency-electrical",
   "electrical-inspections",
@@ -88,16 +88,16 @@ const LEGACY_ELECTRICAL_SERVICE_IDS = new Set([
   "smart-home-wiring",
   "backup-power",
   "commercial-fitouts",
-  "oil-changes",
-  "brake-repair",
-  "transmission-service",
-  "engine-diagnostics",
-  "preventive-maintenance",
-  "suspension-repair",
-  "electrical-diagnostics",
-  "factory-scheduled-maintenance",
-  "performance-services",
-  "general-repairs",
+  "vehicle-wraps",
+  "window-tint",
+  "paint-protection",
+  "auto-detail",
+  "custom-builds",
+  "body-kits",
+  "custom-design",
+  "commercial-fleet",
+  "ceramic-coating",
+  "performance-styling",
 ]);
 
 export const MINHS_SERVICE_IMAGE_BY_ID: Record<string, string> = Object.fromEntries(
@@ -113,6 +113,8 @@ export function isAllowedMinhsImage(url: string | undefined | null): boolean {
   if (!url || typeof url !== "string") return false;
   const trimmed = url.trim();
   if (!trimmed) return false;
+  // Local curated assets and non-Unsplash CDNs are always allowed.
+  if (trimmed.startsWith("/images/") || trimmed.startsWith("/")) return true;
   if (!trimmed.includes("images.unsplash.com")) return true;
   const id = trimmed.match(/photo-([0-9]+-[a-z0-9]+)/)?.[1];
   if (!id) return true;
@@ -120,7 +122,7 @@ export function isAllowedMinhsImage(url: string | undefined | null): boolean {
 }
 
 export function resolveMinhsServiceImage(serviceId: string, candidate?: string | null): string {
-  const canonical = MINHS_SERVICE_IMAGE_BY_ID[serviceId] ?? MINHS_IMAGES.wraps;
+  const canonical = MINHS_SERVICE_IMAGE_BY_ID[serviceId] ?? MINHS_IMAGES.serviceBay;
   if (candidate && isAllowedMinhsImage(candidate)) return candidate;
   return canonical;
 }
@@ -129,7 +131,7 @@ export function resolveMinhsServiceSectionImage(sectionId: string, candidate?: s
   const canonical =
     MINHS_SERVICE_SECTION_IMAGE_BY_ID[sectionId] ??
     MINHS_SERVICE_IMAGE_BY_ID[sectionId] ??
-    MINHS_IMAGES.wraps;
+    MINHS_IMAGES.serviceBay;
   if (candidate && isAllowedMinhsImage(candidate)) return candidate;
   return canonical;
 }

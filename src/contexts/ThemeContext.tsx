@@ -33,26 +33,25 @@ interface ThemeContextType extends ThemeConfig {
 }
 
 const BRAND = buildThemeDefaults({
-  // Logo fit: electric blue CTAs (main), magenta kept as a light accent in CSS
-  primaryColor: "#0a0a0f",
-  secondaryColor: "#2b7fff",
-  backgroundColor: "#f5f7fb",
-  foregroundColor: "#0f172a",
-  mutedColor: "#e8eef8",
+  primaryColor: "#0a0a0a",
+  secondaryColor: "#f5c517",
+  backgroundColor: "#faf9f5",
+  foregroundColor: "#0a0a0a",
+  mutedColor: "#f3f0e6",
 });
 
 export const THEME_DEFAULTS: ThemeConfig = {
   ...BRAND,
-  logoUrl: "/envision-wraps-logo.png",
-  faviconUrl: "/envision-wraps-logo.png",
+  logoUrl: null,
+  faviconUrl: "/favicon.svg",
   serviceImages: {},
   serviceSectionImages: {},
   teamImages: {},
   projectImages: {},
 };
 
-const STORAGE_KEY = "envision-theme-v3";
-const EXPORT_MARKER_KEY = "envision-export-applied-at-v3";
+const STORAGE_KEY = "elshadai-jn-theme-v3";
+const EXPORT_MARKER_KEY = "elshadai-jn-theme-export-v3";
 
 function migrateSavedTheme(partial: Partial<ThemeConfig>): ThemeConfig {
   return normalizeThemeConfig(THEME_DEFAULTS, partial);

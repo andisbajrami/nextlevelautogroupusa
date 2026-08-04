@@ -48,7 +48,7 @@ const ServiceDetail = () => {
         <ElectricalPageHero
           breadcrumb={[{ label: "Home", to: "/" }, { label: "Services", to: "/services" }, { label: "Not found" }]}
           title="Service Not Found"
-          body="That service doesn't exist. Browse our full wraps, tint, and protection catalog."
+          body="That service doesn't exist. Browse our full auto repair service list."
           image={MINHS_IMAGES.serviceBay}
         />
       ) : (
@@ -145,8 +145,8 @@ const ServiceDetail = () => {
               <div>
                 <h2 className="font-display text-xl sm:text-2xl font-bold uppercase">Schedule {svc.title}</h2>
                 <p className="mt-2 text-sm text-white/75 max-w-lg">
-                  Request a consult online — clear quotes on every wrap, tint, and
-                  vehicle.
+                  Request a consult online — clear quotes on every repair and
+                  service visit.
                 </p>
               </div>
               <Button
@@ -163,7 +163,9 @@ const ServiceDetail = () => {
 
           <CTASection
             title={`Ready for ${svc.title.toLowerCase()}?`}
-            subtitle="Book a consult for wraps, tint, PPF, and custom builds."
+            subtitle="Book an appointment — tailored estimates and clear next steps."
+            primaryLabel="SCHEDULE NOW"
+            secondaryLabel="CALL NOW"
           />
           <LeadContactSection />
         </>

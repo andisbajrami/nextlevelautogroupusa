@@ -23,7 +23,7 @@ const SignatureProjectsSection = () => {
               Shop Gallery
             </span>
             <h2 className="mt-2 font-display text-3xl sm:text-4xl font-bold uppercase text-[hsl(var(--primary))]">
-              Wraps, Tint & Custom Builds
+              Recent Repair Work
             </h2>
           </div>
           <Link

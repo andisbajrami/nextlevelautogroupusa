@@ -20,6 +20,9 @@ import {
   Award,
   ShieldCheck,
   Tag,
+  Wind,
+  Users,
+  Handshake,
   type LucideIcon,
 } from "lucide-react";
 
@@ -45,9 +48,12 @@ export const SERVICE_ICON_MAP: Record<string, LucideIcon> = {
   Award,
   ShieldCheck,
   Tag,
+  Wind,
+  Users,
+  Handshake,
 };
 
-export const DEFAULT_SERVICE_ICON: LucideIcon = Palette;
+export const DEFAULT_SERVICE_ICON: LucideIcon = Wrench;
 
 export function getServiceIcon(name: string | undefined): LucideIcon {
   if (!name) return DEFAULT_SERVICE_ICON;

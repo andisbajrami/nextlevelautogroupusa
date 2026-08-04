@@ -9,8 +9,10 @@ import WarrantySection from "@/components/home/WarrantySection";
 import ClientStoriesSection from "@/components/home/ClientStoriesSection";
 import SignatureProjectsSection from "@/components/home/SignatureProjectsSection";
 import AboutHomeSection from "@/components/home/AboutHomeSection";
+import CommunityDiscountBand from "@/components/home/CommunityDiscountBand";
 import ServiceAreasHome from "@/components/home/ServiceAreasHome";
 import HomeFaqSection from "@/components/home/HomeFaqSection";
+import NewsletterSignup from "@/components/home/NewsletterSignup";
 import CTABannerSection from "@/components/home/CTABannerSection";
 import LeadContactSection from "@/components/home/LeadContactSection";
 import Reveal from "@/components/animations/Reveal";
@@ -22,9 +24,9 @@ const Index = () => {
   return (
     <Layout>
       <Helmet>
-        <title>{COMPANY.name} | Automotive Personalization</title>
+        <title>{COMPANY.name} | Orlando Auto Repair</title>
         <meta name="description" content={`${COMPANY.name}. ${COMPANY.tagline}`} />
-        <meta property="og:title" content={`${COMPANY.name} | Wraps, Tint & PPF`} />
+        <meta property="og:title" content={`${COMPANY.name} | Orlando Auto Repair`} />
         <meta property="og:description" content={COMPANY.tagline} />
       </Helmet>
 
@@ -58,6 +60,9 @@ const Index = () => {
           <WarrantySection />
         </Reveal>
       )}
+      <Reveal delay={160}>
+        <CommunityDiscountBand />
+      </Reveal>
       {sectionVisibility["home.clientStories"] && (
         <Reveal delay={180}>
           <ClientStoriesSection />
@@ -83,6 +88,9 @@ const Index = () => {
           <HomeFaqSection />
         </Reveal>
       )}
+      <Reveal delay={310}>
+        <NewsletterSignup variant="section" />
+      </Reveal>
       {sectionVisibility["home.ctaBanner"] !== false && (
         <Reveal delay={320}>
           <CTABannerSection />

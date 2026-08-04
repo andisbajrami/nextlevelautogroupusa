@@ -34,16 +34,16 @@ const Contact = () => {
     <Layout>
       <Helmet>
         <title>Contact Us | {COMPANY.name}</title>
-        <meta name="description" content={`Contact ${COMPANY.name} to schedule European auto service in Brooklyn.`} />
+        <meta name="description" content={`Contact ${COMPANY.name} to schedule auto repair in Orlando. Call 407-719-3539.`} />
       </Helmet>
 
       <ElectricalPageHero
         eyebrow="Contact"
         breadcrumb={[{ label: "Home", to: "/" }, { label: "Contact" }]}
         title="Schedule Your Service"
-        body="Online appointments, service requests, and general inquiries — our Brooklyn team responds fast with transparent estimates."
+        body="Online appointments, service requests, and general inquiries — our Orlando team responds fast with transparent estimates. Open Mon–Sat 9 AM–6 PM EST."
         image={MINHS_IMAGES.contactHero}
-        imageAlt="Contact MINHS Automotive"
+        imageAlt="Contact Elshadai J&N Auto Repair LLC"
       />
 
       <section className="bg-[hsl(var(--primary))] text-white py-14 lg:py-20">
@@ -168,8 +168,40 @@ const Contact = () => {
               </form>
             </div>
             <p className="mt-3 text-[11px] text-slate-500 text-center">
-              We respect your privacy. Your information stays with MINHS.
+              We respect your privacy. Your information stays with Elshadai J&N Auto Repair LLC.
             </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white py-10 border-y border-slate-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div className="lg:col-span-4 space-y-3">
+            <h3 className="font-display text-2xl font-bold uppercase tracking-wide text-[hsl(var(--primary))]">
+              Get Directions
+            </h3>
+            <p className="text-sm text-slate-600">{COMPANY.address}</p>
+            <Button
+              asChild
+              className="bg-[hsl(var(--secondary))] text-[hsl(var(--secondary-foreground))] hover:bg-[hsl(var(--secondary))]/90 font-display font-bold uppercase tracking-wide"
+            >
+              <a
+                href="https://www.openstreetmap.org/directions?to=3014%20N%20John%20Young%20Pkwy%2C%20Orlando%2C%20FL%2032804#map=17/28.5685/-81.4155"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Open Street Map Directions
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </a>
+            </Button>
+          </div>
+          <div className="lg:col-span-8 rounded-lg overflow-hidden min-h-[280px] ring-1 ring-slate-200">
+            <iframe
+              title="Elshadai J&N Auto Repair LLC location map"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=-81.4255%2C28.5585%2C-81.4055%2C28.5785&layer=mapnik&marker=28.5685%2C-81.4155"
+              className="w-full h-full min-h-[280px]"
+              loading="lazy"
+            />
           </div>
         </div>
       </section>

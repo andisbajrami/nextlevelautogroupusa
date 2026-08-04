@@ -19,18 +19,18 @@ const ServiceAreas = () => {
         <title>Service Areas | {COMPANY.name}</title>
         <meta
           name="description"
-          content={`${COMPANY.name} serves drivers across our local area with wraps, tint, paint protection, and custom builds.`}
+          content={`${COMPANY.name} serves Orlando and Central Florida with honest auto repair — maintenance, brakes, diagnostics, and more.`}
         />
       </Helmet>
 
       <ElectricalPageHero
         eyebrow="Coverage"
         breadcrumb={[{ label: "Home", to: "/" }, { label: "Service Areas" }]}
-        title="Personalization Near You"
-        eyebrowAfter="Local Shop · Surrounding Areas"
-        body="Envision serves drivers across our local area with professional wraps, tint, paint protection, and custom builds."
+        title="Auto Repair Near You"
+        eyebrowAfter="Orlando · Central Florida"
+        body={`${COMPANY.name} serves drivers across Orlando and nearby communities with honest diagnostics and quality repairs.`}
         image={MINHS_IMAGES.serviceAreasHero}
-        imageAlt="Custom wrapped vehicles at Envision Wraps"
+        imageAlt="Orlando service area for Elshadai J&N Auto Repair LLC"
       />
 
       <section className="bg-[hsl(var(--minhs-surface))] py-14 lg:py-20">
@@ -40,7 +40,8 @@ const ServiceAreas = () => {
               Who We Serve
             </h2>
             <p className="text-slate-600 leading-relaxed">
-              From daily drivers to show builds and fleet accounts — if you want a custom look, we can help. Reach out if you&apos;re unsure we cover your area.
+              From daily drivers to fleet vehicles — if you need honest auto repair in Central Florida, we can help.
+              Reach out if you&apos;re unsure we cover your area.
             </p>
           </div>
           <div className="flex flex-wrap gap-3">
@@ -64,7 +65,8 @@ const ServiceAreas = () => {
               Visit The Shop
             </h2>
             <p className="text-slate-600 leading-relaxed">
-              Book a consult for wraps, tint, PPF, detail, or a full visual build. Share your vehicle and goals — we’ll map materials, scope, and timeline.
+              Visit us at 3014 N John Young Pkwy for maintenance, brakes, diagnostics, engine, and AC repair.
+              Use Get Directions below for an OpenStreetMap route to the shop.
             </p>
             <ul className="space-y-4 text-sm">
               {COMPANY.address ? (
@@ -82,20 +84,35 @@ const ServiceAreas = () => {
                 </li>
               ) : null}
             </ul>
-            <Button
-              asChild
-              className="bg-[hsl(var(--secondary))] text-[hsl(var(--secondary-foreground))] hover:bg-[hsl(var(--secondary))]/90 font-display font-bold uppercase tracking-wide"
-            >
-              <Link to="/contact">
-                Start Your Build
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
+            <div className="flex flex-wrap gap-3">
+              <Button
+                asChild
+                className="bg-[hsl(var(--secondary))] text-[hsl(var(--secondary-foreground))] hover:bg-[hsl(var(--secondary))]/90 font-display font-bold uppercase tracking-wide"
+              >
+                <Link to="/contact">
+                  Schedule Now
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+              <Button
+                asChild
+                variant="outline"
+                className="minhs-btn-outline-on-light font-display font-bold uppercase tracking-wide"
+              >
+                <a
+                  href="https://www.openstreetmap.org/directions?to=3014%20N%20John%20Young%20Pkwy%2C%20Orlando%2C%20FL%2032804#map=17/28.5685/-81.4155"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Get Directions
+                </a>
+              </Button>
+            </div>
           </div>
           <div className="lg:col-span-7 rounded-lg overflow-hidden min-h-[360px] ring-1 ring-slate-200 bg-[hsl(var(--minhs-surface))]">
             {mapEmbedUrl ? (
               <iframe
-                title="Envision service area map"
+                title="Elshadai J&N Auto Repair LLC map"
                 src={mapEmbedUrl}
                 className="w-full h-full min-h-[360px]"
                 loading="lazy"
@@ -108,7 +125,7 @@ const ServiceAreas = () => {
                     Shop map coming soon
                   </p>
                   <p className="mt-2 text-sm text-slate-600 max-w-sm">
-                    Contact Envision for directions and consult availability.
+                    Contact Elshadai J&N for directions and appointment availability.
                   </p>
                 </div>
               </div>
@@ -118,10 +135,10 @@ const ServiceAreas = () => {
       </section>
 
       <CTASection
-        title="Ready to start your build?"
-        subtitle="Book a consult for wraps, tint, PPF, detail, and custom builds."
-        primaryLabel="START YOUR BUILD"
-        secondaryLabel="CONTACT US"
+        title="Ready to schedule service?"
+        subtitle="Book an appointment for maintenance, brakes, diagnostics, engine, or AC repair."
+        primaryLabel="SCHEDULE NOW"
+        secondaryLabel="CALL NOW"
       />
     </Layout>
   );

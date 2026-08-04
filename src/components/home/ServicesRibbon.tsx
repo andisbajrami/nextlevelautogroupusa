@@ -16,11 +16,11 @@ const ServicesRibbon = () => {
             Our Services
           </span>
           <h2 className="mt-2 font-display text-3xl sm:text-4xl font-bold uppercase text-[hsl(var(--primary))]">
-            Wraps, Tint &{" "}
-            <span className="text-[hsl(var(--secondary))]">Protection</span>
+            Auto Repair &{" "}
+            <span className="text-[hsl(var(--secondary))]">Maintenance</span>
           </h2>
           <p className="mt-3 text-muted-foreground text-sm sm:text-base">
-            Professional automotive personalization — color wraps, ceramic tint, PPF, detail, and custom builds.
+            Full-service auto repair — maintenance, brakes, diagnostics, engine, transmission, suspension, and AC.
           </p>
         </div>
 

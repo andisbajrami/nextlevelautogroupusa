@@ -22,7 +22,7 @@ const ServiceAreasHome = () => {
             </h2>
             <p className="mt-4 text-sm sm:text-base text-muted-foreground leading-relaxed">
               {SITE_TOP.locations
-                ? `${SITE_TOP.locations} with wraps, tint, PPF, and custom builds.`
+                ? `${SITE_TOP.locations} with honest diagnostics and quality auto repair.`
                 : "We serve local drivers with professional wraps, ceramic tint, paint protection, and full visual builds."}
             </p>
             <Link

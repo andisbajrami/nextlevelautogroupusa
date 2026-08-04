@@ -49,7 +49,7 @@ const Services = () => {
               European Auto Services
             </span>
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold uppercase tracking-wide leading-[0.95]">
-              Dealer-Level Care for Your Vehicle
+              Honest Auto Repair for Your Vehicle
             </h1>
             <p className="mt-5 text-base sm:text-lg text-white/75 leading-relaxed max-w-2xl">{servicesPageIntro}</p>
           </div>

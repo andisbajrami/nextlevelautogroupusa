@@ -1,51 +1,55 @@
 {
-  "generatedAt": "2026-07-30T00:40:00.000Z",
+  "generatedAt": "2026-08-04T12:00:00.000Z",
   "site": {
-    "name": "Envision Wraps",
-    "legalName": "Envision Wraps",
-    "tagline": "Professional automotive personalization — wraps, tint, paint protection, and custom builds."
+    "name": "Elshadai J&N Auto Repair LLC",
+    "legalName": "Elshadai J&N Auto Repair LLC",
+    "tagline": "Trusted auto repair in Orlando — maintenance, brakes, diagnostics, engine & AC service done right."
   },
   "contact": {
-    "phone": "",
-    "email": "",
-    "address": "",
-    "hours": "Mon - Fri: 8:00 AM - 5:00 PM · Sat: By Appointment",
+    "phone": "407-719-3539",
+    "email": "elshadaijnauto@gmail.com",
+    "address": "3014 N John Young Pkwy, Orlando, FL 32804",
+    "hours": "Mon – Sat: 9:00 AM – 6:00 PM EST · Closed Sunday",
     "officeHours": [
-      { "days": "Monday – Friday", "hours": "8:00 AM - 5:00 PM" },
-      { "days": "Saturday", "hours": "By Appointment" },
+      { "days": "Monday – Saturday", "hours": "9:00 AM – 6:00 PM EST" },
       { "days": "Sunday", "hours": "Closed" }
     ],
-    "locations": "Serving drivers across our local area",
-    "mapEmbedUrl": ""
+    "locations": "Serving Orlando & Central Florida",
+    "mapEmbedUrl": "https://www.openstreetmap.org/export/embed.html?bbox=-81.4255%2C28.5585%2C-81.4055%2C28.5785&layer=mapnik&marker=28.5685%2C-81.4155"
   },
   "pages": [
-    { "id": "home", "label": "Home", "path": "/", "description": "" },
-    { "id": "services", "label": "Services", "path": "/services", "description": "" },
-    { "id": "projects", "label": "Gallery", "path": "/projects", "description": "" },
-    { "id": "about", "label": "About", "path": "/about", "description": "" },
-    { "id": "contact", "label": "Contact", "path": "/contact", "description": "" },
-    { "id": "faq", "label": "FAQ", "path": "/faq", "description": "" }
+    { "id": "home", "label": "Home", "path": "/", "description": "Orlando auto repair homepage" },
+    { "id": "services", "label": "Services", "path": "/services", "description": "Maintenance, brakes, diagnostics, engine, AC" },
+    { "id": "projects", "label": "Gallery", "path": "/projects", "description": "Recent repair work" },
+    { "id": "about", "label": "About", "path": "/about", "description": "Our story and values" },
+    { "id": "reviews", "label": "Reviews", "path": "/reviews", "description": "Google customer reviews" },
+    { "id": "contact", "label": "Contact", "path": "/contact", "description": "Schedule an appointment" },
+    { "id": "faq", "label": "FAQ", "path": "/faq", "description": "Common questions" }
   ],
   "about": {
-    "intro": "Here at Envision you will find the standard in Automotive Personalization.",
+    "intro": "Elshadai J&N Auto Repair LLC is Orlando’s neighborhood shop for honest diagnostics and lasting repairs.",
     "stats": [
-      { "label": "Years personalizing", "value": "15+" },
-      { "label": "Core services", "value": "10+" }
+      { "label": "Primary services", "value": "8+" },
+      { "label": "Days open weekly", "value": "6" }
     ],
     "values": [
-      { "title": "Craftsmanship", "description": "Prep, alignment, and edges that look factory-clean." },
-      { "title": "Design first", "description": "We help you envision the finish before install day." }
+      { "title": "Honesty first", "description": "Clear findings and fair recommendations — always." },
+      { "title": "Community care", "description": "5% off oil changes for first responders, teachers, veterans, and seniors." }
     ],
     "certifications": [
-      { "label": "Wrap Specialists", "sub": "Color · Graphics · Fleet" },
-      { "label": "Tint Pros", "sub": "Ceramic · Performance" }
+      { "label": "Maintenance Pros", "sub": "Oil · Filters · Intervals" },
+      { "label": "Brake Specialists", "sub": "Pads · Rotors · Hydraulics" }
     ]
   },
   "services": [
-    { "id": "vehicle-wraps", "title": "Vehicle Wraps", "description": "Full color-change, accents, and custom graphics.", "detailPath": "/services/vehicle-wraps" },
-    { "id": "window-tint", "title": "Window Tint", "description": "Ceramic and performance tint for heat and privacy.", "detailPath": "/services/window-tint" },
-    { "id": "paint-protection", "title": "Paint Protection Film", "description": "PPF for high-impact zones or full front coverage.", "detailPath": "/services/paint-protection" },
-    { "id": "auto-detail", "title": "Auto Detail", "description": "Correction and ceramic coatings.", "detailPath": "/services/auto-detail" }
+    { "id": "general-maintenance", "title": "General Maintenance", "description": "Scheduled maintenance that keeps your vehicle reliable.", "detailPath": "/services/general-maintenance" },
+    { "id": "suspension", "title": "Suspension", "description": "Shocks, struts, and suspension repairs.", "detailPath": "/services/suspension" },
+    { "id": "transmission", "title": "Transmission", "description": "Transmission service and repair.", "detailPath": "/services/transmission" },
+    { "id": "oil-changes", "title": "Oil Changes", "description": "Oil & filter service with community discounts.", "detailPath": "/services/oil-changes" },
+    { "id": "brakes", "title": "Brakes", "description": "Pads, rotors, and braking systems.", "detailPath": "/services/brakes" },
+    { "id": "diagnostics", "title": "Diagnostics", "description": "Check-engine lights and computer diagnostics.", "detailPath": "/services/diagnostics" },
+    { "id": "engine-repair", "title": "Engine Repair", "description": "Engine diagnostics and repair.", "detailPath": "/services/engine-repair" },
+    { "id": "ac-repair", "title": "AC Repair", "description": "Air conditioning for Florida heat.", "detailPath": "/services/ac-repair" }
   ],
   "serviceSections": [],
   "capabilities": [],
@@ -53,21 +57,23 @@
   "team": [],
   "testimonials": [],
   "faq": [
-    { "question": "What services does Envision offer?", "answer": "Wraps, window tint, paint protection film, detail, body kits/aero, custom design, commercial/fleet, and full visual builds." },
-    { "question": "How do I book a consult?", "answer": "Use the contact form or call the shop to set up a consult." }
+    { "question": "What services do you offer?", "answer": "General maintenance, suspension, transmission, oil changes, brakes, diagnostics, engine repair, and AC repair." },
+    { "question": "How do I schedule an appointment?", "answer": "Call 407-719-3539, use the online form, or chat with our assistant. We’re open Mon–Sat 9AM–6PM EST." },
+    { "question": "Do you offer discounts?", "answer": "First responders, teachers, veterans, and seniors get 5% off oil changes." },
+    { "question": "Where are you located?", "answer": "3014 N John Young Pkwy, Orlando, FL 32804." }
   ],
   "pricing": {
-    "summary": "Every quote is project-specific. Share your vehicle and goals and we’ll confirm materials, scope, and timeline.",
-    "bullets": ["Free design consults", "Wrap, tint & PPF quotes", "Custom build packages"]
+    "summary": "Every estimate is tailored to your vehicle after diagnosis. We explain findings and cost before repair work begins.",
+    "bullets": ["Tailored written estimates", "Honest diagnostics", "Community oil-change discount"]
   },
   "process": [
-    { "label": "Consult", "description": "Design goals and material choices." },
-    { "label": "Quote", "description": "Clear scope and timeline." },
-    { "label": "Install", "description": "Precision prep and professional install." }
+    { "label": "Schedule", "description": "Book by phone, form, or chat." },
+    { "label": "Diagnose", "description": "Clear findings — no guesswork." },
+    { "label": "Repair", "description": "Quality parts and careful workmanship." }
   ],
   "hero": {
-    "headline": "Your Trusted Wraps & Tint Shop",
-    "body": "Anything you can Envision — wraps, tint, paint protection, and custom builds."
+    "headline": "Your Trusted Auto Repair Shop",
+    "body": "Maintenance, brakes, diagnostics, engine & AC repair for Orlando drivers."
   },
   "actions": [
     { "id": "open_contact_form", "description": "Open the contact form." },

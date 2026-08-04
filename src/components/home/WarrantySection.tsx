@@ -56,21 +56,21 @@ const WarrantySection = () => {
                 </div>
                 <div>
                   <p className="text-xs font-display uppercase tracking-[0.22em] text-white/60">Shop standard</p>
-                  <p className="font-display text-lg font-bold uppercase tracking-wide text-white">Pro film installs</p>
+                  <p className="font-display text-lg font-bold uppercase tracking-wide text-white">Honest diagnostics</p>
                 </div>
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <div className="rounded-sm border border-white/15 bg-white/10 p-5 sm:p-6 text-center">
-                  <p className="font-display text-5xl sm:text-6xl font-bold text-[hsl(var(--secondary))] leading-none">15+</p>
-                  <p className="mt-2 font-display text-sm uppercase tracking-widest text-white">Years</p>
+                  <p className="font-display text-5xl sm:text-6xl font-bold text-[hsl(var(--secondary))] leading-none">6</p>
+                  <p className="mt-2 font-display text-sm uppercase tracking-widest text-white">Days Open</p>
                 </div>
                 <div className="rounded-sm border border-white/15 bg-white/10 p-5 sm:p-6 text-center">
-                  <p className="font-display text-3xl sm:text-4xl font-bold text-white leading-none">6+</p>
+                  <p className="font-display text-3xl sm:text-4xl font-bold text-white leading-none">8+</p>
                   <p className="mt-2 font-display text-sm uppercase tracking-widest text-white/80">Services</p>
                 </div>
               </div>
               <p className="mt-5 text-center text-xs uppercase tracking-[0.18em] text-white/55">
-                Wraps · Tint · PPF · Detail
+                Maintenance · Brakes · Diagnostics · Engine · AC
               </p>
             </div>
           </div>

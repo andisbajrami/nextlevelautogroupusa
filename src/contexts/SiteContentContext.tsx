@@ -123,8 +123,8 @@ interface SiteContentContextType extends SiteContentState {
   resetContent: () => void;
 }
 
-const STORAGE_KEY = "envision-site-content-v3";
-const EXPORT_MARKER_KEY = "envision-export-applied-at-v3";
+const STORAGE_KEY = "elshadai-jn-site-content-v2";
+const EXPORT_MARKER_KEY = "elshadai-jn-content-export-v2";
 
 export const SITE_CONTENT_DEFAULTS: SiteContentState = {
   services: SERVICES,

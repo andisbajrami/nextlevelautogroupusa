@@ -27,17 +27,17 @@ const FAQ = () => {
         <title>FAQ | {COMPANY.name}</title>
         <meta
           name="description"
-          content={`Answers about ${COMPANY.name} European auto repair, appointments, pricing, warranties, and services in Brooklyn.`}
+          content={`Answers about ${COMPANY.name} auto repair, appointments, estimates, discounts, and services in Orlando.`}
         />
       </Helmet>
 
       <ElectricalPageHero
         eyebrow="FAQ"
         breadcrumb={[{ label: "Home", to: "/" }, { label: "FAQ" }]}
-        title="Automotive Questions Answered"
-        body="Everything you need to know about our ASE certified technicians, European brands, factory maintenance, diagnostics, and 5 year nationwide warranty."
+        title="Auto Repair Questions Answered"
+        body="Everything you need to know about our services, scheduling, tailored estimates, community discounts, and shop hours."
         image={MINHS_IMAGES.technician2}
-        imageAlt="Automotive technician in a Brooklyn garage"
+        imageAlt="Auto repair technician at Elshadai J&N"
       />
 
       {sectionVisibility["faq.main"] ? (

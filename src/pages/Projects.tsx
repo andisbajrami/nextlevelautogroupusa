@@ -63,7 +63,7 @@ const Projects = () => {
         <title>Projects | {COMPANY.name}</title>
         <meta
           name="description"
-          content={`Gallery from ${COMPANY.name} — wraps, tint, paint protection, detail, and custom builds.`}
+          content={`Gallery from ${COMPANY.name} — maintenance, brakes, diagnostics, engine, and AC repairs.`}
         />
       </Helmet>
 
@@ -87,13 +87,13 @@ const Projects = () => {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-12 gap-10 items-end">
           <div className="lg:col-span-7">
             <p className="text-[hsl(var(--secondary))] text-xs font-display font-bold uppercase tracking-[0.22em] mb-3">
-              Project Gallery · {projects.length} Builds
+              Project Gallery · {projects.length} Jobs
             </p>
             <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold uppercase tracking-wide leading-tight">
               Our Shop in Action
             </h1>
             <p className="mt-4 text-white/80 max-w-xl leading-relaxed">
-              Color-change wraps, ceramic tint, PPF, chrome deletes, detail, and full visual builds — real work from the Envision bay.
+              Brakes, oil changes, diagnostics, AC, suspension, and engine work — real repairs from the Elshadai J&N bay in Orlando.
             </p>
           </div>
           <div className="lg:col-span-5 grid grid-cols-2 gap-3">
@@ -188,7 +188,9 @@ const Projects = () => {
 
       <CTASection
         title="Ready to schedule service?"
-        subtitle="Book a consult to start your wrap, tint, or PPF build."
+        subtitle="Book an appointment for maintenance, brakes, diagnostics, or AC repair."
+        primaryLabel="SCHEDULE NOW"
+        secondaryLabel="CALL NOW"
       />
     </Layout>
   );

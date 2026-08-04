@@ -10,6 +10,7 @@ import {
   Eye,
   Handshake,
   Heart,
+  Sparkles,
 } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import ElectricalPageHero from "@/components/sections/ElectricalPageHero";
@@ -20,7 +21,7 @@ import { ABOUT_HERO_BADGES, MINHS_IMAGES } from "@/data/siteData";
 import { Button } from "@/components/ui/button";
 
 const badgeIconMap = { HomeIcon, ShieldCheck, Award, Tag, Home: HomeIcon } as const;
-const valueIconMap = { ShieldCheck, Award, Users, Handshake, Eye, Heart } as const;
+const valueIconMap = { ShieldCheck, Award, Users, Handshake, Eye, Heart, Sparkles } as const;
 
 const About = () => {
   const { company: COMPANY, coreValues, certifications, aboutStats, team } = useSiteContent();
@@ -37,11 +38,11 @@ const About = () => {
       <ElectricalPageHero
         eyebrow="Our Story"
         breadcrumb={[{ label: "Home", to: "/" }, { label: "About" }]}
-        title="Automotive Personalization Shop"
-        eyebrowAfter="Wraps · Tint · PPF · Builds"
-        body={`${COMPANY.name} was built around a simple idea: anything you can envision, we can install. Premium wraps, ceramic tint, paint protection, and custom builds — with craftsmanship that turns heads.`}
+        title="Orlando Auto Repair With Integrity"
+        eyebrowAfter="Maintenance · Brakes · Diagnostics · Engine · AC"
+        body={`${COMPANY.name} was built to serve Orlando drivers with honest diagnostics, clear estimates, and repairs that last. From oil changes to engine and AC work, we treat every vehicle like it belongs to family.`}
         image={MINHS_IMAGES.aboutHero}
-        imageAlt="Envision Wraps automotive personalization shop"
+        imageAlt="Elshadai J&N Auto Repair LLC shop in Orlando"
         badges={
           <div className="flex flex-wrap gap-3">
             {ABOUT_HERO_BADGES.map(b => {
@@ -82,19 +83,23 @@ const About = () => {
               Who We Are
             </span>
             <h2 className="mt-3 font-display text-3xl sm:text-4xl font-bold uppercase text-[hsl(var(--primary))] leading-tight">
-              Design-First Craft.
-              <span className="block">Shop-Level Finish.</span>
+              Faith. Craft.
+              <span className="block">Care For Every Mile.</span>
             </h2>
             <p className="mt-5 text-sm sm:text-base text-muted-foreground leading-relaxed">
-              From full color-change wraps to ceramic tint and PPF, our team combines precise installs with clear
-              communication. We help you envision the end result, then deliver it with prep, materials, and edges that
-              look intentional.
+              On N John Young Parkway, Elshadai J&N is Central Florida’s neighborhood shop for drivers who want
+              straight answers and lasting repairs. We diagnose carefully, estimate clearly, and repair with
+              quality parts — then send appointment reminders so your vehicle stays on schedule.
+            </p>
+            <p className="mt-4 text-sm sm:text-base text-muted-foreground leading-relaxed">
+              We’re open Monday through Saturday, 9 AM – 6 PM EST, and proud to offer 5% off oil changes for
+              first responders, teachers, veterans, and seniors.
             </p>
           </div>
           <div className="lg:col-span-7 order-1 lg:order-2 rounded-sm overflow-hidden ring-1 ring-[hsl(var(--border))]">
             <img
               src={MINHS_IMAGES.technician}
-              alt="Envision Wraps vinyl wrap installation"
+              alt="Technician at Elshadai J&N Auto Repair LLC"
               className="w-full aspect-[4/3] object-cover"
             />
           </div>
@@ -108,7 +113,7 @@ const About = () => {
               Core Values
             </span>
             <h2 className="mt-2 font-display text-3xl sm:text-4xl font-bold uppercase text-[hsl(var(--primary))]">
-              How We Wire Every Job
+              How We Serve Every Customer
             </h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -138,7 +143,7 @@ const About = () => {
           <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-10">
             <div>
               <span className="text-[hsl(var(--secondary))] text-xs font-bold uppercase tracking-[0.22em] font-display">The Crew</span>
-              <h2 className="mt-2 font-display text-3xl sm:text-4xl font-bold uppercase">Meet the Masters</h2>
+              <h2 className="mt-2 font-display text-3xl sm:text-4xl font-bold uppercase">Meet The Team</h2>
             </div>
             <Button asChild variant="outline" className="minhs-btn-outline-on-dark font-display font-bold uppercase tracking-wider rounded-sm">
               <Link to="/team">Full Team <ArrowRight className="ml-1.5 h-4 w-4" /></Link>
@@ -163,7 +168,7 @@ const About = () => {
       <section className="bg-[hsl(var(--minhs-surface))] py-12 border-t border-[hsl(var(--border))]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <h3 className="text-center font-display text-xs font-bold uppercase tracking-[0.22em] text-[hsl(var(--secondary))] mb-8">
-            Licensed · Certified · Trusted
+            Trusted · Local · Community Focused
           </h3>
           <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-6">
             {certifications.map(c => (

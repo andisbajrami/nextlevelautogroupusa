@@ -15,11 +15,11 @@ const WhyTeamSection = () => {
             </span>
             <h2 className="mt-2 font-display text-3xl sm:text-4xl lg:text-[2.75rem] font-bold uppercase text-[hsl(var(--primary))] leading-tight">
               Why Choose
-              <span className="block text-[hsl(var(--secondary))]">Envision</span>
+              <span className="block text-[hsl(var(--secondary))]">Elshadai J&N</span>
             </h2>
             <p className="mt-4 text-sm sm:text-base text-muted-foreground leading-relaxed">
-              Precision wraps, ceramic tint, paint protection, and custom builds — the personalization
-              experience drivers deserve.
+              Honest diagnostics, tailored estimates, and full-service auto repair for Orlando drivers —
+              Monday through Saturday.
             </p>
           </div>
 

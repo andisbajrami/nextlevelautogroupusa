@@ -18,18 +18,18 @@ const Reviews = () => {
         <title>Reviews | {COMPANY.name}</title>
         <meta
           name="description"
-          content={`See what drivers say about ${COMPANY.name} — wraps, tint, paint protection, and custom builds.`}
+          content={`See what Orlando drivers say about ${COMPANY.name} — honest auto repair, clear estimates, and quality service.`}
         />
       </Helmet>
 
       <ElectricalPageHero
         eyebrow="Customer Reviews"
         breadcrumb={[{ label: "Home", to: "/" }, { label: "Reviews" }]}
-        title="Trusted By Drivers"
+        title="Trusted By Orlando Drivers"
         eyebrowAfter={`${siteTop.ratingValue} Stars · ${siteTop.ratingCount} ${siteTop.ratingLabel}`}
-        body="Real feedback from drivers who chose Envision for color-change wraps, ceramic tint, PPF, detail, and full visual builds."
+        body={`Real feedback from drivers who chose ${COMPANY.name} for maintenance, brakes, diagnostics, engine, and AC repair.`}
         image={MINHS_IMAGES.reviewsHero}
-        imageAlt="Custom wrapped vehicle at Envision Wraps"
+        imageAlt="Customer reviews for Elshadai J&N Auto Repair LLC"
       />
 
       <section className="bg-[hsl(var(--primary))] text-white py-10 border-y border-[hsl(var(--secondary))]/20">
@@ -119,7 +119,7 @@ const Reviews = () => {
           <div>
             <h2 className="font-display text-2xl font-bold uppercase tracking-wide">Ready to join our happy customers?</h2>
             <p className="text-white/75 mt-2 text-sm max-w-lg">
-              Precision wraps, ceramic tint, PPF, and custom builds — with consults that start from your vision.
+              Honest diagnostics, tailored estimates, and quality repairs — with appointment reminders that keep you on schedule.
             </p>
           </div>
           <Button
@@ -127,7 +127,7 @@ const Reviews = () => {
             className="bg-[hsl(var(--secondary))] text-[hsl(var(--secondary-foreground))] hover:bg-[hsl(var(--secondary))]/90 font-display font-bold uppercase tracking-wide shrink-0"
           >
             <Link to="/contact">
-              Start Your Build
+              Schedule Now
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>
@@ -135,10 +135,10 @@ const Reviews = () => {
       </section>
 
       <CTASection
-        title="Experience the Envision difference"
-        subtitle="Book a consult for wraps, tint, PPF, detail, and custom builds."
-        primaryLabel="START YOUR BUILD"
-        secondaryLabel="CONTACT US"
+        title="Experience the Elshadai J&N difference"
+        subtitle="Book an appointment for maintenance, brakes, diagnostics, engine, or AC repair."
+        primaryLabel="SCHEDULE NOW"
+        secondaryLabel="CALL NOW"
       />
     </Layout>
   );
