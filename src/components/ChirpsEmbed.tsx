@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 
-/** Envision Wraps — Chirps AI assistant (https://chirps.cc). */
-const CHIRPS_ASSISTANT_ID = "214e8a8e-5a3f-4f3c-92b0-190b810bd960";
+/** Elshadai J&N Auto Repair — Chirps AI assistant (https://chirps.cc). */
+const CHIRPS_ASSISTANT_ID = "ee211cf9-e99d-4384-b4e2-d60650a05ba6";
 const CHIRPS_SCRIPT_ID = "chirps-embed-script";
 const CHIRPS_SCRIPT_SRC = "https://chirps.cc/embed.js";
 

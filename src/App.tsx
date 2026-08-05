@@ -8,6 +8,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import { SiteContentProvider } from "@/contexts/SiteContentContext";
 import ScrollToTop from "@/components/ScrollToTop";
+import ChirpsEmbed from "@/components/ChirpsEmbed";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 
@@ -82,6 +83,7 @@ const App = () => (
             <Toaster />
             <Sonner />
             <AppShell />
+            <ChirpsEmbed />
           </TooltipProvider>
         </ThemeProvider>
       </SiteContentProvider>
