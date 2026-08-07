@@ -16,7 +16,7 @@ const Services = () => {
   return (
     <Layout>
       <Helmet>
-        <title>Automotive Services | {COMPANY.name}</title>
+        <title>Buy & Sell Services | {COMPANY.name}</title>
         <meta name="description" content={servicesPageIntro} />
       </Helmet>
 
@@ -46,10 +46,10 @@ const Services = () => {
           <div className="max-w-3xl">
             <span className="inline-flex items-center gap-2 text-[hsl(var(--secondary))] text-xs font-bold uppercase tracking-[0.22em] font-display mb-4">
               <Wrench className="h-3.5 w-3.5" />
-              European Auto Services
+              Buy & Sell Services
             </span>
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold uppercase tracking-wide leading-[0.95]">
-              Honest Auto Repair for Your Vehicle
+              Buy & Sell Vehicles With Confidence
             </h1>
             <p className="mt-5 text-base sm:text-lg text-white/75 leading-relaxed max-w-2xl">{servicesPageIntro}</p>
           </div>

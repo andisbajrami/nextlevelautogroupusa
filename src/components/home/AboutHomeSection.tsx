@@ -11,7 +11,7 @@ const AboutHomeSection = () => {
       <div className="container-custom">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           <div className="relative overflow-hidden rounded-sm minhs-card aspect-[4/3] lg:aspect-auto lg:min-h-[420px]">
-            <img src={a.image} alt="Elshadai J&N Auto Repair LLC shop" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+            <img src={a.image} alt="NextLevel Auto Group USA LLC lot" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
             <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--primary))]/60 to-transparent" />
           </div>
           <div>

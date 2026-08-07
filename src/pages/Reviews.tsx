@@ -18,7 +18,7 @@ const Reviews = () => {
         <title>Reviews | {COMPANY.name}</title>
         <meta
           name="description"
-          content={`See what Orlando drivers say about ${COMPANY.name} — honest auto repair, clear estimates, and quality service.`}
+          content={`See what Orlando drivers say about ${COMPANY.name} — quality inventory, fair offers, and personal service.`}
         />
       </Helmet>
 
@@ -27,9 +27,9 @@ const Reviews = () => {
         breadcrumb={[{ label: "Home", to: "/" }, { label: "Reviews" }]}
         title="Trusted By Orlando Drivers"
         eyebrowAfter={`${siteTop.ratingValue} Stars · ${siteTop.ratingCount} ${siteTop.ratingLabel}`}
-        body={`Real feedback from drivers who chose ${COMPANY.name} for maintenance, brakes, diagnostics, engine, and AC repair.`}
+        body={`Real feedback from drivers who chose ${COMPANY.name} to buy, sell, and trade vehicles.`}
         image={MINHS_IMAGES.reviewsHero}
-        imageAlt="Customer reviews for Elshadai J&N Auto Repair LLC"
+        imageAlt="Customer reviews for NextLevel Auto Group USA LLC"
       />
 
       <section className="bg-[hsl(var(--primary))] text-white py-10 border-y border-[hsl(var(--secondary))]/20">
@@ -119,7 +119,7 @@ const Reviews = () => {
           <div>
             <h2 className="font-display text-2xl font-bold uppercase tracking-wide">Ready to join our happy customers?</h2>
             <p className="text-white/75 mt-2 text-sm max-w-lg">
-              Honest diagnostics, tailored estimates, and quality repairs — with appointment reminders that keep you on schedule.
+              Quality inventory, fair cash offers, and helpful scheduling — including AI chat for FAQs and estimates.
             </p>
           </div>
           <Button
@@ -127,7 +127,7 @@ const Reviews = () => {
             className="bg-[hsl(var(--secondary))] text-[hsl(var(--secondary-foreground))] hover:bg-[hsl(var(--secondary))]/90 font-display font-bold uppercase tracking-wide shrink-0"
           >
             <Link to="/contact">
-              Schedule Now
+              Schedule Visit
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>
@@ -135,9 +135,9 @@ const Reviews = () => {
       </section>
 
       <CTASection
-        title="Experience the Elshadai J&N difference"
-        subtitle="Book an appointment for maintenance, brakes, diagnostics, engine, or AC repair."
-        primaryLabel="SCHEDULE NOW"
+        title="Experience the NextLevel difference"
+        subtitle="Browse inventory, get a cash offer, or schedule a test drive today."
+        primaryLabel="VIEW INVENTORY"
         secondaryLabel="CALL NOW"
       />
     </Layout>

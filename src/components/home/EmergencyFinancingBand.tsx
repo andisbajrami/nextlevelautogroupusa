@@ -26,10 +26,10 @@ const EmergencyFinancingBand = () => {
                 </span>
                 <div>
                   <h3 className="font-display text-2xl sm:text-3xl font-bold uppercase tracking-wide">
-                    {SITE_TOP.line || "24/7 Emergency Service"}
+                    {SITE_TOP.line || "Orlando Buy & Sell Vehicles"}
                   </h3>
                   <p className="mt-1 text-sm sm:text-base opacity-80 max-w-md">
-                    Power out? Sparking panel? Our licensed electricians dispatch fast — day or night.
+                    Ready to buy or sell? Call NextLevel Auto Group USA — fair offers and easy scheduling.
                   </p>
                   <a
                     href={phoneHref}
@@ -52,8 +52,7 @@ const EmergencyFinancingBand = () => {
                     Flexible Financing
                   </h3>
                   <p className="mt-1 text-sm sm:text-base opacity-80 max-w-md md:ml-auto">
-                    Spread panel upgrades and major installs over manageable monthly payments. Ask about
-                    0% promo options.
+                    Ask about financing guidance and payment estimates when you&apos;re ready to buy.
                   </p>
                   <Link
                     to="/contact"

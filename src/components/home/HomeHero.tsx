@@ -1,14 +1,14 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Phone, Wrench, CircleDot, Cpu } from "lucide-react";
+import { ArrowRight, Phone, Car, DollarSign, RefreshCw } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useSiteContent } from "@/contexts/SiteContentContext";
 import { useTheme } from "@/contexts/ThemeContext";
 import { MINHS_IMAGES } from "@/data/siteData";
 
 const LICENSE_BADGES = [
-  { icon: Wrench, label: "Full-Service Repair" },
-  { icon: CircleDot, label: "Brake Specialists" },
-  { icon: Cpu, label: "Diagnostics" },
+  { icon: Car, label: "Quality Inventory" },
+  { icon: DollarSign, label: "We Buy Cars" },
+  { icon: RefreshCw, label: "Trade-Ins" },
 ] as const;
 
 const HomeHero = () => {
@@ -17,7 +17,7 @@ const HomeHero = () => {
   const phoneHref = `tel:${(COMPANY.phone || "").replace(/[^+\d]/g, "")}`;
   const heroImage =
     HOME_HERO.image ||
-    resolveServiceImage("general-maintenance", MINHS_IMAGES.heroLuxury);
+    resolveServiceImage("vehicle-sales", MINHS_IMAGES.heroLuxury);
   const secondaryTo = HOME_HERO.secondaryCta?.to || "/contact";
   const secondaryIsTel = secondaryTo.startsWith("tel:");
 
@@ -45,7 +45,7 @@ const HomeHero = () => {
                 )}
               </h1>
               <p className="mt-4 text-base sm:text-lg font-display font-semibold uppercase tracking-wide text-[hsl(var(--envision-pink))]">
-                {HOME_HERO.featuredEyebrow || "Orlando · Quality Repairs"}
+                {HOME_HERO.featuredEyebrow || "Orlando · Quality Vehicles"}
               </p>
               <p className="mt-4 text-sm sm:text-base text-white/75 leading-relaxed max-w-md">
                 {HOME_HERO.body}
@@ -77,7 +77,7 @@ const HomeHero = () => {
                   className="bg-[hsl(var(--secondary))] text-[hsl(var(--secondary-foreground))] hover:bg-[hsl(var(--secondary))]/90 font-display font-bold uppercase tracking-wider rounded-sm px-6"
                 >
                   <Link to={HOME_HERO.primaryCta?.to || "/contact"}>
-                    {HOME_HERO.primaryCta?.label || "Schedule Now"}
+                    {HOME_HERO.primaryCta?.label || "View Inventory"}
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
@@ -115,7 +115,7 @@ const HomeHero = () => {
         <div className="relative min-h-[280px] sm:min-h-[360px] lg:min-h-full">
           <img
             src={heroImage}
-            alt={`${COMPANY.name} auto repair shop`}
+            alt={`${COMPANY.name} vehicle inventory`}
             className="absolute inset-0 h-full w-full object-cover minhs-clip-diagonal"
           />
           <div

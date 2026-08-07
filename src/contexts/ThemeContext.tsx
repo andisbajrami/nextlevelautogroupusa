@@ -34,24 +34,24 @@ interface ThemeContextType extends ThemeConfig {
 
 const BRAND = buildThemeDefaults({
   primaryColor: "#0a0a0a",
-  secondaryColor: "#f5c517",
-  backgroundColor: "#faf9f5",
+  secondaryColor: "#6cab2d",
+  backgroundColor: "#f4f6f2",
   foregroundColor: "#0a0a0a",
-  mutedColor: "#f3f0e6",
+  mutedColor: "#e8ede3",
 });
 
 export const THEME_DEFAULTS: ThemeConfig = {
   ...BRAND,
-  logoUrl: null,
-  faviconUrl: "/favicon.svg",
+  logoUrl: "/logo.png",
+  faviconUrl: "/favicon.png",
   serviceImages: {},
   serviceSectionImages: {},
   teamImages: {},
   projectImages: {},
 };
 
-const STORAGE_KEY = "elshadai-jn-theme-v3";
-const EXPORT_MARKER_KEY = "elshadai-jn-theme-export-v3";
+const STORAGE_KEY = "nextlevel-auto-theme-v2";
+const EXPORT_MARKER_KEY = "nextlevel-auto-theme-export-v2";
 
 function migrateSavedTheme(partial: Partial<ThemeConfig>): ThemeConfig {
   return normalizeThemeConfig(THEME_DEFAULTS, partial);

@@ -15,11 +15,11 @@ const WhyTeamSection = () => {
             </span>
             <h2 className="mt-2 font-display text-3xl sm:text-4xl lg:text-[2.75rem] font-bold uppercase text-[hsl(var(--primary))] leading-tight">
               Why Choose
-              <span className="block text-[hsl(var(--secondary))]">Elshadai J&N</span>
+              <span className="block text-[hsl(var(--secondary))]">NextLevel</span>
             </h2>
             <p className="mt-4 text-sm sm:text-base text-muted-foreground leading-relaxed">
-              Honest diagnostics, tailored estimates, and full-service auto repair for Orlando drivers —
-              Monday through Saturday.
+              Quality inventory, fair cash offers, and easy scheduling for Orlando drivers buying or
+              selling vehicles — Monday through Saturday.
             </p>
           </div>
 

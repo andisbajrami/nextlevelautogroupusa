@@ -22,8 +22,8 @@ const ServiceAreasHome = () => {
             </h2>
             <p className="mt-4 text-sm sm:text-base text-muted-foreground leading-relaxed">
               {SITE_TOP.locations
-                ? `${SITE_TOP.locations} with honest diagnostics and quality auto repair.`
-                : "We serve local drivers with professional wraps, ceramic tint, paint protection, and full visual builds."}
+                ? `${SITE_TOP.locations} — buy, sell, and trade vehicles with confidence.`
+                : "We serve Orlando and surrounding areas with quality inventory and fair vehicle offers."}
             </p>
             <Link
               to="/service-areas"

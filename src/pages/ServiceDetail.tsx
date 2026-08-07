@@ -21,8 +21,8 @@ const ServiceDetail = () => {
   const svc = services.find(s => s.id === id);
   const detail = serviceSections.find(s => s.id === id);
 
-  const title = svc ? `${svc.title} | ${COMPANY.name}` : `Automotive Services | ${COMPANY.name}`;
-  const desc = svc?.description || `Automotive personalization from ${COMPANY.name}.`;
+  const title = svc ? `${svc.title} | ${COMPANY.name}` : `Buy & Sell Services | ${COMPANY.name}`;
+  const desc = svc?.description || `Buy and sell vehicle services from ${COMPANY.name}.`;
 
   const heroImage = svc
     ? resolveMinhsServiceImage(svc.id, resolveServiceImage(svc.id, svc.image))
@@ -48,7 +48,7 @@ const ServiceDetail = () => {
         <ElectricalPageHero
           breadcrumb={[{ label: "Home", to: "/" }, { label: "Services", to: "/services" }, { label: "Not found" }]}
           title="Service Not Found"
-          body="That service doesn't exist. Browse our full auto repair service list."
+          body="That service doesn't exist. Browse our full buy & sell services."
           image={MINHS_IMAGES.serviceBay}
         />
       ) : (
@@ -104,7 +104,7 @@ const ServiceDetail = () => {
                 <div className="rounded-lg overflow-hidden ring-1 ring-slate-200 min-h-[280px]">
                   <img
                     src={sectionImage ?? heroImage}
-                    alt={`${svc.title} — workshop`}
+                    alt={`${svc.title} — NextLevel Auto Group USA`}
                     className="w-full h-full min-h-[280px] object-cover"
                     loading="lazy"
                   />
@@ -145,8 +145,8 @@ const ServiceDetail = () => {
               <div>
                 <h2 className="font-display text-xl sm:text-2xl font-bold uppercase">Schedule {svc.title}</h2>
                 <p className="mt-2 text-sm text-white/75 max-w-lg">
-                  Request a consult online — clear quotes on every repair and
-                  service visit.
+                  Request a visit online — clear pricing on every purchase, sale,
+                  and trade-in.
                 </p>
               </div>
               <Button

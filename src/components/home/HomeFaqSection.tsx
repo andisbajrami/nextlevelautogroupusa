@@ -25,7 +25,7 @@ const HomeFaqSection = () => {
               Common Questions
             </h2>
             <p className="mt-4 text-muted-foreground leading-relaxed">
-              Straight answers about services, scheduling, estimates, discounts, and what makes Elshadai J&N a trusted Orlando auto shop.
+              Straight answers about buying, selling, trade-ins, estimates, scheduling, and what makes NextLevel a trusted Orlando dealership.
             </p>
             <Button
               asChild

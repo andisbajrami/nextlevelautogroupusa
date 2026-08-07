@@ -50,7 +50,7 @@ const Header = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-2 flex items-center justify-between gap-3 text-xs sm:text-[13px]">
           <span className="flex items-center gap-2 font-display font-bold uppercase tracking-wider">
             <ShieldCheck className="h-3.5 w-3.5" />
-            {SITE_TOP.line || "Orlando Auto Repair"}
+            {SITE_TOP.line || "Orlando Buy & Sell Vehicles"}
           </span>
           {COMPANY.phone ? (
             <a
@@ -91,10 +91,10 @@ const Header = () => {
                 </span>
                 <div className="leading-none">
                   <span className="block font-display text-lg sm:text-xl font-bold uppercase tracking-wide text-white group-hover:text-[hsl(var(--secondary))] transition-colors">
-                    {(COMPANY.name || "Elshadai").split(" ")[0]}
+                    {(COMPANY.name || "NextLevel").split(" ")[0]}
                   </span>
                   <span className="block text-[10px] sm:text-[11px] font-semibold tracking-[0.2em] text-white/55 uppercase">
-                    {(COMPANY.name || "Elshadai J&N Auto Repair LLC").split(" ").slice(1).join(" ") || "J&N Auto Repair"}
+                    {(COMPANY.name || "NextLevel Auto Group USA LLC").split(" ").slice(1).join(" ") || "Auto Group USA"}
                   </span>
                 </div>
               </>

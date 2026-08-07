@@ -16,9 +16,9 @@ const ProjectDetail = () => {
     return (
       <Layout>
         <div className="py-20 max-w-7xl mx-auto px-4 sm:px-6 text-center">
-          <h1 className="font-display text-2xl font-bold text-[hsl(var(--primary))]">Project not found</h1>
+          <h1 className="font-display text-2xl font-bold text-[hsl(var(--primary))]">Vehicle not found</h1>
           <Link to="/projects" className="text-[hsl(var(--secondary))] hover:underline mt-4 inline-block">
-            Back to Projects
+            Back to Inventory
           </Link>
         </div>
       </Layout>
@@ -47,7 +47,7 @@ const ProjectDetail = () => {
             className="inline-flex items-center gap-1 text-sm text-white/80 hover:text-[hsl(var(--secondary))] mb-4 w-fit"
           >
             <ArrowLeft className="h-4 w-4" />
-            Back to Projects
+            Back to Inventory
           </Link>
           <span className="inline-flex w-fit rounded-full bg-[hsl(var(--secondary))] text-[hsl(var(--secondary-foreground))] px-3 py-1 text-[10px] font-display font-bold uppercase tracking-wider mb-3">
             {project.category}
@@ -60,14 +60,14 @@ const ProjectDetail = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 grid md:grid-cols-3 gap-12">
           <div className="md:col-span-2">
             <h2 className="font-display text-2xl font-bold uppercase tracking-wide text-[hsl(var(--primary))] mb-4">
-              Project Overview
+              Vehicle Overview
             </h2>
             <p className="text-slate-600 leading-relaxed">{project.description}</p>
 
             {gallery.length > 0 ? (
               <div className="mt-10">
                 <h3 className="font-display text-lg font-bold uppercase tracking-wide text-[hsl(var(--primary))] mb-4">
-                  Project Gallery
+                  Vehicle Photos
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {gallery.map((src, idx) => (
@@ -113,8 +113,8 @@ const ProjectDetail = () => {
       </section>
 
       <CTASection
-        title="Need similar service for your vehicle?"
-        subtitle="Schedule an appointment for European auto repair with transparent estimates in Brooklyn."
+        title="Interested in this vehicle?"
+        subtitle="Schedule a test drive, ask about financing, or get a trade-in estimate — Orlando hours Mon–Sat."
       />
     </Layout>
   );

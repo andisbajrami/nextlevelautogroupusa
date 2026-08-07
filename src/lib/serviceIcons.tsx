@@ -23,6 +23,10 @@ import {
   Wind,
   Users,
   Handshake,
+  Car,
+  DollarSign,
+  RefreshCw,
+  MapPin,
   type LucideIcon,
 } from "lucide-react";
 
@@ -51,6 +55,10 @@ export const SERVICE_ICON_MAP: Record<string, LucideIcon> = {
   Wind,
   Users,
   Handshake,
+  Car,
+  DollarSign,
+  RefreshCw,
+  MapPin,
 };
 
 export const DEFAULT_SERVICE_ICON: LucideIcon = Wrench;

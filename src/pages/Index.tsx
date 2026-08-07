@@ -24,9 +24,9 @@ const Index = () => {
   return (
     <Layout>
       <Helmet>
-        <title>{COMPANY.name} | Orlando Auto Repair</title>
+        <title>{COMPANY.name} | Buy & Sell Vehicles in Orlando</title>
         <meta name="description" content={`${COMPANY.name}. ${COMPANY.tagline}`} />
-        <meta property="og:title" content={`${COMPANY.name} | Orlando Auto Repair`} />
+        <meta property="og:title" content={`${COMPANY.name} | Buy & Sell Vehicles in Orlando`} />
         <meta property="og:description" content={COMPANY.tagline} />
       </Helmet>
 

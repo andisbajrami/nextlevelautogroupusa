@@ -38,11 +38,11 @@ const About = () => {
       <ElectricalPageHero
         eyebrow="Our Story"
         breadcrumb={[{ label: "Home", to: "/" }, { label: "About" }]}
-        title="Orlando Auto Repair With Integrity"
-        eyebrowAfter="Maintenance · Brakes · Diagnostics · Engine · AC"
-        body={`${COMPANY.name} was built to serve Orlando drivers with honest diagnostics, clear estimates, and repairs that last. From oil changes to engine and AC work, we treat every vehicle like it belongs to family.`}
+        title="Buy & Sell Vehicles With Confidence"
+        eyebrowAfter="Buy · Sell · Trade · Inventory"
+        body={`${COMPANY.name} helps Orlando drivers buy quality vehicles and sell or trade with fair offers. Browse inventory, get estimates, and schedule visits — including help from our AI assistant.`}
         image={MINHS_IMAGES.aboutHero}
-        imageAlt="Elshadai J&N Auto Repair LLC shop in Orlando"
+        imageAlt="NextLevel Auto Group USA LLC in Orlando"
         badges={
           <div className="flex flex-wrap gap-3">
             {ABOUT_HERO_BADGES.map(b => {
@@ -83,23 +83,23 @@ const About = () => {
               Who We Are
             </span>
             <h2 className="mt-3 font-display text-3xl sm:text-4xl font-bold uppercase text-[hsl(var(--primary))] leading-tight">
-              Faith. Craft.
-              <span className="block">Care For Every Mile.</span>
+              Next Level.
+              <span className="block">Real Deals.</span>
             </h2>
             <p className="mt-5 text-sm sm:text-base text-muted-foreground leading-relaxed">
-              On N John Young Parkway, Elshadai J&N is Central Florida’s neighborhood shop for drivers who want
-              straight answers and lasting repairs. We diagnose carefully, estimate clearly, and repair with
-              quality parts — then send appointment reminders so your vehicle stays on schedule.
+              On S Orange Blossom Trail, NextLevel Auto Group USA is Orlando’s destination to buy and sell
+              vehicles with confidence. We stock quality inventory, make fair purchase offers, and explain
+              every option clearly — no high-pressure tactics.
             </p>
             <p className="mt-4 text-sm sm:text-base text-muted-foreground leading-relaxed">
-              We’re open Monday through Saturday, 9 AM – 6 PM EST, and proud to offer 5% off oil changes for
-              first responders, teachers, veterans, and seniors.
+              We’re open Monday–Friday 9:30 AM – 6:00 PM and Saturday 9:30 AM – 4:00 PM. Chat with our AI
+              assistant anytime for FAQs, estimates, and visit scheduling.
             </p>
           </div>
           <div className="lg:col-span-7 order-1 lg:order-2 rounded-sm overflow-hidden ring-1 ring-[hsl(var(--border))]">
             <img
               src={MINHS_IMAGES.technician}
-              alt="Technician at Elshadai J&N Auto Repair LLC"
+              alt="Vehicles at NextLevel Auto Group USA LLC"
               className="w-full aspect-[4/3] object-cover"
             />
           </div>

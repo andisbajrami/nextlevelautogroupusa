@@ -114,7 +114,7 @@ const LeadContactSection = () => {
               className="w-full rounded-sm border border-[hsl(var(--border))] bg-[hsl(var(--minhs-surface))] text-[hsl(var(--primary))] px-4 py-3.5 text-sm focus:outline-none focus:ring-2 focus:ring-[hsl(var(--secondary))] focus:border-transparent"
             >
               <option value="" disabled>
-                Service Needed
+                How can we help?
               </option>
               {services.map(s => (
                 <option key={s.id} value={s.id}>
@@ -123,7 +123,7 @@ const LeadContactSection = () => {
               ))}
             </select>
             <textarea
-              placeholder="Describe your service needs (optional)"
+              placeholder="Vehicle details or questions (optional)"
               rows={4}
               className="w-full rounded-sm border border-[hsl(var(--border))] bg-[hsl(var(--minhs-surface))] text-[hsl(var(--primary))] placeholder:text-muted-foreground px-4 py-3.5 text-sm focus:outline-none focus:ring-2 focus:ring-[hsl(var(--secondary))] focus:border-transparent resize-none"
             />
@@ -133,7 +133,7 @@ const LeadContactSection = () => {
               disabled={submitting}
               className="w-full bg-[hsl(var(--secondary))] text-[hsl(var(--secondary-foreground))] hover:bg-[hsl(var(--secondary))]/90 font-display font-bold uppercase tracking-wider rounded-sm py-6"
             >
-              {submitting ? "Sending…" : "Schedule Appointment"}
+              {submitting ? "Sending…" : "Schedule Visit"}
               {!submitting && <ArrowRight className="ml-2 h-4 w-4" />}
             </Button>
             <div className="flex items-center justify-center gap-1.5 text-[11px] text-muted-foreground pt-1">

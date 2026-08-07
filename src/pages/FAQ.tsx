@@ -27,17 +27,17 @@ const FAQ = () => {
         <title>FAQ | {COMPANY.name}</title>
         <meta
           name="description"
-          content={`Answers about ${COMPANY.name} auto repair, appointments, estimates, discounts, and services in Orlando.`}
+          content={`Answers about ${COMPANY.name} — buying, selling, trade-ins, estimates, scheduling, and services in Orlando.`}
         />
       </Helmet>
 
       <ElectricalPageHero
         eyebrow="FAQ"
         breadcrumb={[{ label: "Home", to: "/" }, { label: "FAQ" }]}
-        title="Auto Repair Questions Answered"
-        body="Everything you need to know about our services, scheduling, tailored estimates, community discounts, and shop hours."
+        title="Buy & Sell Questions Answered"
+        body="Everything you need to know about inventory, selling your car, trade-ins, estimates, scheduling, and hours."
         image={MINHS_IMAGES.technician2}
-        imageAlt="Auto repair technician at Elshadai J&N"
+        imageAlt="NextLevel Auto Group USA dealership"
       />
 
       {sectionVisibility["faq.main"] ? (
@@ -86,7 +86,7 @@ const FAQ = () => {
               Still have questions?
             </h2>
             <p className="text-slate-600 mb-8 leading-relaxed">
-              Can&apos;t find what you need? Call our master electricians or request a free estimate — we&apos;re happy to help.
+              Can&apos;t find what you need? Call us, chat with our AI assistant, or request an estimate — we&apos;re happy to help.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button

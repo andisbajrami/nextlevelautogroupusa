@@ -32,7 +32,7 @@ const Privacy = () => {
         <div className="max-w-3xl mx-auto px-4 sm:px-6 space-y-8 text-[hsl(var(--foreground))]/85 leading-relaxed">
           <p>
             {COMPANY.name} (“we,” “us,” or “our”) respects your privacy. This policy explains what
-            information we collect when you visit our website or contact our shop, how we use it, and
+            information we collect when you visit our website or contact our dealership, how we use it, and
             the choices you have.
           </p>
 
@@ -43,8 +43,8 @@ const Privacy = () => {
             <p className="mb-3">We may collect information you provide directly, including:</p>
             <ul className="list-disc pl-5 space-y-2">
               <li>Name, phone number, email address, and vehicle details from contact or booking forms</li>
-              <li>Messages you send us about wraps, tint, paint protection, or other services</li>
-              <li>Communications when you call, email, or visit our shop</li>
+              <li>Messages you send us about buying, selling, trade-ins, or other services</li>
+              <li>Communications when you call, email, or visit our lot</li>
             </ul>
             <p className="mt-3">
               We may also collect basic technical data such as browser type, device information, and
@@ -59,7 +59,7 @@ const Privacy = () => {
             <p className="mb-3">We use your information to:</p>
             <ul className="list-disc pl-5 space-y-2">
               <li>Respond to quotes, consults, and service requests</li>
-              <li>Schedule appointments and follow up on projects</li>
+              <li>Schedule visits and follow up on buy/sell inquiries</li>
               <li>Improve our website, marketing, and customer experience</li>
               <li>Comply with legal obligations</li>
             </ul>

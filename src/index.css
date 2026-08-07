@@ -15,40 +15,40 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222 47% 11%;
 
-    /* El Shadai JN: near-black primary + gold accent */
+    /* NextLevel: near-black primary + logo lime green accent */
     --primary: 0 0% 4%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 48 91% 52%;
+    --secondary: 90 58% 42%;
     --secondary-foreground: 0 0% 4%;
 
-    --muted: 42 28% 93%;
+    --muted: 90 18% 91%;
     --muted-foreground: 0 0% 32%;
 
-    --accent: 48 91% 52%;
+    --accent: 90 58% 42%;
     --accent-foreground: 0 0% 4%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 40 16% 84%;
-    --input: 40 16% 84%;
-    --ring: 48 91% 52%;
+    --border: 90 12% 82%;
+    --input: 90 12% 82%;
+    --ring: 90 58% 42%;
 
-    /* Gold co-accent (legacy class name kept for template compatibility) */
-    --envision-pink: 48 91% 52%;
+    /* Logo green co-accent (legacy class name kept for template compatibility) */
+    --envision-pink: 90 58% 42%;
     --envision-pink-foreground: 0 0% 4%;
 
     --radius: 0.375rem;
 
     --volt-charcoal: 0 0% 4%;
-    --volt-blue: 48 91% 52%;
-    --volt-surface: 42 28% 95%;
+    --volt-blue: 90 58% 42%;
+    --volt-surface: 90 18% 93%;
     --volt-dark-panel: 0 0% 6%;
-    --minhs-surface: 42 28% 95%;
+    --minhs-surface: 90 18% 93%;
     --minhs-dark-panel: 0 0% 6%;
     --minhs-charcoal: 0 0% 4%;
-    --minhs-blue: 48 91% 52%;
+    --minhs-blue: 90 58% 42%;
 
     --sidebar-background: 210 20% 98%;
     --sidebar-foreground: 210 18% 12%;
@@ -150,7 +150,7 @@
     @apply rounded-sm border border-border bg-card shadow-sm;
   }
 
-  /* Brand energy bar: black → gold */
+  /* Brand energy bar: black → logo green */
   .envision-brand-bar {
     background: linear-gradient(
       90deg,

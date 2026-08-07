@@ -19,7 +19,7 @@ const TroubleshootingSection = () => {
         <div className="relative min-h-[280px] lg:min-h-full order-2 lg:order-1">
           <img
             src={TROUBLESHOOT_IMAGE}
-            alt="Custom wrapped vehicle at Envision Wraps"
+            alt="Vehicles at NextLevel Auto Group USA"
             className="absolute inset-0 h-full w-full object-cover opacity-90"
           />
           <div
@@ -31,15 +31,15 @@ const TroubleshootingSection = () => {
         <div className="flex flex-col justify-center px-4 sm:px-6 lg:px-12 xl:px-16 py-12 lg:py-16 order-1 lg:order-2">
           <span className="inline-flex items-center gap-2 text-[hsl(var(--envision-pink))] text-xs font-bold uppercase tracking-[0.22em] font-display mb-4">
             <AlertTriangle className="h-4 w-4" />
-            Popular Upgrades
+            How We Help
           </span>
           <h2 className="font-display text-3xl sm:text-4xl font-bold uppercase leading-tight">
-            Ready For Your
-            <span className="block text-[hsl(var(--secondary))]">Next Upgrade?</span>
+            Ready To Buy
+            <span className="block text-[hsl(var(--secondary))]">Or Sell?</span>
           </h2>
           <p className="mt-4 text-sm sm:text-base text-white/70 max-w-lg leading-relaxed">
-            Whether you want a full color wrap, cooler ceramic tint, or invisible paint protection —
-            start with the package that matches your vision.
+            Whether you&apos;re buying, selling, or trading — start with inventory, a cash offer, or a
+            visit that fits your timeline.
           </p>
 
           <ul className="mt-8 space-y-3">
@@ -68,7 +68,7 @@ const TroubleshootingSection = () => {
               className="minhs-btn-outline-on-dark font-display font-bold uppercase tracking-wider rounded-sm"
             >
               <Link to="/contact">
-                Schedule Appointment
+                Schedule Visit
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Palette, Sun } from "lucide-react";
+import { ArrowRight, Car, DollarSign } from "lucide-react";
 import { useSiteContent } from "@/contexts/SiteContentContext";
 import { useTheme } from "@/contexts/ThemeContext";
 import { MINHS_IMAGES } from "@/data/siteData";
@@ -8,40 +8,40 @@ const ResidentialCommercialSplit = () => {
   const { services } = useSiteContent();
   const { resolveServiceImage } = useTheme();
 
-  const wrapsSvc = services.find(s => s.id === "vehicle-wraps");
-  const tintSvc = services.find(s => s.id === "window-tint");
+  const salesSvc = services.find(s => s.id === "vehicle-sales");
+  const buySvc = services.find(s => s.id === "we-buy-cars");
 
-  const wrapsImg = wrapsSvc
-    ? resolveServiceImage(wrapsSvc.id, wrapsSvc.image || MINHS_IMAGES.residentialSplit)
+  const salesImg = salesSvc
+    ? resolveServiceImage(salesSvc.id, salesSvc.image || MINHS_IMAGES.residentialSplit)
     : MINHS_IMAGES.residentialSplit;
-  const tintImg = tintSvc
-    ? resolveServiceImage(tintSvc.id, tintSvc.image || MINHS_IMAGES.commercialSplit)
+  const buyImg = buySvc
+    ? resolveServiceImage(buySvc.id, buySvc.image || MINHS_IMAGES.commercialSplit)
     : MINHS_IMAGES.commercialSplit;
 
   const panels = [
     {
-      id: "wraps",
-      icon: Palette,
-      eyebrow: "Color & Graphics",
-      title: wrapsSvc?.title || "Vehicle Wraps",
+      id: "sales",
+      icon: Car,
+      eyebrow: "Buy a Vehicle",
+      title: salesSvc?.title || "Vehicle Sales",
       body:
-        wrapsSvc?.description ||
-        "Full color-change, accents, chrome delete, and custom graphics that transform your ride.",
-      image: wrapsImg,
-      to: wrapsSvc ? `/services/${wrapsSvc.id}` : "/services/vehicle-wraps",
-      cta: "Explore Wraps",
+        salesSvc?.description ||
+        "Quality cars, trucks, and SUVs ready for Orlando roads.",
+      image: salesImg,
+      to: salesSvc ? `/services/${salesSvc.id}` : "/services/vehicle-sales",
+      cta: "Browse Inventory",
     },
     {
-      id: "tint",
-      icon: Sun,
-      eyebrow: "Heat & Privacy",
-      title: tintSvc?.title || "Window Tint",
+      id: "buy",
+      icon: DollarSign,
+      eyebrow: "Sell Your Car",
+      title: buySvc?.title || "We Buy Cars",
       body:
-        tintSvc?.description ||
-        "Ceramic and performance tint for heat rejection, privacy, and a clean finished look.",
-      image: tintImg,
-      to: tintSvc ? `/services/${tintSvc.id}` : "/services/window-tint",
-      cta: "Explore Tint",
+        buySvc?.description ||
+        "Competitive cash offers for vehicles of nearly any make or model.",
+      image: buyImg,
+      to: buySvc ? `/services/${buySvc.id}` : "/services/we-buy-cars",
+      cta: "Get a Cash Offer",
     },
   ] as const;
 
@@ -79,14 +79,14 @@ const ResidentialCommercialSplit = () => {
                 <h3 className="mt-3 font-display text-3xl sm:text-4xl font-bold uppercase tracking-wide">
                   {panel.title}
                 </h3>
-                <p className="mt-3 text-sm sm:text-base text-white/75 leading-relaxed">{panel.body}</p>
+                <p className="mt-3 text-sm sm:text-base text-white/80 leading-relaxed">{panel.body}</p>
                 <span
-                  className={`mt-6 inline-flex items-center gap-2 text-sm font-display font-bold uppercase tracking-wider group-hover:gap-3 transition-all ${
+                  className={`mt-6 inline-flex items-center gap-2 text-sm font-display font-bold uppercase tracking-wider ${
                     accent === "pink" ? "text-[hsl(var(--envision-pink))]" : "text-[hsl(var(--secondary))]"
                   }`}
                 >
                   {panel.cta}
-                  <ArrowRight className="h-4 w-4" />
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </span>
               </div>
             </Link>

@@ -16,11 +16,11 @@ const ServicesRibbon = () => {
             Our Services
           </span>
           <h2 className="mt-2 font-display text-3xl sm:text-4xl font-bold uppercase text-[hsl(var(--primary))]">
-            Auto Repair &{" "}
-            <span className="text-[hsl(var(--secondary))]">Maintenance</span>
+            Buy, Sell &{" "}
+            <span className="text-[hsl(var(--secondary))]">Trade</span>
           </h2>
           <p className="mt-3 text-muted-foreground text-sm sm:text-base">
-            Full-service auto repair — maintenance, brakes, diagnostics, engine, transmission, suspension, and AC.
+            Quality vehicles for sale, fair cash offers when you sell, trade-ins, inspections, and financing guidance.
           </p>
         </div>
 

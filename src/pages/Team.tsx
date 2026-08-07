@@ -15,7 +15,7 @@ const Team = () => {
         <title>Our Team | {COMPANY.name}</title>
         <meta
           name="description"
-          content={`Meet the master electricians and specialists behind ${COMPANY.name} — licensed, local, and committed to code-perfect work across DFW.`}
+          content={`Meet the sales and purchase specialists behind ${COMPANY.name} — helping Orlando drivers buy and sell vehicles with confidence.`}
         />
       </Helmet>
 
@@ -34,10 +34,10 @@ const Team = () => {
             Our Team
           </p>
           <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold uppercase tracking-wide leading-tight max-w-2xl">
-            Master Electricians You Can Trust
+            People Who Put Drivers First
           </h1>
           <p className="mt-4 text-white/80 max-w-xl leading-relaxed">
-            Texas-licensed masters, EV specialists, and commercial leads — the crew that shows up when the power&apos;s out and stays until the panel is labeled right.
+            Sales advisors, purchase specialists, and customer care — the NextLevel team that helps you buy, sell, and trade with clear answers.
           </p>
         </div>
       </section>
@@ -89,8 +89,8 @@ const Team = () => {
 
       {sectionVisibility["team.cta"] ? (
         <CTASection
-          title="Work with our master electricians"
-          subtitle="Same-day service, upfront pricing, and code-perfect craftsmanship across DFW."
+          title="Ready to meet the team?"
+          subtitle="Visit our Orlando lot, schedule a test drive, or ask about selling your vehicle."
         />
       ) : null}
     </Layout>

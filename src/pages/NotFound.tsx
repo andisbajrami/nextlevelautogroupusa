@@ -10,17 +10,17 @@ const QUICK_LINKS = [
   {
     label: "Our Services",
     to: "/services",
-    description: "Maintenance, brakes, diagnostics, engine, transmission, suspension, and AC.",
+    description: "Vehicle sales, we buy cars, trade-ins, financing help, and more.",
   },
   {
-    label: "Gallery",
+    label: "Inventory",
     to: "/projects",
-    description: "See recent repair work from our Orlando shop.",
+    description: "Browse vehicles for sale on our Orlando lot.",
   },
   {
-    label: "Schedule Now",
+    label: "Schedule Visit",
     to: "/contact",
-    description: "Book an appointment — Mon–Sat 9 AM–6 PM EST.",
+    description: "Book a visit — Mon–Fri 9:30–6, Sat 9:30–4.",
   },
 ] as const;
 
@@ -40,7 +40,7 @@ const NotFound = () => {
         <meta name="robots" content="noindex, nofollow" />
         <meta
           name="description"
-          content={`This page doesn’t exist. Return to ${COMPANY.name} for Orlando auto repair.`}
+          content={`This page doesn’t exist. Return to ${COMPANY.name} to buy or sell vehicles in Orlando.`}
         />
       </Helmet>
 
@@ -70,7 +70,7 @@ const NotFound = () => {
               </h1>
               <p className="text-base md:text-lg text-white/75 leading-relaxed max-w-xl mb-8">
                 The URL you followed isn&apos;t on our site. It may have moved or never existed —
-                let&apos;s get you back to service and scheduling.
+                let&apos;s get you back to inventory and scheduling.
               </p>
 
               {location.pathname && location.pathname !== "/" ? (
@@ -98,9 +98,9 @@ const NotFound = () => {
                   variant="outline"
                   className="minhs-btn-outline-on-dark rounded-sm font-display font-bold uppercase px-8"
                 >
-                  <Link to="/contact" aria-label="Schedule service">
+                  <Link to="/contact" aria-label="Schedule a visit">
                     <Phone className="h-4 w-4 mr-2" />
-                    Schedule Now
+                    Schedule Visit
                   </Link>
                 </Button>
               </div>

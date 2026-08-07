@@ -49,10 +49,10 @@ const Footer = () => {
                   </span>
                   <div className="leading-none">
                     <span className="block font-display text-lg font-bold uppercase tracking-wide group-hover:text-[hsl(var(--secondary))] transition-colors">
-                      {(COMPANY.name || "Elshadai").split(" ")[0]}
+                      {(COMPANY.name || "NextLevel").split(" ")[0]}
                     </span>
                     <span className="block text-[10px] font-semibold tracking-[0.2em] text-white/50 uppercase">
-                      {(COMPANY.name || "Elshadai J&N Auto Repair LLC").split(" ").slice(1).join(" ") || "J&N Auto Repair"}
+                      {(COMPANY.name || "NextLevel Auto Group USA LLC").split(" ").slice(1).join(" ") || "Auto Group USA"}
                     </span>
                   </div>
                 </>
@@ -152,13 +152,13 @@ const Footer = () => {
               ) : (
                 <li>
                   <Link to="/contact" className="hover:text-[hsl(var(--secondary))] transition-colors">
-                    Contact us for shop details
+                    Contact us for lot details
                   </Link>
                 </li>
               )}
               <li className="flex items-center gap-2 text-[hsl(var(--secondary))] font-display font-bold uppercase text-xs tracking-wider">
                 <ShieldCheck className="h-4 w-4 shrink-0" />
-                <span>{SITE_TOP.line || "Orlando Auto Repair"}</span>
+                <span>{SITE_TOP.line || "Orlando Buy & Sell Vehicles"}</span>
               </li>
             </ul>
           </div>

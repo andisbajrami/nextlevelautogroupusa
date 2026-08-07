@@ -14,10 +14,10 @@ interface CTASectionProps {
 }
 
 const CTASection = ({
-  title = "Ready to start your project?",
-  subtitle = "Tell us about your timeline and goals, and we’ll respond with clear next steps.",
-  primaryLabel = "REQUEST ESTIMATE",
-  secondaryLabel = "BOOK A CALL",
+  title = "Ready to buy or sell?",
+  subtitle = "Tell us what you need — inventory, a cash offer, or a visit — and we’ll respond with clear next steps.",
+  primaryLabel = "CONTACT US",
+  secondaryLabel = "CALL NOW",
   primaryTo = "/contact",
   secondaryTo,
   tone = "plain",

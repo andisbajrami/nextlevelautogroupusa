@@ -60,10 +60,10 @@ const Projects = () => {
   return (
     <Layout>
       <Helmet>
-        <title>Projects | {COMPANY.name}</title>
+        <title>Inventory | {COMPANY.name}</title>
         <meta
           name="description"
-          content={`Gallery from ${COMPANY.name} — maintenance, brakes, diagnostics, engine, and AC repairs.`}
+          content={`Vehicle inventory from ${COMPANY.name} — cars, trucks, and SUVs for sale in Orlando.`}
         />
       </Helmet>
 
@@ -87,13 +87,13 @@ const Projects = () => {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-12 gap-10 items-end">
           <div className="lg:col-span-7">
             <p className="text-[hsl(var(--secondary))] text-xs font-display font-bold uppercase tracking-[0.22em] mb-3">
-              Project Gallery · {projects.length} Jobs
+              Vehicle Inventory · {projects.length} Listings
             </p>
             <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold uppercase tracking-wide leading-tight">
-              Our Shop in Action
+              Vehicles For Sale
             </h1>
             <p className="mt-4 text-white/80 max-w-xl leading-relaxed">
-              Brakes, oil changes, diagnostics, AC, suspension, and engine work — real repairs from the Elshadai J&N bay in Orlando.
+              Browse cars, trucks, and SUVs selected for Orlando drivers — schedule a test drive or ask about financing and trade-ins.
             </p>
           </div>
           <div className="lg:col-span-5 grid grid-cols-2 gap-3">
@@ -128,13 +128,13 @@ const Projects = () => {
               </button>
             ))}
             <span className="ml-auto text-xs font-display font-bold uppercase tracking-wider text-slate-500">
-              {filtered.length} {filtered.length === 1 ? "project" : "projects"}
+              {filtered.length} {filtered.length === 1 ? "vehicle" : "vehicles"}
             </span>
           </div>
 
           {pageProjects.length === 0 ? (
             <div className="rounded-lg border-2 border-dashed border-slate-200 p-16 text-center">
-              <p className="text-sm text-slate-500">No projects in this category yet.</p>
+              <p className="text-sm text-slate-500">No vehicles in this category yet.</p>
             </div>
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-4 md:gap-5 auto-rows-[220px]">
@@ -187,9 +187,9 @@ const Projects = () => {
       </section>
 
       <CTASection
-        title="Ready to schedule service?"
-        subtitle="Book an appointment for maintenance, brakes, diagnostics, or AC repair."
-        primaryLabel="SCHEDULE NOW"
+        title="Ready to buy or sell?"
+        subtitle="Schedule a test drive, get a cash offer, or ask about trade-ins and financing."
+        primaryLabel="SCHEDULE VISIT"
         secondaryLabel="CALL NOW"
       />
     </Layout>

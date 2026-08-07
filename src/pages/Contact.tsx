@@ -21,7 +21,7 @@ const Contact = () => {
     event.preventDefault();
     setSubmitting(true);
     setTimeout(() => {
-      toast.success("Thanks! Our service team will confirm your appointment shortly.");
+      toast.success("Thanks! Our team will confirm your visit shortly.");
       (event.target as HTMLFormElement).reset();
       setSubmitting(false);
     }, 600);
@@ -34,16 +34,16 @@ const Contact = () => {
     <Layout>
       <Helmet>
         <title>Contact Us | {COMPANY.name}</title>
-        <meta name="description" content={`Contact ${COMPANY.name} to schedule auto repair in Orlando. Call 407-719-3539.`} />
+        <meta name="description" content={`Contact ${COMPANY.name} to buy, sell, or schedule a visit in Orlando. Call 689-252-4265.`} />
       </Helmet>
 
       <ElectricalPageHero
         eyebrow="Contact"
         breadcrumb={[{ label: "Home", to: "/" }, { label: "Contact" }]}
-        title="Schedule Your Service"
-        body="Online appointments, service requests, and general inquiries — our Orlando team responds fast with transparent estimates. Open Mon–Sat 9 AM–6 PM EST."
+        title="Schedule Your Visit"
+        body="Book a test drive, request a purchase offer, or ask about trade-ins — our Orlando team responds fast. Open Mon–Fri 9:30–6 and Sat 9:30–4."
         image={MINHS_IMAGES.contactHero}
-        imageAlt="Contact Elshadai J&N Auto Repair LLC"
+        imageAlt="Contact NextLevel Auto Group USA LLC"
       />
 
       <section className="bg-[hsl(var(--primary))] text-white py-14 lg:py-20">
@@ -54,7 +54,7 @@ const Contact = () => {
                 Get In Touch
               </h2>
               <p className="text-white/75 text-sm leading-relaxed">
-                Call to speak with a service advisor. Use the forms below for appointments, service requests, or general contact.
+                Call to speak with our team. Use the forms below for visits, buy/sell requests, or general contact — or chat with our AI assistant anytime.
               </p>
             </div>
             <ul className="space-y-5">
@@ -107,9 +107,9 @@ const Contact = () => {
 
           <div className="bg-white text-[hsl(var(--primary))] rounded-lg p-6 lg:p-8 shadow-2xl">
             <h3 className="font-display text-lg font-bold uppercase tracking-wide mb-1">
-              Online Appointment
+              Schedule a Visit
             </h3>
-            <p className="text-sm text-slate-500 mb-5">Request a service appointment — we&apos;ll confirm your visit and vehicle details.</p>
+            <p className="text-sm text-slate-500 mb-5">Request a test drive, sell appointment, or trade-in review — we&apos;ll confirm your visit.</p>
             <form onSubmit={onSubmit} className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <input required type="text" placeholder="Full Name" className={inputCls} />
               <input required type="tel" placeholder="Phone Number" className={inputCls} />
@@ -118,7 +118,7 @@ const Contact = () => {
               <input type="text" placeholder="Make / Model" className={inputCls} />
               <select defaultValue="" className={`${inputCls} sm:col-span-2`}>
                 <option value="" disabled>
-                  Service Needed
+                  How can we help?
                 </option>
                 {services.map(s => (
                   <option key={s.id} value={s.id}>
@@ -127,7 +127,7 @@ const Contact = () => {
                 ))}
               </select>
               <textarea
-                placeholder="Appointment notes (optional)"
+                placeholder="Visit notes (optional)"
                 rows={3}
                 className={`${inputCls} sm:col-span-2 resize-none`}
               />
@@ -136,21 +136,21 @@ const Contact = () => {
                 disabled={submitting}
                 className="sm:col-span-2 bg-[hsl(var(--secondary))] text-[hsl(var(--secondary-foreground))] hover:bg-[hsl(var(--secondary))]/90 font-display font-bold uppercase tracking-wide py-5"
               >
-                {submitting ? "Sending…" : "Schedule Appointment"}
+                {submitting ? "Sending…" : "Schedule Visit"}
                 {!submitting && <ArrowRight className="ml-1.5 h-4 w-4" />}
               </Button>
             </form>
             <div className="mt-8 pt-8 border-t border-slate-200">
               <h3 className="font-display text-lg font-bold uppercase tracking-wide mb-1">
-                Service Request
+                Buy / Sell Request
               </h3>
-              <p className="text-sm text-slate-500 mb-4">Describe a specific repair or diagnostic need.</p>
+              <p className="text-sm text-slate-500 mb-4">Tell us about the vehicle you want to buy or sell.</p>
               <form onSubmit={onSubmit} className="grid grid-cols-1 gap-3">
                 <input required type="text" placeholder="Full Name" className={inputCls} />
                 <input required type="tel" placeholder="Phone" className={inputCls} />
-                <textarea placeholder="What does your vehicle need?" rows={3} className={`${inputCls} resize-none`} />
+                <textarea placeholder="Vehicle details or inventory interest" rows={3} className={`${inputCls} resize-none`} />
                 <Button type="submit" variant="outline" disabled={submitting} className="minhs-btn-outline-on-light font-display font-bold uppercase">
-                  Submit Service Request
+                  Submit Request
                 </Button>
               </form>
             </div>
@@ -168,7 +168,7 @@ const Contact = () => {
               </form>
             </div>
             <p className="mt-3 text-[11px] text-slate-500 text-center">
-              We respect your privacy. Your information stays with Elshadai J&N Auto Repair LLC.
+              We respect your privacy. Your information stays with NextLevel Auto Group USA LLC.
             </p>
           </div>
         </div>
@@ -186,7 +186,7 @@ const Contact = () => {
               className="bg-[hsl(var(--secondary))] text-[hsl(var(--secondary-foreground))] hover:bg-[hsl(var(--secondary))]/90 font-display font-bold uppercase tracking-wide"
             >
               <a
-                href="https://www.openstreetmap.org/directions?to=3014%20N%20John%20Young%20Pkwy%2C%20Orlando%2C%20FL%2032804#map=17/28.5685/-81.4155"
+                href="https://www.openstreetmap.org/directions?to=2120%20S%20Orange%20Blossom%20Trl%2C%20Orlando%2C%20FL%2032805#map=17/28.5085/-81.3975"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -197,8 +197,8 @@ const Contact = () => {
           </div>
           <div className="lg:col-span-8 rounded-lg overflow-hidden min-h-[280px] ring-1 ring-slate-200">
             <iframe
-              title="Elshadai J&N Auto Repair LLC location map"
-              src="https://www.openstreetmap.org/export/embed.html?bbox=-81.4255%2C28.5585%2C-81.4055%2C28.5785&layer=mapnik&marker=28.5685%2C-81.4155"
+              title="NextLevel Auto Group USA LLC location map"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=-81.4075%2C28.4985%2C-81.3875%2C28.5185&layer=mapnik&marker=28.5085%2C-81.3975"
               className="w-full h-full min-h-[280px]"
               loading="lazy"
             />

@@ -12,11 +12,11 @@ const VehicleBrandsSection = () => {
             All Makes Welcome
           </p>
           <h2 className="mt-3 font-display text-3xl md:text-4xl lg:text-[2.75rem] font-bold uppercase tracking-wide text-[hsl(var(--primary))]">
-            Vehicles We Service
+            Brands We Carry &amp; Buy
           </h2>
           <p className="mt-4 text-muted-foreground leading-relaxed">
-            From daily drivers to trucks and imports — maintenance and repair for the brands
-            {COMPANY.name ? ` ${COMPANY.name} customers` : " customers"} bring in.
+            From daily drivers to trucks and imports — quality inventory and fair purchase offers for the brands
+            {COMPANY.name ? ` ${COMPANY.name} customers` : " customers"} love.
           </p>
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4">

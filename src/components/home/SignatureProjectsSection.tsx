@@ -20,17 +20,17 @@ const SignatureProjectsSection = () => {
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10">
           <div>
             <span className="text-[hsl(var(--envision-pink))] text-xs font-bold uppercase tracking-[0.28em] font-display">
-              Shop Gallery
+              Featured Inventory
             </span>
             <h2 className="mt-2 font-display text-3xl sm:text-4xl font-bold uppercase text-[hsl(var(--primary))]">
-              Recent Repair Work
+              Vehicles For Sale
             </h2>
           </div>
           <Link
             to="/projects"
             className="inline-flex items-center gap-1.5 text-sm font-bold uppercase tracking-wider text-[hsl(var(--primary))] hover:text-[hsl(var(--secondary))] transition-colors font-display"
           >
-            View Full Gallery
+            View Full Inventory
             <ArrowRight className="h-4 w-4" />
           </Link>
         </div>

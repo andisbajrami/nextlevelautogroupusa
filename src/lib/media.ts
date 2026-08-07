@@ -75,7 +75,7 @@ const ALLOWED_UNSPLASH_IDS = new Set(
     .filter((id): id is string => Boolean(id)),
 );
 
-/** Legacy electrical / wrap-shop ids that must never appear on Elshadai J&N. */
+/** Legacy electrical / wrap-shop ids that must never appear on NextLevel Auto Group. */
 const LEGACY_ELECTRICAL_SERVICE_IDS = new Set([
   "emergency-electrical",
   "electrical-inspections",

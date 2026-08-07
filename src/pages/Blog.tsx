@@ -66,7 +66,7 @@ const Blog = () => {
     }, { replace: true });
   }, [rawPage, listPage, setSearchParams]);
 
-  const titleBase = `Automotive Blog | ${COMPANY.name}`;
+  const titleBase = `Buy & Sell Tips | ${COMPANY.name}`;
   const docTitle = listPage > 1 ? `${titleBase} | Page ${listPage}` : titleBase;
 
   return (
@@ -75,17 +75,17 @@ const Blog = () => {
         <title>{docTitle}</title>
         <meta
           name="description"
-          content={`European vehicle maintenance tips and Brooklyn owner advice from the ${COMPANY.name} team.`}
+          content={`Buying, selling, and trade-in tips from the ${COMPANY.name} team in Orlando.`}
         />
       </Helmet>
 
       <ElectricalPageHero
-        eyebrow="Electrical Blog"
+        eyebrow="Dealership Blog"
         breadcrumb={[{ label: "Home", to: "/" }, { label: "Blog" }]}
-        title="European Auto Tips & Field Notes"
-        body="Honest European vehicle advice from factory-trained technicians — maintenance schedules, brake care, diagnostics, and Brooklyn driving tips."
+        title="Buy & Sell Tips for Orlando Drivers"
+        body="Practical advice on buying used vehicles, selling for a fair price, trade-ins, and financing estimates."
         image={MINHS_IMAGES.blogHero}
-        imageAlt="Car engine bay during maintenance"
+        imageAlt="Vehicles at NextLevel Auto Group USA"
       />
 
       {sectionVisibility["blog.main"] ? (
@@ -196,12 +196,12 @@ const Blog = () => {
                 </div>
 
                 <div className="rounded-lg bg-[hsl(var(--primary))] p-6 text-white">
-                  <h3 className="font-display font-bold text-lg mb-2">Need an electrician?</h3>
+                  <h3 className="font-display font-bold text-lg mb-2">Ready to buy or sell?</h3>
                   <p className="text-sm text-white/85 mb-5 leading-relaxed">
-                    Free estimates from licensed master electricians. Same-day service across DFW.
+                    Browse inventory, get a cash offer, or schedule a visit — our AI assistant can help with FAQs too.
                   </p>
                   <Button asChild className="w-full rounded-sm font-display font-bold uppercase bg-[hsl(var(--secondary))] text-[hsl(var(--secondary-foreground))] hover:bg-[hsl(var(--secondary))]/90">
-                    <Link to="/contact">Request Estimate</Link>
+                    <Link to="/contact">Contact Us</Link>
                   </Button>
                 </div>
 

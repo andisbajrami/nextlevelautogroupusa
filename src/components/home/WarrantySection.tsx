@@ -55,8 +55,8 @@ const WarrantySection = () => {
                   <ShieldCheck className="h-8 w-8 text-[hsl(var(--secondary))]" aria-hidden />
                 </div>
                 <div>
-                  <p className="text-xs font-display uppercase tracking-[0.22em] text-white/60">Shop standard</p>
-                  <p className="font-display text-lg font-bold uppercase tracking-wide text-white">Honest diagnostics</p>
+                  <p className="text-xs font-display uppercase tracking-[0.22em] text-white/60">Our standard</p>
+                  <p className="font-display text-lg font-bold uppercase tracking-wide text-white">Honest pricing</p>
                 </div>
               </div>
               <div className="grid grid-cols-2 gap-4">
@@ -65,12 +65,12 @@ const WarrantySection = () => {
                   <p className="mt-2 font-display text-sm uppercase tracking-widest text-white">Days Open</p>
                 </div>
                 <div className="rounded-sm border border-white/15 bg-white/10 p-5 sm:p-6 text-center">
-                  <p className="font-display text-3xl sm:text-4xl font-bold text-white leading-none">8+</p>
-                  <p className="mt-2 font-display text-sm uppercase tracking-widest text-white/80">Services</p>
+                  <p className="font-display text-3xl sm:text-4xl font-bold text-white leading-none">Buy</p>
+                  <p className="mt-2 font-display text-sm uppercase tracking-widest text-white/80">&amp; Sell</p>
                 </div>
               </div>
               <p className="mt-5 text-center text-xs uppercase tracking-[0.18em] text-white/55">
-                Maintenance · Brakes · Diagnostics · Engine · AC
+                Buy · Sell · Trade · Finance · Inspections
               </p>
             </div>
           </div>

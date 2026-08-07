@@ -123,8 +123,8 @@ interface SiteContentContextType extends SiteContentState {
   resetContent: () => void;
 }
 
-const STORAGE_KEY = "elshadai-jn-site-content-v2";
-const EXPORT_MARKER_KEY = "elshadai-jn-content-export-v2";
+const STORAGE_KEY = "nextlevel-auto-site-content-v2";
+const EXPORT_MARKER_KEY = "nextlevel-auto-content-export-v2";
 
 export const SITE_CONTENT_DEFAULTS: SiteContentState = {
   services: SERVICES,

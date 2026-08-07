@@ -52,10 +52,10 @@ const Terms = () => {
               Services and quotes
             </h2>
             <p>
-              Information on this site about wraps, tint, paint protection, detail, and related
-              services is for general information. Final pricing, materials, timelines, and scope are
-              confirmed in a written quote or work order after consultation. Vehicle condition, design
-              complexity, and material availability may affect estimates.
+              Information on this site about vehicle sales, purchases, trade-ins, financing guidance, and related
+              services is for general information. Final pricing, timelines, and terms are confirmed in a
+              written purchase or sale agreement after consultation. Vehicle condition, market value, and
+              paperwork requirements may affect estimates and offers.
             </p>
           </div>
 
@@ -64,20 +64,20 @@ const Terms = () => {
               Appointments
             </h2>
             <p>
-              Booking requests submitted online or by phone are subject to shop confirmation. We may
-              reschedule or cancel appointments due to capacity, material delays, or other operational
+              Booking requests submitted online or by phone are subject to dealership confirmation. We may
+              reschedule or cancel visits due to capacity, inventory availability, or other operational
               needs and will make reasonable efforts to notify you.
             </p>
           </div>
 
           <div>
             <h2 className="font-display text-2xl font-bold uppercase tracking-wide text-[hsl(var(--primary))] mb-3">
-              Installations and warranties
+              Sales and warranties
             </h2>
             <p>
-              Workmanship and material coverage, if any, are described at the time of sale or in
-              product/manufacturer documentation. Proper aftercare is required. Damage from misuse,
-              accidents, improper washing, or third-party work may void coverage.
+              Any warranty or coverage, if applicable, is described at the time of sale or in
+              manufacturer documentation. Condition disclosures are provided in good faith. Damage from
+              misuse, accidents, or third-party work after sale may affect remaining coverage.
             </p>
           </div>
 

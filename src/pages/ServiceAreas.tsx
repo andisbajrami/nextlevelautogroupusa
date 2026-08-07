@@ -19,18 +19,18 @@ const ServiceAreas = () => {
         <title>Service Areas | {COMPANY.name}</title>
         <meta
           name="description"
-          content={`${COMPANY.name} serves Orlando and Central Florida with honest auto repair — maintenance, brakes, diagnostics, and more.`}
+          content={`${COMPANY.name} serves Orlando and surrounding areas — buy and sell vehicles with confidence.`}
         />
       </Helmet>
 
       <ElectricalPageHero
         eyebrow="Coverage"
         breadcrumb={[{ label: "Home", to: "/" }, { label: "Service Areas" }]}
-        title="Auto Repair Near You"
-        eyebrowAfter="Orlando · Central Florida"
-        body={`${COMPANY.name} serves drivers across Orlando and nearby communities with honest diagnostics and quality repairs.`}
+        title="Serving Orlando & Nearby"
+        eyebrowAfter="Orlando · Surrounding Areas"
+        body={`${COMPANY.name} helps drivers across Orlando and nearby communities buy, sell, and trade vehicles.`}
         image={MINHS_IMAGES.serviceAreasHero}
-        imageAlt="Orlando service area for Elshadai J&N Auto Repair LLC"
+        imageAlt="Orlando service area for NextLevel Auto Group USA LLC"
       />
 
       <section className="bg-[hsl(var(--minhs-surface))] py-14 lg:py-20">
@@ -40,7 +40,7 @@ const ServiceAreas = () => {
               Who We Serve
             </h2>
             <p className="text-slate-600 leading-relaxed">
-              From daily drivers to fleet vehicles — if you need honest auto repair in Central Florida, we can help.
+              From first-time buyers to sellers ready for a cash offer — if you need a trusted Orlando dealership, we can help.
               Reach out if you&apos;re unsure we cover your area.
             </p>
           </div>
@@ -62,11 +62,11 @@ const ServiceAreas = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
           <div className="lg:col-span-5 space-y-6">
             <h2 className="font-display text-2xl font-bold uppercase tracking-wide text-[hsl(var(--primary))]">
-              Visit The Shop
+              Visit The Lot
             </h2>
             <p className="text-slate-600 leading-relaxed">
-              Visit us at 3014 N John Young Pkwy for maintenance, brakes, diagnostics, engine, and AC repair.
-              Use Get Directions below for an OpenStreetMap route to the shop.
+              Visit us at 2120 S Orange Blossom Trl to browse inventory, sell your vehicle, or discuss a trade-in.
+              Use Get Directions below for an OpenStreetMap route.
             </p>
             <ul className="space-y-4 text-sm">
               {COMPANY.address ? (
@@ -90,7 +90,7 @@ const ServiceAreas = () => {
                 className="bg-[hsl(var(--secondary))] text-[hsl(var(--secondary-foreground))] hover:bg-[hsl(var(--secondary))]/90 font-display font-bold uppercase tracking-wide"
               >
                 <Link to="/contact">
-                  Schedule Now
+                  Schedule Visit
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
@@ -100,7 +100,7 @@ const ServiceAreas = () => {
                 className="minhs-btn-outline-on-light font-display font-bold uppercase tracking-wide"
               >
                 <a
-                  href="https://www.openstreetmap.org/directions?to=3014%20N%20John%20Young%20Pkwy%2C%20Orlando%2C%20FL%2032804#map=17/28.5685/-81.4155"
+                  href="https://www.openstreetmap.org/directions?to=2120%20S%20Orange%20Blossom%20Trl%2C%20Orlando%2C%20FL%2032805#map=17/28.5085/-81.3975"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -112,7 +112,7 @@ const ServiceAreas = () => {
           <div className="lg:col-span-7 rounded-lg overflow-hidden min-h-[360px] ring-1 ring-slate-200 bg-[hsl(var(--minhs-surface))]">
             {mapEmbedUrl ? (
               <iframe
-                title="Elshadai J&N Auto Repair LLC map"
+                title="NextLevel Auto Group USA LLC map"
                 src={mapEmbedUrl}
                 className="w-full h-full min-h-[360px]"
                 loading="lazy"
@@ -122,10 +122,10 @@ const ServiceAreas = () => {
                 <div>
                   <MapPin className="mx-auto h-10 w-10 text-[hsl(var(--secondary))] mb-4" />
                   <p className="font-display text-lg font-bold uppercase tracking-wide text-[hsl(var(--primary))]">
-                    Shop map coming soon
+                    Lot map coming soon
                   </p>
                   <p className="mt-2 text-sm text-slate-600 max-w-sm">
-                    Contact Elshadai J&N for directions and appointment availability.
+                    Contact NextLevel Auto Group USA for directions and visit availability.
                   </p>
                 </div>
               </div>
@@ -135,9 +135,9 @@ const ServiceAreas = () => {
       </section>
 
       <CTASection
-        title="Ready to schedule service?"
-        subtitle="Book an appointment for maintenance, brakes, diagnostics, engine, or AC repair."
-        primaryLabel="SCHEDULE NOW"
+        title="Ready to buy or sell?"
+        subtitle="Browse inventory, get a cash offer, or schedule a visit — Orlando and surrounding areas."
+        primaryLabel="VIEW INVENTORY"
         secondaryLabel="CALL NOW"
       />
     </Layout>

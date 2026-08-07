@@ -1,55 +1,54 @@
 {
-  "generatedAt": "2026-08-04T12:00:00.000Z",
+  "generatedAt": "2026-08-07T12:00:00.000Z",
   "site": {
-    "name": "Elshadai J&N Auto Repair LLC",
-    "legalName": "Elshadai J&N Auto Repair LLC",
-    "tagline": "Trusted auto repair in Orlando — maintenance, brakes, diagnostics, engine & AC service done right."
+    "name": "NextLevel Auto Group USA LLC",
+    "legalName": "NextLevel Auto Group USA LLC",
+    "tagline": "Orlando’s trusted destination to buy and sell vehicles — quality inventory, fair offers, and personal service."
   },
   "contact": {
-    "phone": "407-719-3539",
-    "email": "elshadaijnauto@gmail.com",
-    "address": "3014 N John Young Pkwy, Orlando, FL 32804",
-    "hours": "Mon – Sat: 9:00 AM – 6:00 PM EST · Closed Sunday",
+    "phone": "689-252-4265",
+    "email": "info@nextlevelautogroupusa.com",
+    "address": "2120 S Orange Blossom Trl, Orlando, FL 32805",
+    "hours": "Mon – Fri: 9:30 AM – 6:00 PM · Sat: 9:30 AM – 4:00 PM · Sun: Closed",
     "officeHours": [
-      { "days": "Monday – Saturday", "hours": "9:00 AM – 6:00 PM EST" },
+      { "days": "Monday – Friday", "hours": "9:30 AM – 6:00 PM" },
+      { "days": "Saturday", "hours": "9:30 AM – 4:00 PM" },
       { "days": "Sunday", "hours": "Closed" }
     ],
-    "locations": "Serving Orlando & Central Florida",
-    "mapEmbedUrl": "https://www.openstreetmap.org/export/embed.html?bbox=-81.4255%2C28.5585%2C-81.4055%2C28.5785&layer=mapnik&marker=28.5685%2C-81.4155"
+    "locations": "Serving Orlando and Surrounding Areas",
+    "mapEmbedUrl": "https://www.openstreetmap.org/export/embed.html?bbox=-81.4075%2C28.4985%2C-81.3875%2C28.5185&layer=mapnik&marker=28.5085%2C-81.3975"
   },
   "pages": [
-    { "id": "home", "label": "Home", "path": "/", "description": "Orlando auto repair homepage" },
-    { "id": "services", "label": "Services", "path": "/services", "description": "Maintenance, brakes, diagnostics, engine, AC" },
-    { "id": "projects", "label": "Gallery", "path": "/projects", "description": "Recent repair work" },
+    { "id": "home", "label": "Home", "path": "/", "description": "Orlando buy & sell vehicles homepage" },
+    { "id": "services", "label": "Services", "path": "/services", "description": "Vehicle sales, we buy cars, trade-ins, financing" },
+    { "id": "projects", "label": "Inventory", "path": "/projects", "description": "Vehicles for sale" },
     { "id": "about", "label": "About", "path": "/about", "description": "Our story and values" },
-    { "id": "reviews", "label": "Reviews", "path": "/reviews", "description": "Google customer reviews" },
-    { "id": "contact", "label": "Contact", "path": "/contact", "description": "Schedule an appointment" },
+    { "id": "reviews", "label": "Reviews", "path": "/reviews", "description": "Customer reviews" },
+    { "id": "contact", "label": "Contact", "path": "/contact", "description": "Schedule a visit" },
     { "id": "faq", "label": "FAQ", "path": "/faq", "description": "Common questions" }
   ],
   "about": {
-    "intro": "Elshadai J&N Auto Repair LLC is Orlando’s neighborhood shop for honest diagnostics and lasting repairs.",
+    "intro": "NextLevel Auto Group USA LLC helps Orlando drivers buy quality vehicles and sell or trade with fair offers.",
     "stats": [
-      { "label": "Primary services", "value": "8+" },
+      { "label": "Core services", "value": "Buy & Sell" },
       { "label": "Days open weekly", "value": "6" }
     ],
     "values": [
-      { "title": "Honesty first", "description": "Clear findings and fair recommendations — always." },
-      { "title": "Community care", "description": "5% off oil changes for first responders, teachers, veterans, and seniors." }
+      { "title": "Honesty first", "description": "Clear pricing and fair offers — always." },
+      { "title": "Local care", "description": "Proudly serving Orlando and surrounding areas." }
     ],
     "certifications": [
-      { "label": "Maintenance Pros", "sub": "Oil · Filters · Intervals" },
-      { "label": "Brake Specialists", "sub": "Pads · Rotors · Hydraulics" }
+      { "label": "Vehicle Sales", "sub": "Cars · Trucks · SUVs" },
+      { "label": "We Buy Cars", "sub": "Cash Offers · Any Make" }
     ]
   },
   "services": [
-    { "id": "general-maintenance", "title": "General Maintenance", "description": "Scheduled maintenance that keeps your vehicle reliable.", "detailPath": "/services/general-maintenance" },
-    { "id": "suspension", "title": "Suspension", "description": "Shocks, struts, and suspension repairs.", "detailPath": "/services/suspension" },
-    { "id": "transmission", "title": "Transmission", "description": "Transmission service and repair.", "detailPath": "/services/transmission" },
-    { "id": "oil-changes", "title": "Oil Changes", "description": "Oil & filter service with community discounts.", "detailPath": "/services/oil-changes" },
-    { "id": "brakes", "title": "Brakes", "description": "Pads, rotors, and braking systems.", "detailPath": "/services/brakes" },
-    { "id": "diagnostics", "title": "Diagnostics", "description": "Check-engine lights and computer diagnostics.", "detailPath": "/services/diagnostics" },
-    { "id": "engine-repair", "title": "Engine Repair", "description": "Engine diagnostics and repair.", "detailPath": "/services/engine-repair" },
-    { "id": "ac-repair", "title": "AC Repair", "description": "Air conditioning for Florida heat.", "detailPath": "/services/ac-repair" }
+    { "id": "vehicle-sales", "title": "Vehicle Sales", "description": "Quality cars, trucks, and SUVs ready for Orlando roads.", "detailPath": "/services/vehicle-sales" },
+    { "id": "we-buy-cars", "title": "We Buy Cars", "description": "Competitive cash offers for vehicles of nearly any make or model.", "detailPath": "/services/we-buy-cars" },
+    { "id": "trade-ins", "title": "Trade-Ins", "description": "Apply your current vehicle’s value toward your next purchase.", "detailPath": "/services/trade-ins" },
+    { "id": "financing-help", "title": "Financing Help", "description": "Budget estimates and guidance to help you plan your purchase.", "detailPath": "/services/financing-help" },
+    { "id": "vehicle-inspections", "title": "Vehicle Inspections", "description": "Clear condition reviews so you know what you’re buying or selling.", "detailPath": "/services/vehicle-inspections" },
+    { "id": "test-drives", "title": "Test Drives", "description": "Schedule a visit and experience the vehicle before you decide.", "detailPath": "/services/test-drives" }
   ],
   "serviceSections": [],
   "capabilities": [],
@@ -57,26 +56,26 @@
   "team": [],
   "testimonials": [],
   "faq": [
-    { "question": "What services do you offer?", "answer": "General maintenance, suspension, transmission, oil changes, brakes, diagnostics, engine repair, and AC repair." },
-    { "question": "How do I schedule an appointment?", "answer": "Call 407-719-3539, use the online form, or chat with our assistant. We’re open Mon–Sat 9AM–6PM EST." },
-    { "question": "Do you offer discounts?", "answer": "First responders, teachers, veterans, and seniors get 5% off oil changes." },
-    { "question": "Where are you located?", "answer": "3014 N John Young Pkwy, Orlando, FL 32804." }
+    { "question": "What services do you offer?", "answer": "We sell quality vehicles and buy cars — including trade-ins, inspections, test drives, and financing guidance." },
+    { "question": "How do I schedule a visit?", "answer": "Call 689-252-4265, use the online form, or chat with this assistant. We’re open Mon–Fri 9:30–6 and Sat 9:30–4." },
+    { "question": "Do you buy cars?", "answer": "Yes — we buy vehicles of many makes and models. Share details for an estimate path or visit for a fair cash offer." },
+    { "question": "Where are you located?", "answer": "2120 S Orange Blossom Trl, Orlando, FL 32805." }
   ],
   "pricing": {
-    "summary": "Every estimate is tailored to your vehicle after diagnosis. We explain findings and cost before repair work begins.",
-    "bullets": ["Tailored written estimates", "Honest diagnostics", "Community oil-change discount"]
+    "summary": "Inventory pricing varies by vehicle. Purchase and trade-in estimates are tailored after we review condition and market value.",
+    "bullets": ["Transparent inventory pricing", "Fair cash purchase offers", "Trade-in credit options"]
   },
   "process": [
-    { "label": "Schedule", "description": "Book by phone, form, or chat." },
-    { "label": "Diagnose", "description": "Clear findings — no guesswork." },
-    { "label": "Repair", "description": "Quality parts and careful workmanship." }
+    { "label": "Browse", "description": "Explore inventory or ask this assistant for matches." },
+    { "label": "Visit / Schedule", "description": "Book a test drive or sell appointment." },
+    { "label": "Deal", "description": "Buy, sell, or trade with clear paperwork." }
   ],
   "hero": {
-    "headline": "Your Trusted Auto Repair Shop",
-    "body": "Maintenance, brakes, diagnostics, engine & AC repair for Orlando drivers."
+    "headline": "Buy & Sell Vehicles With Confidence",
+    "body": "Quality inventory, fair cash offers, and easy scheduling for Orlando drivers."
   },
   "actions": [
     { "id": "open_contact_form", "description": "Open the contact form." },
-    { "id": "navigate", "description": "Navigate to an internal path.", "args": { "path": "/services" } }
+    { "id": "navigate", "description": "Navigate to an internal path.", "args": { "path": "/projects" } }
   ]
 }
