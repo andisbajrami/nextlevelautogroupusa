@@ -69,6 +69,11 @@ const SignatureProjectsSection = () => {
                       <h3 className="font-display text-lg sm:text-xl font-bold uppercase leading-tight mt-1">
                         {project.title}
                       </h3>
+                      {project.value && (
+                        <p className="text-sm font-display font-bold text-[hsl(var(--secondary))] mt-1">
+                          {project.value}
+                        </p>
+                      )}
                       {project.location && (
                         <p className="text-xs text-white/70 mt-1">{project.location}</p>
                       )}

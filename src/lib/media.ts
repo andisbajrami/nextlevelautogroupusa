@@ -2,6 +2,7 @@ import {
   HOME_HERO,
   MINHS_IMAGES,
   PROJECTS,
+  PROJECTS_PAGE_STATS,
   SERVICE_DEEP_DIVES,
   SERVICES,
   SERVICE_SECTION_IMAGES,
@@ -177,11 +178,14 @@ export function hydrateMinhsSiteContent<T extends Record<string, unknown>>(conte
   const projects = PROJECTS.map(def => {
     const saved = partialProjects?.find(p => p.id === def.id);
     const base = hydrateImageRows([def as RowWithImage], saved ? [saved as RowWithImage] : undefined, projectImageById)[0];
+    // Keep code-defined inventory as source of truth (title, price, mileage, photos).
     return {
       ...base,
-      beforeImage: isAllowedMinhsImage(saved?.beforeImage) ? saved!.beforeImage : def.beforeImage,
-      afterImage: isAllowedMinhsImage(saved?.afterImage) ? saved!.afterImage : def.afterImage,
-      gallery: (saved?.gallery?.length ? saved.gallery : def.gallery).filter(isAllowedMinhsImage),
+      ...def,
+      image: def.image,
+      beforeImage: def.beforeImage,
+      afterImage: def.afterImage,
+      gallery: def.gallery.filter(isAllowedMinhsImage),
     };
   });
 
@@ -196,6 +200,7 @@ export function hydrateMinhsSiteContent<T extends Record<string, unknown>>(conte
     ...content,
     services,
     projects,
+    projectsPageStats: PROJECTS_PAGE_STATS,
     serviceSections,
   });
 }
