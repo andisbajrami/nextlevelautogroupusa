@@ -957,6 +957,39 @@ export const PROJECTS = [
     afterImage: '/images/inventory/volkswagen-jetta-gli/01.jpeg',
     number: 17,
   },
+  {
+    id: 'volkswagen-tiguan-s',
+    title: '2017 Volkswagen Tiguan S',
+    category: 'SUV',
+    serviceId: 'vehicle-sales',
+    location: 'Orlando, FL',
+    year: '2017',
+    client: 'Available Now',
+    mileage: '121,000 miles',
+    value: '$7,900',
+    features: [],
+    description: '2017 Volkswagen Tiguan S with 121,000 miles. Compact SUV ready for Orlando driving. Contact us to schedule a test drive.',
+    image: '/images/inventory/volkswagen-tiguan-s/11.jpeg',
+    gallery: [
+    '/images/inventory/volkswagen-tiguan-s/11.jpeg',
+    '/images/inventory/volkswagen-tiguan-s/01.jpeg',
+    '/images/inventory/volkswagen-tiguan-s/02.jpeg',
+    '/images/inventory/volkswagen-tiguan-s/03.jpeg',
+    '/images/inventory/volkswagen-tiguan-s/04.jpeg',
+    '/images/inventory/volkswagen-tiguan-s/05.jpeg',
+    '/images/inventory/volkswagen-tiguan-s/06.jpeg',
+    '/images/inventory/volkswagen-tiguan-s/07.jpeg',
+    '/images/inventory/volkswagen-tiguan-s/08.jpeg',
+    '/images/inventory/volkswagen-tiguan-s/09.jpeg',
+    '/images/inventory/volkswagen-tiguan-s/10.jpeg',
+    '/images/inventory/volkswagen-tiguan-s/12.jpeg',
+    '/images/inventory/volkswagen-tiguan-s/13.jpeg',
+    '/images/inventory/volkswagen-tiguan-s/14.jpeg',
+    ],
+    beforeImage: '/images/inventory/volkswagen-tiguan-s/11.jpeg',
+    afterImage: '/images/inventory/volkswagen-tiguan-s/11.jpeg',
+    number: 18,
+  },
 ];
 
 export const SIGNATURE_PROJECT_COUNT = 6;
@@ -1167,7 +1200,7 @@ export function getBlogCategoryCounts(): { label: string; count: number }[] {
 export const BLOG_TAGS = ["BUYING", "SELLING", "TRADE-INS", "FINANCING", "ORLANDO"];
 
 export const PROJECTS_PAGE_STATS = [
-  { label: "Vehicles Listed", value: "17" },
+  { label: "Vehicles Listed", value: "18" },
   { label: "Days Open", value: "6" },
   { label: "Buy & Sell", value: "Yes" },
   { label: "Focus", value: "Inventory" },
