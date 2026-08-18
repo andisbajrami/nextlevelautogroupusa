@@ -186,7 +186,11 @@ const ProjectDetail = () => {
 
       <CTASection
         title="Interested in this vehicle?"
-        subtitle="Schedule a test drive, ask about financing, or get a trade-in estimate — Orlando hours Mon–Sat."
+        subtitle="Schedule a test drive, apply for financing, or get a trade-in estimate — Orlando hours Mon–Sat."
+        primaryLabel="APPLY FOR FINANCING"
+        primaryTo={`/financing/apply?vehicle=${project.id}`}
+        secondaryLabel="CONTACT US"
+        secondaryTo="/contact"
       />
 
       {lightboxIndex !== null ? (

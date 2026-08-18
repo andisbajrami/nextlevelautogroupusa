@@ -44,6 +44,10 @@ const Privacy = () => {
             <ul className="list-disc pl-5 space-y-2">
               <li>Name, phone number, email address, and vehicle details from contact or booking forms</li>
               <li>Messages you send us about buying, selling, trade-ins, or other services</li>
+              <li>
+                Financing application details (including address, employment, income, Social Security number,
+                driver&apos;s license image, and vehicle of interest) when you apply for financing
+              </li>
               <li>Communications when you call, email, or visit our lot</li>
             </ul>
             <p className="mt-3">
@@ -60,6 +64,7 @@ const Privacy = () => {
             <ul className="list-disc pl-5 space-y-2">
               <li>Respond to quotes, consults, and service requests</li>
               <li>Schedule visits and follow up on buy/sell inquiries</li>
+              <li>Process financing applications and share necessary information with our banking partners for approval</li>
               <li>Improve our website, marketing, and customer experience</li>
               <li>Comply with legal obligations</li>
             </ul>

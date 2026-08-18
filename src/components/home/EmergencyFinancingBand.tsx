@@ -55,10 +55,10 @@ const EmergencyFinancingBand = () => {
                     Ask about financing guidance and payment estimates when you&apos;re ready to buy.
                   </p>
                   <Link
-                    to="/contact"
+                    to="/financing/apply"
                     className="mt-3 inline-flex items-center gap-2 text-sm font-display font-bold uppercase tracking-wider hover:opacity-80 transition-opacity"
                   >
-                    Explore Payment Options
+                    Apply for Financing
                     <ArrowRight className="h-4 w-4" />
                   </Link>
                 </div>

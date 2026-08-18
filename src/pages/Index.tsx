@@ -15,6 +15,7 @@ import HomeFaqSection from "@/components/home/HomeFaqSection";
 import NewsletterSignup from "@/components/home/NewsletterSignup";
 import CTABannerSection from "@/components/home/CTABannerSection";
 import LeadContactSection from "@/components/home/LeadContactSection";
+import EmergencyFinancingBand from "@/components/home/EmergencyFinancingBand";
 import Reveal from "@/components/animations/Reveal";
 import { useSiteContent } from "@/contexts/SiteContentContext";
 
@@ -88,6 +89,9 @@ const Index = () => {
           <HomeFaqSection />
         </Reveal>
       )}
+      <Reveal delay={305}>
+        <EmergencyFinancingBand />
+      </Reveal>
       <Reveal delay={310}>
         <NewsletterSignup variant="section" />
       </Reveal>

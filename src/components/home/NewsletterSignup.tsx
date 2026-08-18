@@ -3,19 +3,28 @@ import { Mail } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { NEWSLETTER } from "@/data/siteData";
+import { submitSiteForm, SubmitFormError } from "@/lib/submitForm";
 
 const NewsletterSignup = ({ variant = "footer" }: { variant?: "footer" | "section" }) => {
   const [submitting, setSubmitting] = useState(false);
   const n = NEWSLETTER;
 
-  const onSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    const form = event.currentTarget;
     setSubmitting(true);
-    setTimeout(() => {
+    try {
+      await submitSiteForm(form, {
+        subject: `Newsletter signup — NextLevel Auto Group USA`,
+        extras: { form_name: "Newsletter" },
+      });
       toast.success(n.successMessage);
-      (event.target as HTMLFormElement).reset();
+      form.reset();
+    } catch (err) {
+      toast.error(err instanceof SubmitFormError ? err.message : "Unable to sign up. Please try again.");
+    } finally {
       setSubmitting(false);
-    }, 500);
+    }
   };
 
   if (variant === "section") {
@@ -31,9 +40,11 @@ const NewsletterSignup = ({ variant = "footer" }: { variant?: "footer" | "sectio
           <p className="mt-3 text-sm sm:text-base text-muted-foreground">{n.description}</p>
           <form onSubmit={onSubmit} className="mt-8 flex flex-col sm:flex-row gap-3 max-w-lg mx-auto">
             <input
+              name="email"
               type="email"
               required
               placeholder={n.placeholder}
+              autoComplete="email"
               className="flex-1 rounded-sm border border-[hsl(var(--border))] bg-white px-4 py-3.5 text-sm focus:outline-none focus:ring-2 focus:ring-[hsl(var(--secondary))]"
             />
             <Button
@@ -59,9 +70,11 @@ const NewsletterSignup = ({ variant = "footer" }: { variant?: "footer" | "sectio
         <div className="relative">
           <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-white/40" />
           <input
+            name="email"
             type="email"
             required
             placeholder={n.placeholder}
+            autoComplete="email"
             className="w-full rounded-sm border border-white/15 bg-white/5 pl-9 pr-3 py-2.5 text-sm text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-[hsl(var(--secondary))]"
           />
         </div>

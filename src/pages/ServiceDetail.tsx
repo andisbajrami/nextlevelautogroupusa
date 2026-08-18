@@ -163,8 +163,13 @@ const ServiceDetail = () => {
 
           <CTASection
             title={`Ready for ${svc.title.toLowerCase()}?`}
-            subtitle="Book an appointment — tailored estimates and clear next steps."
-            primaryLabel="SCHEDULE NOW"
+            subtitle={
+              svc.id === "financing-help"
+                ? "Submit your financing application — we’ll call you with bank approval."
+                : "Book an appointment — tailored estimates and clear next steps."
+            }
+            primaryLabel={svc.id === "financing-help" ? "APPLY NOW" : "SCHEDULE NOW"}
+            primaryTo={svc.id === "financing-help" ? "/financing/apply" : "/contact"}
             secondaryLabel="CALL NOW"
           />
           <LeadContactSection />

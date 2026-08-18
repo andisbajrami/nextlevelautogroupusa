@@ -196,10 +196,10 @@ export const SERVICES_RIBBON = [
   },
   {
     id: "financing-help",
-    to: "/services/financing-help",
+    to: "/financing/apply",
     icon: "ClipboardCheck",
     label: "FINANCING",
-    description: "Estimates and guidance to help you budget with confidence.",
+    description: "Apply online — we submit to the bank and call you with approval.",
   },
   {
     id: "vehicle-inspections",
@@ -999,7 +999,7 @@ export const PROJECTS = [
     year: '2021',
     client: 'Available Now',
     mileage: '100,000 miles',
-    value: 'Call for price',
+    value: '$12,900',
     features: ['1 owner', 'No accidents'],
     description: '2021 Volkswagen Jetta R-Line with 100,000 miles. One owner, no accidents — sharp R-Line sedan ready for Orlando. Contact us to schedule a test drive.',
     image: '/images/inventory/volkswagen-jetta-r-line/01.jpeg',
@@ -1218,6 +1218,7 @@ export const NAV_LINKS = [
   { path: "/", label: "Home" },
   { path: "/services", label: "Services" },
   { path: "/projects", label: "Inventory" },
+  { path: "/financing/apply", label: "Financing" },
   { path: "/about", label: "About" },
   { path: "/reviews", label: "Reviews" },
   { path: "/service-areas", label: "Service Areas" },
@@ -1229,7 +1230,7 @@ export const FOOTER_SERVICE_LINKS = [
   { to: "/services/vehicle-sales", label: "Vehicle Sales" },
   { to: "/services/we-buy-cars", label: "We Buy Cars" },
   { to: "/services/trade-ins", label: "Trade-Ins" },
-  { to: "/services/financing-help", label: "Financing Help" },
+  { to: "/financing/apply", label: "Apply for Financing" },
   { to: "/projects", label: "Inventory" },
 ];
 
@@ -1239,6 +1240,7 @@ export const FOOTER_COMPANY_LINKS = [
   { to: "/projects", label: "Inventory" },
   { to: "/about", label: "About Us" },
   { to: "/reviews", label: "Reviews" },
+  { to: "/financing/apply", label: "Financing" },
   { to: "/contact", label: "Contact Us" },
 ];
 

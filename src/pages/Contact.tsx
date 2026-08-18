@@ -8,23 +8,32 @@ import { useSiteContent } from "@/contexts/SiteContentContext";
 import { CONTACT_TRUST_STRIP } from "@/data/siteData";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
+import { submitSiteForm, SubmitFormError } from "@/lib/submitForm";
 
 const trustIconMap = { ShieldCheck, Award, Users, Clock } as const;
 
 const Contact = () => {
   const { company: COMPANY, officeHours, services } = useSiteContent();
-  const [submitting, setSubmitting] = useState(false);
+  const [submitting, setSubmitting] = useState<string | null>(null);
   const phoneHref = `tel:${(COMPANY.phone || "").replace(/[^+\d]/g, "")}`;
   const mailHref = `mailto:${COMPANY.email || ""}`;
 
-  const onSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (event: FormEvent<HTMLFormElement>, formKey: string, subject: string) => {
     event.preventDefault();
-    setSubmitting(true);
-    setTimeout(() => {
-      toast.success("Thanks! Our team will confirm your visit shortly.");
-      (event.target as HTMLFormElement).reset();
-      setSubmitting(false);
-    }, 600);
+    const form = event.currentTarget;
+    setSubmitting(formKey);
+    try {
+      await submitSiteForm(form, {
+        subject,
+        extras: { form_name: formKey },
+      });
+      toast.success("Thanks! Our team will get back to you shortly.");
+      form.reset();
+    } catch (err) {
+      toast.error(err instanceof SubmitFormError ? err.message : "Unable to send. Please try again.");
+    } finally {
+      setSubmitting(null);
+    }
   };
 
   const inputCls =
@@ -110,34 +119,38 @@ const Contact = () => {
               Schedule a Visit
             </h3>
             <p className="text-sm text-slate-500 mb-5">Request a test drive, sell appointment, or trade-in review — we&apos;ll confirm your visit.</p>
-            <form onSubmit={onSubmit} className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              <input required type="text" placeholder="Full Name" className={inputCls} />
-              <input required type="tel" placeholder="Phone Number" className={inputCls} />
-              <input required type="email" placeholder="Email Address" className={`${inputCls} sm:col-span-2`} />
-              <input type="text" placeholder="Vehicle Year" className={inputCls} />
-              <input type="text" placeholder="Make / Model" className={inputCls} />
-              <select defaultValue="" className={`${inputCls} sm:col-span-2`}>
+            <form
+              onSubmit={e => onSubmit(e, "Schedule a Visit", `Schedule a visit — ${COMPANY.name}`)}
+              className="grid grid-cols-1 sm:grid-cols-2 gap-3"
+            >
+              <input name="full_name" required type="text" placeholder="Full Name" autoComplete="name" className={inputCls} />
+              <input name="phone" required type="tel" placeholder="Phone Number" autoComplete="tel" className={inputCls} />
+              <input name="email" required type="email" placeholder="Email Address" autoComplete="email" className={`${inputCls} sm:col-span-2`} />
+              <input name="vehicle_year" type="text" placeholder="Vehicle Year" className={inputCls} />
+              <input name="make_model" type="text" placeholder="Make / Model" className={inputCls} />
+              <select name="service_interest" defaultValue="" className={`${inputCls} sm:col-span-2`}>
                 <option value="" disabled>
                   How can we help?
                 </option>
                 {services.map(s => (
-                  <option key={s.id} value={s.id}>
+                  <option key={s.id} value={s.title}>
                     {s.title}
                   </option>
                 ))}
               </select>
               <textarea
+                name="message"
                 placeholder="Visit notes (optional)"
                 rows={3}
                 className={`${inputCls} sm:col-span-2 resize-none`}
               />
               <Button
                 type="submit"
-                disabled={submitting}
+                disabled={submitting !== null}
                 className="sm:col-span-2 bg-[hsl(var(--secondary))] text-[hsl(var(--secondary-foreground))] hover:bg-[hsl(var(--secondary))]/90 font-display font-bold uppercase tracking-wide py-5"
               >
-                {submitting ? "Sending…" : "Schedule Visit"}
-                {!submitting && <ArrowRight className="ml-1.5 h-4 w-4" />}
+                {submitting === "Schedule a Visit" ? "Sending…" : "Schedule Visit"}
+                {submitting !== "Schedule a Visit" && <ArrowRight className="ml-1.5 h-4 w-4" />}
               </Button>
             </form>
             <div className="mt-8 pt-8 border-t border-slate-200">
@@ -145,12 +158,16 @@ const Contact = () => {
                 Buy / Sell Request
               </h3>
               <p className="text-sm text-slate-500 mb-4">Tell us about the vehicle you want to buy or sell.</p>
-              <form onSubmit={onSubmit} className="grid grid-cols-1 gap-3">
-                <input required type="text" placeholder="Full Name" className={inputCls} />
-                <input required type="tel" placeholder="Phone" className={inputCls} />
-                <textarea placeholder="Vehicle details or inventory interest" rows={3} className={`${inputCls} resize-none`} />
-                <Button type="submit" variant="outline" disabled={submitting} className="minhs-btn-outline-on-light font-display font-bold uppercase">
-                  Submit Request
+              <form
+                onSubmit={e => onSubmit(e, "Buy / Sell Request", `Buy / sell request — ${COMPANY.name}`)}
+                className="grid grid-cols-1 gap-3"
+              >
+                <input name="full_name" required type="text" placeholder="Full Name" autoComplete="name" className={inputCls} />
+                <input name="phone" required type="tel" placeholder="Phone" autoComplete="tel" className={inputCls} />
+                <input name="email" type="email" placeholder="Email (optional)" autoComplete="email" className={inputCls} />
+                <textarea name="message" placeholder="Vehicle details or inventory interest" rows={3} className={`${inputCls} resize-none`} />
+                <Button type="submit" variant="outline" disabled={submitting !== null} className="minhs-btn-outline-on-light font-display font-bold uppercase">
+                  {submitting === "Buy / Sell Request" ? "Sending…" : "Submit Request"}
                 </Button>
               </form>
             </div>
@@ -158,12 +175,15 @@ const Contact = () => {
               <h3 className="font-display text-lg font-bold uppercase tracking-wide mb-1">
                 General Contact
               </h3>
-              <form onSubmit={onSubmit} className="grid grid-cols-1 gap-3">
-                <input required type="text" placeholder="Name" className={inputCls} />
-                <input required type="email" placeholder="Email" className={inputCls} />
-                <textarea placeholder="Your message" rows={3} className={`${inputCls} resize-none`} />
-                <Button type="submit" variant="outline" disabled={submitting} className="minhs-btn-outline-on-light font-display font-bold uppercase">
-                  Send Message
+              <form
+                onSubmit={e => onSubmit(e, "General Contact", `General contact — ${COMPANY.name}`)}
+                className="grid grid-cols-1 gap-3"
+              >
+                <input name="full_name" required type="text" placeholder="Name" autoComplete="name" className={inputCls} />
+                <input name="email" required type="email" placeholder="Email" autoComplete="email" className={inputCls} />
+                <textarea name="message" required placeholder="Your message" rows={3} className={`${inputCls} resize-none`} />
+                <Button type="submit" variant="outline" disabled={submitting !== null} className="minhs-btn-outline-on-light font-display font-bold uppercase">
+                  {submitting === "General Contact" ? "Sending…" : "Send Message"}
                 </Button>
               </form>
             </div>

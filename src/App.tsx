@@ -21,6 +21,7 @@ const Blog = lazy(() => import("./pages/Blog"));
 const BlogPost = lazy(() => import("./pages/BlogPost"));
 const Team = lazy(() => import("./pages/Team"));
 const Contact = lazy(() => import("./pages/Contact"));
+const FinancingApply = lazy(() => import("./pages/FinancingApply"));
 const FAQ = lazy(() => import("./pages/FAQ"));
 const Reviews = lazy(() => import("./pages/Reviews"));
 const ServiceAreas = lazy(() => import("./pages/ServiceAreas"));
@@ -53,6 +54,7 @@ const AnimatedRoutes = () => {
         <Route path="/blog/:id" element={<BlogPost />} />
         <Route path="/team" element={<Team />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/financing/apply" element={<FinancingApply />} />
         <Route path="/faq" element={<FAQ />} />
         <Route path="/reviews" element={<Reviews />} />
         <Route path="/service-areas" element={<ServiceAreas />} />
