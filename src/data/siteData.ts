@@ -1122,6 +1122,38 @@ export const PROJECTS = [
     afterImage: '/images/inventory/hyundai-kona-sel/01.jpeg',
     number: 22,
   },
+  {
+    id: 'nissan-murano-platinum',
+    title: '2016 Nissan Murano Platinum',
+    category: 'SUV',
+    serviceId: 'vehicle-sales',
+    location: 'Orlando, FL',
+    year: '2016',
+    client: 'Available Now',
+    mileage: '109,000 miles',
+    value: '$10,900',
+    features: ['No accidents', 'Clean title'],
+    description: '2016 Nissan Murano Platinum with 109,000 miles. No accidents, clean title — premium SUV ready for Orlando. Contact us to schedule a test drive.',
+    image: '/images/inventory/nissan-murano-platinum/02.jpeg',
+    gallery: [
+    '/images/inventory/nissan-murano-platinum/02.jpeg',
+    '/images/inventory/nissan-murano-platinum/01.jpeg',
+    '/images/inventory/nissan-murano-platinum/03.jpeg',
+    '/images/inventory/nissan-murano-platinum/04.jpeg',
+    '/images/inventory/nissan-murano-platinum/05.jpeg',
+    '/images/inventory/nissan-murano-platinum/06.jpeg',
+    '/images/inventory/nissan-murano-platinum/07.jpeg',
+    '/images/inventory/nissan-murano-platinum/08.jpeg',
+    '/images/inventory/nissan-murano-platinum/09.jpeg',
+    '/images/inventory/nissan-murano-platinum/10.jpeg',
+    '/images/inventory/nissan-murano-platinum/11.jpeg',
+    '/images/inventory/nissan-murano-platinum/12.jpeg',
+    '/images/inventory/nissan-murano-platinum/13.jpeg',
+    ],
+    beforeImage: '/images/inventory/nissan-murano-platinum/02.jpeg',
+    afterImage: '/images/inventory/nissan-murano-platinum/02.jpeg',
+    number: 23,
+  },
 ];
 
 export const SIGNATURE_PROJECT_COUNT = 6;
@@ -1334,7 +1366,7 @@ export function getBlogCategoryCounts(): { label: string; count: number }[] {
 export const BLOG_TAGS = ["BUYING", "SELLING", "TRADE-INS", "FINANCING", "ORLANDO"];
 
 export const PROJECTS_PAGE_STATS = [
-  { label: "Vehicles Listed", value: "22" },
+  { label: "Vehicles Listed", value: "23" },
   { label: "Days Open", value: "6" },
   { label: "Buy & Sell", value: "Yes" },
   { label: "Focus", value: "Inventory" },
