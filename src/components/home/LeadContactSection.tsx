@@ -4,6 +4,7 @@ import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { useSiteContent } from "@/contexts/SiteContentContext";
 import { submitSiteForm, SubmitFormError } from "@/lib/submitForm";
+import FormSubmitHiddenFields from "@/components/forms/FormSubmitHiddenFields";
 
 const LeadContactSection = () => {
   const { leadForm: LEAD_FORM, services, company: COMPANY } = useSiteContent();
@@ -17,7 +18,7 @@ const LeadContactSection = () => {
     try {
       await submitSiteForm(form, {
         subject: `Website lead — ${COMPANY.name}`,
-        extras: { form_name: "Lead / Schedule Visit" },
+        formName: "Lead / Schedule Visit",
       });
       toast.success("Thanks! We'll be in touch within 24 hours.");
       form.reset();
@@ -82,6 +83,7 @@ const LeadContactSection = () => {
 
           <div className="bg-white px-4 sm:px-6 lg:px-10 xl:px-14 py-12 lg:py-16 flex flex-col justify-center">
             <form onSubmit={onSubmit} className="space-y-3 max-w-lg w-full mx-auto lg:mx-0 lg:max-w-none">
+              <FormSubmitHiddenFields />
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <input name="full_name" type="text" required placeholder="Full Name" autoComplete="name" className={fieldCls} />
                 <input name="phone" type="tel" required placeholder="Phone Number" autoComplete="tel" className={fieldCls} />
@@ -99,7 +101,7 @@ const LeadContactSection = () => {
                 <input name="vehicle_make" type="text" placeholder="Make" className={fieldCls} />
                 <input name="vehicle_model" type="text" placeholder="Model" className={fieldCls} />
               </div>
-              <select name="service_interest" defaultValue="" className={`w-full ${fieldCls}`}>
+              <select name="service_interest" required defaultValue="" className={`w-full ${fieldCls}`}>
                 <option value="" disabled>
                   How can we help?
                 </option>

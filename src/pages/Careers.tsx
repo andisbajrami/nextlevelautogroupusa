@@ -1,3 +1,4 @@
+import { FormEvent, useRef, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { ArrowRight, Briefcase, Users, Heart } from "lucide-react";
@@ -5,6 +6,9 @@ import Layout from "@/components/layout/Layout";
 import CTASection from "@/components/sections/CTASection";
 import { Button } from "@/components/ui/button";
 import { useSiteContent } from "@/contexts/SiteContentContext";
+import { submitSiteForm, SubmitFormError } from "@/lib/submitForm";
+import FormSubmitHiddenFields from "@/components/forms/FormSubmitHiddenFields";
+import { toast } from "sonner";
 
 const ROLES = [
   {
@@ -21,8 +25,38 @@ const ROLES = [
   },
 ];
 
+const inputCls =
+  "w-full rounded-md bg-white border border-slate-200 text-[hsl(var(--primary))] placeholder:text-slate-400 px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[hsl(var(--secondary))]";
+
 const Careers = () => {
   const { company: COMPANY } = useSiteContent();
+  const formRef = useRef<HTMLDivElement>(null);
+  const [selectedRole, setSelectedRole] = useState("");
+  const [submitting, setSubmitting] = useState(false);
+
+  const scrollToApply = (role: string) => {
+    setSelectedRole(role);
+    formRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
+  const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const form = event.currentTarget;
+    setSubmitting(true);
+    try {
+      await submitSiteForm(form, {
+        subject: `Career application — ${COMPANY.name}`,
+        formName: "Careers Application",
+      });
+      toast.success("Application sent! We'll review it and get back to you.");
+      form.reset();
+      setSelectedRole("");
+    } catch (err) {
+      toast.error(err instanceof SubmitFormError ? err.message : "Unable to send. Please try again.");
+    } finally {
+      setSubmitting(false);
+    }
+  };
 
   return (
     <Layout>
@@ -75,27 +109,87 @@ const Careers = () => {
                   <p className="mt-1 text-sm text-slate-600 max-w-2xl">{role.body}</p>
                 </div>
                 <Button
-                  asChild
+                  type="button"
+                  onClick={() => scrollToApply(role.title)}
                   className="bg-[hsl(var(--secondary))] text-[hsl(var(--secondary-foreground))] hover:bg-[hsl(var(--secondary))]/90 font-display font-bold uppercase shrink-0"
                 >
-                  <a href={`mailto:${COMPANY.email}?subject=Career inquiry — ${role.title}`}>
-                    Apply
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </a>
+                  Apply
+                  <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </article>
             ))}
+          </div>
+
+          <div ref={formRef} className="mt-12 bg-white rounded-lg p-6 sm:p-8 ring-1 ring-slate-200">
+            <h2 className="font-display text-xl font-bold uppercase tracking-wide text-[hsl(var(--primary))] mb-1">
+              Submit Your Application
+            </h2>
+            <p className="text-sm text-slate-600 mb-6">
+              All applications are sent to {COMPANY.email}. We&apos;ll follow up if there&apos;s a fit.
+            </p>
+            <form onSubmit={onSubmit} encType="multipart/form-data" className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <FormSubmitHiddenFields />
+              <div className="sm:col-span-2">
+                <label htmlFor="role" className="block text-xs font-display font-bold uppercase tracking-wider text-[hsl(var(--primary))] mb-1.5">
+                  Role
+                </label>
+                <select
+                  id="role"
+                  name="role"
+                  required
+                  value={selectedRole}
+                  onChange={e => setSelectedRole(e.target.value)}
+                  className={inputCls}
+                >
+                  <option value="" disabled>
+                    Select a role
+                  </option>
+                  {ROLES.map(role => (
+                    <option key={role.title} value={role.title}>
+                      {role.title}
+                    </option>
+                  ))}
+                  <option value="Other">Other / General inquiry</option>
+                </select>
+              </div>
+              <input name="full_name" required type="text" placeholder="Full Name" autoComplete="name" className={inputCls} />
+              <input name="phone" required type="tel" placeholder="Phone" autoComplete="tel" className={inputCls} />
+              <input name="email" required type="email" placeholder="Email" autoComplete="email" className={`${inputCls} sm:col-span-2`} />
+              <textarea
+                name="message"
+                required
+                placeholder="Tell us about your experience"
+                rows={4}
+                className={`${inputCls} sm:col-span-2 resize-none`}
+              />
+              <div className="sm:col-span-2">
+                <label htmlFor="resume" className="block text-xs font-display font-bold uppercase tracking-wider text-[hsl(var(--primary))] mb-1.5">
+                  Resume (optional)
+                </label>
+                <input
+                  id="resume"
+                  name="resume"
+                  type="file"
+                  accept=".pdf,.doc,.docx,application/pdf,application/msword"
+                  className={`${inputCls} file:mr-3 file:rounded-sm file:border-0 file:bg-[hsl(var(--primary))] file:px-3 file:py-1.5 file:text-xs file:font-bold file:uppercase file:text-white`}
+                />
+              </div>
+              <Button
+                type="submit"
+                disabled={submitting}
+                className="sm:col-span-2 bg-[hsl(var(--secondary))] text-[hsl(var(--secondary-foreground))] hover:bg-[hsl(var(--secondary))]/90 font-display font-bold uppercase py-5"
+              >
+                {submitting ? "Sending…" : "Submit Application"}
+                {!submitting && <ArrowRight className="ml-2 h-4 w-4" />}
+              </Button>
+            </form>
           </div>
 
           <p className="mt-8 text-sm text-slate-600">
             Don&apos;t see a perfect fit?{" "}
             <Link to="/contact" className="font-semibold text-[hsl(var(--primary))] hover:text-[hsl(var(--secondary))]">
               Contact us
-            </Link>{" "}
-            or email{" "}
-            <a href={`mailto:${COMPANY.email}`} className="font-semibold text-[hsl(var(--secondary))] hover:underline">
-              {COMPANY.email}
-            </a>
+            </Link>
             .
           </p>
         </div>

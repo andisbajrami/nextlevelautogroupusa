@@ -4,6 +4,7 @@ import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { NEWSLETTER } from "@/data/siteData";
 import { submitSiteForm, SubmitFormError } from "@/lib/submitForm";
+import FormSubmitHiddenFields from "@/components/forms/FormSubmitHiddenFields";
 
 const NewsletterSignup = ({ variant = "footer" }: { variant?: "footer" | "section" }) => {
   const [submitting, setSubmitting] = useState(false);
@@ -16,7 +17,7 @@ const NewsletterSignup = ({ variant = "footer" }: { variant?: "footer" | "sectio
     try {
       await submitSiteForm(form, {
         subject: `Newsletter signup — NextLevel Auto Group USA`,
-        extras: { form_name: "Newsletter" },
+        formName: "Newsletter",
       });
       toast.success(n.successMessage);
       form.reset();
@@ -39,6 +40,7 @@ const NewsletterSignup = ({ variant = "footer" }: { variant?: "footer" | "sectio
           </h2>
           <p className="mt-3 text-sm sm:text-base text-muted-foreground">{n.description}</p>
           <form onSubmit={onSubmit} className="mt-8 flex flex-col sm:flex-row gap-3 max-w-lg mx-auto">
+            <FormSubmitHiddenFields />
             <input
               name="email"
               type="email"
@@ -67,6 +69,7 @@ const NewsletterSignup = ({ variant = "footer" }: { variant?: "footer" | "sectio
       </h4>
       <p className="text-xs text-white/55 mb-3 leading-relaxed">{n.description}</p>
       <form onSubmit={onSubmit} className="flex flex-col gap-2">
+        <FormSubmitHiddenFields />
         <div className="relative">
           <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-white/40" />
           <input

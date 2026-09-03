@@ -1,4 +1,4 @@
-/** FormSubmit endpoint — submissions email info@nextlevelautogroupusa.com */
+/** All website forms submit to this inbox via FormSubmit (formsubmit.co). */
 export const SUBMIT_FORM_EMAIL = "info@nextlevelautogroupusa.com";
 const SUBMIT_FORM_ENDPOINT = `https://formsubmit.co/ajax/${SUBMIT_FORM_EMAIL}`;
 
@@ -9,20 +9,21 @@ export class SubmitFormError extends Error {
   }
 }
 
-type SubmitOptions = {
-  /** Email subject line shown in the inbox */
+export type SubmitFormOptions = {
+  /** Email subject line */
   subject: string;
-  /** Extra fields not present as inputs (e.g. form_name) */
-  extras?: Record<string, string>;
+  /** Identifies which form was submitted (shown in the email body) */
+  formName: string;
 };
 
 /**
- * Posts a form to FormSubmit so the dealership receives it by email.
- * Uses FormData so file uploads (e.g. driver's license) are supported.
+ * Posts a form to FormSubmit so the dealership receives every field by email.
+ * Supports file uploads (multipart) — used for financing driver's license, etc.
  */
-export async function submitSiteForm(form: HTMLFormElement, options: SubmitOptions): Promise<void> {
+export async function submitSiteForm(form: HTMLFormElement, options: SubmitFormOptions): Promise<void> {
   const data = new FormData(form);
 
+  // FormSubmit control fields — destination is the endpoint URL; these enrich the email.
   data.set("_subject", options.subject);
   data.set("_template", "table");
   data.set("_captcha", "false");
@@ -32,8 +33,24 @@ export async function submitSiteForm(form: HTMLFormElement, options: SubmitOptio
     data.set("_replyto", email.trim());
   }
 
-  for (const [key, value] of Object.entries(options.extras ?? {})) {
-    data.set(key, value);
+  // Metadata so every submission is easy to identify in the inbox.
+  data.set("destination_email", SUBMIT_FORM_EMAIL);
+  data.set("form_name", options.formName);
+  data.set("page_url", window.location.href);
+  data.set("submitted_at", new Date().toLocaleString("en-US", { timeZone: "America/New_York" }));
+
+  // Include empty text fields so the email table shows the full form layout.
+  for (const el of Array.from(form.elements)) {
+    if (!(el instanceof HTMLInputElement || el instanceof HTMLTextAreaElement || el instanceof HTMLSelectElement)) {
+      continue;
+    }
+    if (!el.name || el.name.startsWith("_")) continue;
+    if (el instanceof HTMLInputElement && (el.type === "file" || el.type === "submit" || el.type === "button")) {
+      continue;
+    }
+    if (!data.has(el.name)) {
+      data.set(el.name, "");
+    }
   }
 
   let response: Response;

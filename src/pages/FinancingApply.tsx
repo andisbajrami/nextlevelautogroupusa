@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { useSiteContent } from "@/contexts/SiteContentContext";
 import { MINHS_IMAGES } from "@/data/siteData";
 import { submitSiteForm, SubmitFormError } from "@/lib/submitForm";
+import FormSubmitHiddenFields from "@/components/forms/FormSubmitHiddenFields";
 import { toast } from "sonner";
 
 const inputCls =
@@ -39,7 +40,7 @@ const FinancingApply = () => {
     try {
       await submitSiteForm(form, {
         subject: `Financing application — ${COMPANY.name}`,
-        extras: { form_name: "Financing Application" },
+        formName: "Financing Application",
       });
       toast.success("Application received. We'll call you after we review bank approval.");
       form.reset();
@@ -92,6 +93,7 @@ const FinancingApply = () => {
             </div>
 
             <form onSubmit={onSubmit} encType="multipart/form-data" className="space-y-5" noValidate={false}>
+              <FormSubmitHiddenFields />
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="sm:col-span-2">
                   <label className={labelCls} htmlFor="full_name">

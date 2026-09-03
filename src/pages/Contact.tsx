@@ -9,6 +9,7 @@ import { CONTACT_TRUST_STRIP } from "@/data/siteData";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 import { submitSiteForm, SubmitFormError } from "@/lib/submitForm";
+import FormSubmitHiddenFields from "@/components/forms/FormSubmitHiddenFields";
 
 const trustIconMap = { ShieldCheck, Award, Users, Clock } as const;
 
@@ -25,7 +26,7 @@ const Contact = () => {
     try {
       await submitSiteForm(form, {
         subject,
-        extras: { form_name: formKey },
+        formName: formKey,
       });
       toast.success("Thanks! Our team will get back to you shortly.");
       form.reset();
@@ -123,12 +124,13 @@ const Contact = () => {
               onSubmit={e => onSubmit(e, "Schedule a Visit", `Schedule a visit — ${COMPANY.name}`)}
               className="grid grid-cols-1 sm:grid-cols-2 gap-3"
             >
+              <FormSubmitHiddenFields />
               <input name="full_name" required type="text" placeholder="Full Name" autoComplete="name" className={inputCls} />
               <input name="phone" required type="tel" placeholder="Phone Number" autoComplete="tel" className={inputCls} />
               <input name="email" required type="email" placeholder="Email Address" autoComplete="email" className={`${inputCls} sm:col-span-2`} />
               <input name="vehicle_year" type="text" placeholder="Vehicle Year" className={inputCls} />
               <input name="make_model" type="text" placeholder="Make / Model" className={inputCls} />
-              <select name="service_interest" defaultValue="" className={`${inputCls} sm:col-span-2`}>
+              <select name="service_interest" required defaultValue="" className={`${inputCls} sm:col-span-2`}>
                 <option value="" disabled>
                   How can we help?
                 </option>
@@ -162,10 +164,11 @@ const Contact = () => {
                 onSubmit={e => onSubmit(e, "Buy / Sell Request", `Buy / sell request — ${COMPANY.name}`)}
                 className="grid grid-cols-1 gap-3"
               >
+                <FormSubmitHiddenFields />
                 <input name="full_name" required type="text" placeholder="Full Name" autoComplete="name" className={inputCls} />
                 <input name="phone" required type="tel" placeholder="Phone" autoComplete="tel" className={inputCls} />
                 <input name="email" type="email" placeholder="Email (optional)" autoComplete="email" className={inputCls} />
-                <textarea name="message" placeholder="Vehicle details or inventory interest" rows={3} className={`${inputCls} resize-none`} />
+                <textarea name="message" required placeholder="Vehicle details or inventory interest" rows={3} className={`${inputCls} resize-none`} />
                 <Button type="submit" variant="outline" disabled={submitting !== null} className="minhs-btn-outline-on-light font-display font-bold uppercase">
                   {submitting === "Buy / Sell Request" ? "Sending…" : "Submit Request"}
                 </Button>
@@ -179,7 +182,9 @@ const Contact = () => {
                 onSubmit={e => onSubmit(e, "General Contact", `General contact — ${COMPANY.name}`)}
                 className="grid grid-cols-1 gap-3"
               >
+                <FormSubmitHiddenFields />
                 <input name="full_name" required type="text" placeholder="Name" autoComplete="name" className={inputCls} />
+                <input name="phone" type="tel" placeholder="Phone (optional)" autoComplete="tel" className={inputCls} />
                 <input name="email" required type="email" placeholder="Email" autoComplete="email" className={inputCls} />
                 <textarea name="message" required placeholder="Your message" rows={3} className={`${inputCls} resize-none`} />
                 <Button type="submit" variant="outline" disabled={submitting !== null} className="minhs-btn-outline-on-light font-display font-bold uppercase">
