@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet-async";
+import { SeoHead } from "@/components/seo/SeoHead";
 import { Link } from "react-router-dom";
 import { Star, Quote, ArrowRight } from "lucide-react";
 import Layout from "@/components/layout/Layout";
@@ -7,6 +7,7 @@ import ElectricalPageHero from "@/components/sections/ElectricalPageHero";
 import CTASection from "@/components/sections/CTASection";
 import { useSiteContent } from "@/contexts/SiteContentContext";
 import { Button } from "@/components/ui/button";
+import { staticPageSeo } from "@/lib/seo";
 
 const Reviews = () => {
   const { testimonials, company: COMPANY, siteTop, stats } = useSiteContent();
@@ -14,13 +15,11 @@ const Reviews = () => {
 
   return (
     <Layout>
-      <Helmet>
-        <title>Reviews | {COMPANY.name}</title>
-        <meta
-          name="description"
-          content={`See what Orlando drivers say about ${COMPANY.name} — quality inventory, fair offers, and personal service.`}
-        />
-      </Helmet>
+      <SeoHead
+        title={staticPageSeo()["/reviews"].title}
+        description={staticPageSeo()["/reviews"].description}
+        path="/reviews"
+      />
 
       <ElectricalPageHero
         eyebrow="Customer Reviews"

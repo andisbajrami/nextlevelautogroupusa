@@ -1,4 +1,3 @@
-import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { ArrowRight, Wrench } from "lucide-react";
 import Layout from "@/components/layout/Layout";
@@ -7,18 +6,18 @@ import { useSiteContent } from "@/contexts/SiteContentContext";
 import { useTheme } from "@/contexts/ThemeContext";
 import { MINHS_IMAGES } from "@/data/siteData";
 import { resolveMinhsServiceImage } from "@/lib/media";
+import { SeoHead } from "@/components/seo/SeoHead";
+import { buildAutoDealerSchema, staticPageSeo } from "@/lib/seo";
 import { getServiceIcon } from "@/lib/serviceIcons";
 
 const Services = () => {
   const { services, servicesPageIntro, company: COMPANY } = useSiteContent();
   const { resolveServiceImage } = useTheme();
+  const seo = staticPageSeo()["/services"];
 
   return (
     <Layout>
-      <Helmet>
-        <title>Buy & Sell Services | {COMPANY.name}</title>
-        <meta name="description" content={servicesPageIntro} />
-      </Helmet>
+      <SeoHead title={seo.title} description={seo.description} path={seo.path} jsonLd={[buildAutoDealerSchema()]} />
 
       <section className="relative bg-[hsl(var(--primary))] text-white overflow-hidden min-h-[280px]">
         <img

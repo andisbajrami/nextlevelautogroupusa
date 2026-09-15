@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet-async";
+import { SeoHead } from "@/components/seo/SeoHead";
 import { Link, useParams } from "react-router-dom";
 import { Phone, FileCheck, Check, Search, Hammer, ShieldCheck, Calendar } from "lucide-react";
 import Layout from "@/components/layout/Layout";
@@ -11,6 +11,7 @@ import { MINHS_IMAGES } from "@/data/siteData";
 import { resolveMinhsServiceImage, resolveMinhsServiceSectionImage } from "@/lib/media";
 import { getServiceIcon } from "@/lib/serviceIcons";
 import { Button } from "@/components/ui/button";
+import { buildAutoDealerSchema, servicePageSeo } from "@/lib/seo";
 
 const PROCESS_STEP_ICONS = [Calendar, Search, FileCheck, Hammer, ShieldCheck] as const;
 
@@ -37,12 +38,19 @@ const ServiceDetail = () => {
 
   const ServiceIcon = svc ? getServiceIcon(svc.icon) : ShieldCheck;
 
+  const seo = svc
+    ? servicePageSeo(svc.id, svc.title, svc.description)
+    : { title, description: desc, path: `/services/${id}`, noindex: true as const };
+
   return (
     <Layout>
-      <Helmet>
-        <title>{title}</title>
-        <meta name="description" content={desc} />
-      </Helmet>
+      <SeoHead
+        title={seo.title}
+        description={seo.description || desc}
+        path={seo.path}
+        noindex={"noindex" in seo ? seo.noindex : !svc}
+        jsonLd={svc ? [buildAutoDealerSchema()] : undefined}
+      />
 
       {!svc ? (
         <ElectricalPageHero

@@ -1,15 +1,24 @@
-import { Helmet } from "react-helmet-async";
 import { Link, useSearchParams } from "react-router-dom";
 import { useMemo, useState, useEffect } from "react";
 import { Gauge, Phone, ArrowRight } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import PaginationControls from "@/components/layout/PaginationControls";
 import CTASection from "@/components/sections/CTASection";
+import { SeoHead } from "@/components/seo/SeoHead";
 import { useSiteContent } from "@/contexts/SiteContentContext";
 import { useTheme } from "@/contexts/ThemeContext";
 import { COMPANY, MINHS_IMAGES, PROJECTS_LATEST_PAGE_SIZE } from "@/data/siteData";
 import { clampPage, parsePageParam, slicePage, totalPages as totalPagesCount } from "@/lib/pagination";
 import { cn } from "@/lib/utils";
+import {
+  INVENTORY_PATH,
+  INVENTORY_SEO,
+  buildAutoDealerSchema,
+  buildBreadcrumbSchema,
+  buildInventoryItemListSchema,
+  inventoryPath,
+  vehicleImageAlt,
+} from "@/lib/seo";
 
 type SortKey = "featured" | "price-asc" | "price-desc" | "year-desc" | "mileage-asc";
 
@@ -26,7 +35,7 @@ function parseMileage(mileage: string | undefined): number {
 }
 
 const Projects = () => {
-  const { projects, company } = useSiteContent();
+  const { projects } = useSiteContent();
   const { resolveProjectImage } = useTheme();
   const [searchParams, setSearchParams] = useSearchParams();
 
@@ -94,19 +103,29 @@ const Projects = () => {
 
   return (
     <Layout>
-      <Helmet>
-        <title>Shop Inventory | {company.name}</title>
-        <meta
-          name="description"
-          content={`Shop vehicles for sale at ${company.name} — cars, SUVs, and more in Orlando.`}
-        />
-      </Helmet>
+      <SeoHead
+        title={INVENTORY_SEO.title}
+        description={INVENTORY_SEO.description}
+        path={INVENTORY_PATH}
+        noindex={page > 1}
+        jsonLd={[
+          buildAutoDealerSchema(),
+          buildInventoryItemListSchema(projects),
+          buildBreadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Inventory", path: INVENTORY_PATH },
+          ]),
+        ]}
+      />
 
       <section className="relative overflow-hidden bg-[hsl(var(--primary))] text-white">
         <img
           src={MINHS_IMAGES.projectsPageHero}
           alt=""
           aria-hidden
+          width={1920}
+          height={1080}
+          fetchPriority="high"
           className="absolute inset-0 h-full w-full object-cover opacity-25"
         />
         <div aria-hidden className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--primary))] via-[hsl(var(--primary))]/92 to-[hsl(var(--primary))]/75" />
@@ -117,10 +136,10 @@ const Projects = () => {
           <div className="mt-3 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-2xl">
               <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold uppercase tracking-wide leading-tight">
-                Shop Our Inventory
+                Used Cars for Sale
               </h1>
               <p className="mt-3 text-white/75 leading-relaxed">
-                {projects.length} vehicles in stock — browse by type, compare prices, and schedule a test drive.
+                {projects.length} used vehicles in stock at our Orlando dealership — browse by type, compare prices, and schedule a test drive.
               </p>
             </div>
             <a
@@ -193,12 +212,16 @@ const Projects = () => {
                     key={p.id}
                     className="group flex flex-col overflow-hidden bg-white ring-1 ring-slate-200 transition hover:ring-[hsl(var(--secondary))]/60"
                   >
-                    <Link to={`/projects/${p.id}`} className="relative block aspect-[16/10] overflow-hidden bg-slate-100">
+                    <Link to={inventoryPath(p.id)} className="relative block aspect-[16/10] overflow-hidden bg-slate-100">
                       <img
                         src={resolveProjectImage(p.id, p.image)}
-                        alt={p.title}
+                        alt={vehicleImageAlt(p)}
+                        width={800}
+                        height={500}
                         className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
                         loading="lazy"
+                        decoding="async"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 400px"
                       />
                       <span className="absolute top-3 left-3 bg-[hsl(var(--primary))] px-2.5 py-1 text-[10px] font-display font-bold uppercase tracking-wider text-white">
                         {p.category}
@@ -215,7 +238,7 @@ const Projects = () => {
                             {p.year} · {p.client}
                           </p>
                           <h2 className="mt-1 font-display text-lg font-bold uppercase tracking-wide text-[hsl(var(--primary))] leading-snug">
-                            <Link to={`/projects/${p.id}`} className="hover:text-[hsl(var(--secondary))] transition-colors">
+                            <Link to={inventoryPath(p.id)} className="hover:text-[hsl(var(--secondary))] transition-colors">
                               {p.title}
                             </Link>
                           </h2>
@@ -247,7 +270,7 @@ const Projects = () => {
 
                       <div className="mt-auto pt-5 flex gap-2">
                         <Link
-                          to={`/projects/${p.id}`}
+                          to={inventoryPath(p.id)}
                           className="inline-flex flex-1 items-center justify-center gap-1.5 bg-[hsl(var(--primary))] px-3 py-2.5 text-xs font-display font-bold uppercase tracking-wider text-white hover:bg-[hsl(var(--secondary))] hover:text-[hsl(var(--secondary-foreground))] transition-colors"
                         >
                           View Details
@@ -274,9 +297,11 @@ const Projects = () => {
 
       <CTASection
         title="Ready to buy or sell?"
-        subtitle="Schedule a test drive, get a cash offer, or ask about trade-ins and financing."
-        primaryLabel="SCHEDULE VISIT"
-        secondaryLabel="CALL NOW"
+        subtitle="Schedule a test drive, get a cash offer, or ask about trade-ins and auto financing in Orlando."
+        primaryLabel="APPLY FOR FINANCING"
+        primaryTo="/financing/apply"
+        secondaryLabel="CONTACT US"
+        secondaryTo="/contact"
       />
     </Layout>
   );

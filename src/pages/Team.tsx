@@ -1,9 +1,10 @@
-import { Helmet } from "react-helmet-async";
+import { SeoHead } from "@/components/seo/SeoHead";
 import { Linkedin, Twitter } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import CTASection from "@/components/sections/CTASection";
 import { useSiteContent } from "@/contexts/SiteContentContext";
 import { useTheme } from "@/contexts/ThemeContext";
+import { staticPageSeo } from "@/lib/seo";
 
 const Team = () => {
   const { team: members, sectionVisibility, company: COMPANY } = useSiteContent();
@@ -11,13 +12,11 @@ const Team = () => {
 
   return (
     <Layout>
-      <Helmet>
-        <title>Our Team | {COMPANY.name}</title>
-        <meta
-          name="description"
-          content={`Meet the sales and purchase specialists behind ${COMPANY.name} — helping Orlando drivers buy and sell vehicles with confidence.`}
-        />
-      </Helmet>
+      <SeoHead
+        title={staticPageSeo()["/team"].title}
+        description={staticPageSeo()["/team"].description}
+        path="/team"
+      />
 
       <section className="bg-[hsl(var(--primary))] text-white py-14 lg:py-20 relative overflow-hidden">
         <div

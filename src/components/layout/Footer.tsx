@@ -156,6 +156,9 @@ const Footer = () => {
                   </Link>
                 </li>
               )}
+              {COMPANY.hours ? (
+                <li className="text-white/65 leading-relaxed">{COMPANY.hours}</li>
+              ) : null}
               <li className="flex items-center gap-2 text-[hsl(var(--secondary))] font-display font-bold uppercase text-xs tracking-wider">
                 <ShieldCheck className="h-4 w-4 shrink-0" />
                 <span>{SITE_TOP.line || "Orlando Buy & Sell Vehicles"}</span>

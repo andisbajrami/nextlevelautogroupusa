@@ -1,5 +1,5 @@
 import { FormEvent, useMemo, useState } from "react";
-import { Helmet } from "react-helmet-async";
+import { SeoHead } from "@/components/seo/SeoHead";
 import { Link, useSearchParams } from "react-router-dom";
 import { ArrowRight, Lock, ShieldCheck } from "lucide-react";
 import Layout from "@/components/layout/Layout";
@@ -10,6 +10,7 @@ import { MINHS_IMAGES } from "@/data/siteData";
 import { submitSiteForm, SubmitFormError } from "@/lib/submitForm";
 import FormSubmitHiddenFields from "@/components/forms/FormSubmitHiddenFields";
 import { toast } from "sonner";
+import { buildAutoDealerSchema, staticPageSeo } from "@/lib/seo";
 
 const inputCls =
   "w-full rounded-md bg-white border border-slate-200 text-[hsl(var(--primary))] placeholder:text-slate-400 px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[hsl(var(--secondary))]";
@@ -54,13 +55,12 @@ const FinancingApply = () => {
 
   return (
     <Layout>
-      <Helmet>
-        <title>Apply for Financing | {COMPANY.name}</title>
-        <meta
-          name="description"
-          content="Apply for vehicle financing with NextLevel Auto Group USA. Submit your info and the vehicle you're interested in — we'll call you with bank approval."
-        />
-      </Helmet>
+      <SeoHead
+        title={staticPageSeo()["/financing/apply"].title}
+        description={staticPageSeo()["/financing/apply"].description}
+        path="/financing/apply"
+        jsonLd={[buildAutoDealerSchema()]}
+      />
 
       <ElectricalPageHero
         eyebrow="Financing"
@@ -70,7 +70,7 @@ const FinancingApply = () => {
           { label: "Apply for Financing" },
         ]}
         title="Apply for Financing"
-        body="Fill out the application with your information and the vehicle you're interested in. We submit it for bank approval and call you with the result."
+        body="Fill out the application with your information and the vehicle you're interested in. We submit it for bank approval and call you with the result. You can also browse current used cars in Orlando before you apply."
         image={MINHS_IMAGES.financing}
         imageAlt="Apply for vehicle financing"
       />
@@ -87,7 +87,11 @@ const FinancingApply = () => {
                   Financing Application
                 </h2>
                 <p className="mt-1 text-sm text-slate-600">
-                  Required for bank review. After you submit, our team receives your application and contacts you with approval details.
+                  Required for bank review. After you submit, our team receives your application and contacts you with approval details. Prefer to choose a car first?{" "}
+                  <Link to="/inventory" className="font-semibold text-[hsl(var(--secondary))] hover:underline">
+                    Browse used cars for sale
+                  </Link>
+                  .
                 </p>
               </div>
             </div>

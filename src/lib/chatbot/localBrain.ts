@@ -119,12 +119,12 @@ export function localReply(question: string, data: ChatbotSiteData): ChatReply {
   }
 
   // Projects / portfolio ----------------------------------------------------
-  if (containsAny(q, ["project", "projects", "portfolio", "case", "work", "built", "delivered"])) {
-    const top = data.projects.slice(0, 3).map(p => `• ${p.title} (${p.location || p.category})`).join("\n");
+  if (containsAny(q, ["inventory", "vehicle", "vehicles", "car", "cars", "suv", "truck", "for sale", "project", "projects", "portfolio"])) {
+    const top = data.projects.slice(0, 5).map(p => `• ${p.title}${p.value ? ` — ${p.value}` : ""}`).join("\n");
     return {
-      message: `A few recent projects:\n${top || "Portfolio is coming soon."}\n\nWant the full portfolio?`,
-      action: { id: "navigate", args: { path: "/projects" } },
-      suggestions: ["Open portfolio", "Talk to the team", "Show pricing"],
+      message: `Vehicles currently listed:\n${top || "Check the inventory page for the latest vehicles."}\n\nWant the full inventory?`,
+      action: { id: "navigate", args: { path: "/inventory" } },
+      suggestions: ["Open inventory", "Apply for financing", "Contact us"],
     };
   }
 

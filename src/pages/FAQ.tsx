@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Helmet } from "react-helmet-async";
+import { SeoHead } from "@/components/seo/SeoHead";
 import { Link } from "react-router-dom";
 import Layout from "@/components/layout/Layout";
 import { MINHS_IMAGES } from "@/data/siteData";
@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { FAQ_BY_CATEGORY, FAQ_TABS, FAQ_ITEMS as DEFAULT_FAQ_ITEMS, type FaqTabId } from "@/data/siteData";
 import { useSiteContent } from "@/contexts/SiteContentContext";
 import { cn } from "@/lib/utils";
+import { buildAutoDealerSchema, buildFaqSchema, staticPageSeo } from "@/lib/seo";
 
 const FAQ = () => {
   const { sectionVisibility, company: COMPANY, faqItems } = useSiteContent();
@@ -23,13 +24,12 @@ const FAQ = () => {
 
   return (
     <Layout>
-      <Helmet>
-        <title>FAQ | {COMPANY.name}</title>
-        <meta
-          name="description"
-          content={`Answers about ${COMPANY.name} — buying, selling, trade-ins, estimates, scheduling, and services in Orlando.`}
-        />
-      </Helmet>
+      <SeoHead
+        title={staticPageSeo()["/faq"].title}
+        description={staticPageSeo()["/faq"].description}
+        path="/faq"
+        jsonLd={[buildAutoDealerSchema(), buildFaqSchema(faqItems)].filter(Boolean) as Record<string, unknown>[]}
+      />
 
       <ElectricalPageHero
         eyebrow="FAQ"

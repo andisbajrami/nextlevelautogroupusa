@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet-async";
+import { SeoHead } from "@/components/seo/SeoHead";
 import { useState, FormEvent } from "react";
 import { Phone, Mail, MapPin, Clock, ArrowRight, ShieldCheck, Award, Users } from "lucide-react";
 import Layout from "@/components/layout/Layout";
@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 import { submitSiteForm, SubmitFormError } from "@/lib/submitForm";
 import FormSubmitHiddenFields from "@/components/forms/FormSubmitHiddenFields";
+import { buildAutoDealerSchema, staticPageSeo } from "@/lib/seo";
 
 const trustIconMap = { ShieldCheck, Award, Users, Clock } as const;
 
@@ -42,10 +43,12 @@ const Contact = () => {
 
   return (
     <Layout>
-      <Helmet>
-        <title>Contact Us | {COMPANY.name}</title>
-        <meta name="description" content={`Contact ${COMPANY.name} to buy, sell, or schedule a visit in Orlando. Call 689-252-4265.`} />
-      </Helmet>
+      <SeoHead
+        title={staticPageSeo()["/contact"].title}
+        description={staticPageSeo()["/contact"].description}
+        path="/contact"
+        jsonLd={[buildAutoDealerSchema()]}
+      />
 
       <ElectricalPageHero
         eyebrow="Contact"

@@ -27,7 +27,7 @@ const SignatureProjectsSection = () => {
             </h2>
           </div>
           <Link
-            to="/projects"
+            to="/inventory"
             className="inline-flex items-center gap-1.5 text-sm font-bold uppercase tracking-wider text-[hsl(var(--primary))] hover:text-[hsl(var(--secondary))] transition-colors font-display"
           >
             View Full Inventory
@@ -47,16 +47,19 @@ const SignatureProjectsSection = () => {
             return (
               <Link
                 key={project.id}
-                to={`/projects/${project.id}`}
+                to={`/inventory/${project.id}`}
                 className="group block break-inside-avoid"
               >
                 <article className="relative overflow-hidden rounded-sm bg-[hsl(var(--minhs-surface))]">
                   <div className={cn("relative w-full overflow-hidden", heightClass)}>
                     <img
                       src={img}
-                      alt={project.title}
+                      alt={`${project.title} for sale in Orlando, FL`}
                       className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                       loading="lazy"
+                      decoding="async"
+                      width={800}
+                      height={600}
                     />
                     <div
                       aria-hidden

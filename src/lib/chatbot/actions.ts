@@ -22,7 +22,7 @@ export interface ChatAction {
 const SECTION_TO_ROUTE: Record<string, string> = {
   hero: "/",
   services: "/services",
-  projects: "/projects",
+  projects: "/inventory",
   pricing: "/contact",
   testimonials: "/",
   team: "/team",

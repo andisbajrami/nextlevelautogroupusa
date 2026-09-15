@@ -1,6 +1,7 @@
-import { Helmet } from "react-helmet-async";
+import { SeoHead } from "@/components/seo/SeoHead";
 import Layout from "@/components/layout/Layout";
 import { useSiteContent } from "@/contexts/SiteContentContext";
+import { staticPageSeo } from "@/lib/seo";
 
 const Privacy = () => {
   const { company: COMPANY } = useSiteContent();
@@ -8,13 +9,11 @@ const Privacy = () => {
 
   return (
     <Layout>
-      <Helmet>
-        <title>Privacy Policy | {COMPANY.name}</title>
-        <meta
-          name="description"
-          content={`Privacy Policy for ${COMPANY.name} — how we collect, use, and protect your information.`}
-        />
-      </Helmet>
+      <SeoHead
+        title={staticPageSeo()["/privacy"].title}
+        description={staticPageSeo()["/privacy"].description}
+        path="/privacy"
+      />
 
       <section className="bg-[hsl(var(--primary))] text-white py-14 lg:py-20">
         <div className="max-w-3xl mx-auto px-4 sm:px-6">

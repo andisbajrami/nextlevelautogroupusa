@@ -1,10 +1,11 @@
-import { Helmet } from "react-helmet-async";
+import { SeoHead } from "@/components/seo/SeoHead";
 import { useParams, Link } from "react-router-dom";
 import Layout from "@/components/layout/Layout";
 import ElectricalPageHero from "@/components/sections/ElectricalPageHero";
 import { BLOG_POSTS } from "@/data/siteData";
 import { useSiteContent } from "@/contexts/SiteContentContext";
 import { Calendar, User, ArrowLeft } from "lucide-react";
+import { SITE_NAME_SHORT } from "@/lib/seo";
 
 const BlogPost = () => {
   const { id } = useParams();
@@ -29,12 +30,14 @@ const BlogPost = () => {
 
   return (
     <Layout>
-      <Helmet>
-        <title>{post.title} | {COMPANY.name}</title>
-        <meta name="description" content={post.excerpt} />
-        <meta property="og:title" content={post.title} />
-        <meta property="og:description" content={post.excerpt} />
-      </Helmet>
+      <SeoHead
+        title={`${post.title} | ${SITE_NAME_SHORT}`}
+        description={post.excerpt}
+        path={`/blog/${post.id}`}
+        image={post.image}
+        imageAlt={post.title}
+        type="article"
+      />
 
       <ElectricalPageHero
         eyebrow={post.category}

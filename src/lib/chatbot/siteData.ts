@@ -128,7 +128,7 @@ export const AVAILABLE_ACTIONS: ChatbotSiteData["actions"] = [
     description:
       "Route the visitor to a different page of the website. Use this when the requested content lives on another page.",
     args: {
-      path: "Any internal path from the `pages` array, e.g. /services, /contact, /projects",
+      path: "Any internal path from the `pages` array, e.g. /services, /contact, /inventory",
     },
   },
   {
@@ -231,7 +231,7 @@ export function buildChatbotSiteData(state: BuilderInput): ChatbotSiteData {
     client: str(p.client),
     value: str(p.value),
     description: str(p.description),
-    detailPath: `/projects/${str(p.id)}`,
+    detailPath: `/inventory/${str(p.id)}`,
   }));
 
   const team = arr<LooseRecord>(state.team).map(m => ({

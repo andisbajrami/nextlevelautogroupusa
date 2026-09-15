@@ -44,6 +44,9 @@ const ElectricalPageHero = ({
             src={image}
             alt={imageAlt || ""}
             aria-hidden={!imageAlt}
+            width={1920}
+            height={1080}
+            decoding="async"
             className="absolute inset-0 h-full w-full object-cover opacity-40"
           />
           <div

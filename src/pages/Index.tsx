@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet-async";
+import { SeoHead } from "@/components/seo/SeoHead";
 import Layout from "@/components/layout/Layout";
 import HomeHero from "@/components/home/HomeHero";
 import TrustLicenseBar from "@/components/home/TrustLicenseBar";
@@ -18,18 +18,20 @@ import LeadContactSection from "@/components/home/LeadContactSection";
 import EmergencyFinancingBand from "@/components/home/EmergencyFinancingBand";
 import Reveal from "@/components/animations/Reveal";
 import { useSiteContent } from "@/contexts/SiteContentContext";
+import { HOME_SEO, buildAutoDealerSchema, buildFaqSchema, buildWebSiteSchema } from "@/lib/seo";
 
 const Index = () => {
-  const { sectionVisibility, company: COMPANY } = useSiteContent();
+  const { sectionVisibility, faqItems } = useSiteContent();
 
   return (
     <Layout>
-      <Helmet>
-        <title>{COMPANY.name} | Buy & Sell Vehicles in Orlando</title>
-        <meta name="description" content={`${COMPANY.name}. ${COMPANY.tagline}`} />
-        <meta property="og:title" content={`${COMPANY.name} | Buy & Sell Vehicles in Orlando`} />
-        <meta property="og:description" content={COMPANY.tagline} />
-      </Helmet>
+      <SeoHead
+        title={HOME_SEO.title}
+        description={HOME_SEO.description}
+        path="/"
+        imageAlt="Used cars and vehicles at NextLevel Auto Group USA in Orlando, FL"
+        jsonLd={[buildAutoDealerSchema(), buildWebSiteSchema(), buildFaqSchema(faqItems)].filter(Boolean) as Record<string, unknown>[]}
+      />
 
       {sectionVisibility["home.hero"] && (
         <Reveal direction="zoom" duration={700}>

@@ -125,7 +125,7 @@ export const HOME_HERO = {
   body: "Browse quality vehicles for sale, get a fair offer when you’re ready to sell, and schedule a visit with our AI assistant — NextLevel Auto Group USA puts Orlando drivers first.",
   image: MINHS_IMAGES.heroLuxury,
   eyebrow: "NEXTLEVEL AUTO GROUP · ORLANDO",
-  primaryCta: { to: "/projects", label: "View Inventory" },
+  primaryCta: { to: "/inventory", label: "View Inventory" },
   ratingCard: {
     score: "5.0",
     avatars: [
@@ -147,9 +147,9 @@ export const HOME_HERO = {
   secondaryCta: { to: "tel:6892524265", label: "Call Now" },
   featuredTitle: "Your Next Vehicle Starts Here",
   headlineAfter: "",
-  headlineBefore: "Buy & Sell",
-  featuredEyebrow: "ORLANDO · QUALITY VEHICLES",
-  headlineHighlight: "Vehicles With Confidence",
+  headlineBefore: "Used Cars",
+  featuredEyebrow: "USED CARS · ORLANDO, FL",
+  headlineHighlight: "in Orlando, FL",
 };
 
 export const TRUST_BAR_ITEMS = [
@@ -213,7 +213,7 @@ export const SERVICES_RIBBON = [
 export const CAPABILITIES = [
   {
     id: "quality-inventory",
-    to: "/projects",
+    to: "/inventory",
     icon: "Car",
     title: "Quality Inventory",
     description: "Hand-selected vehicles priced for Orlando buyers.",
@@ -319,7 +319,7 @@ export const WARRANTY_SECTION = {
   headline: "Quality Vehicles.",
   highlight: "Honest Deals.",
   body: "Whether you’re buying or selling, we explain condition, pricing, and options clearly — so every decision feels informed. Browse inventory, request an estimate, or schedule a visit with our AI assistant.",
-  cta: { label: "Browse Inventory", to: "/projects" },
+  cta: { label: "Browse Inventory", to: "/inventory" },
   image: MINHS_IMAGES.warrantyHero,
   bullets: [
     "Hand-selected inventory",
@@ -1310,12 +1310,32 @@ export const FAQ_ITEMS = [
     answer:
       "Orlando and surrounding areas across Central Florida.",
   },
+  {
+    question: "What vehicles do you currently have available?",
+    answer:
+      "Inventory changes as vehicles sell. Browse current used cars, SUVs, and other vehicles on our Inventory page, or visit us at 2120 S Orange Blossom Trl in Orlando.",
+  },
+  {
+    question: "Do you offer financing?",
+    answer:
+      "Yes. Complete the financing application with your contact details, employment information, identity documentation, and the vehicle you are interested in. We submit it for bank approval and call you with the result.",
+  },
+  {
+    question: "What information do I need to apply for financing?",
+    answer:
+      "The application asks for your name, email, phone, address, identity documentation, employer, work phone, monthly income, job tenure, and the vehicle you want to finance.",
+  },
+  {
+    question: "How can I contact the dealership?",
+    answer:
+      "Call 689-252-4265, email info@nextlevelautogroupusa.com, use the contact form, or chat with our AI assistant. We are at 2120 S Orange Blossom Trl, Orlando, FL 32805.",
+  },
 ];
 
 export const NAV_LINKS = [
   { path: "/", label: "Home" },
   { path: "/services", label: "Services" },
-  { path: "/projects", label: "Inventory" },
+  { path: "/inventory", label: "Inventory" },
   { path: "/financing/apply", label: "Financing" },
   { path: "/about", label: "About" },
   { path: "/reviews", label: "Reviews" },
@@ -1329,16 +1349,17 @@ export const FOOTER_SERVICE_LINKS = [
   { to: "/services/we-buy-cars", label: "We Buy Cars" },
   { to: "/services/trade-ins", label: "Trade-Ins" },
   { to: "/financing/apply", label: "Apply for Financing" },
-  { to: "/projects", label: "Inventory" },
+  { to: "/inventory", label: "Used Cars for Sale" },
 ];
 
 export const FOOTER_COMPANY_LINKS = [
   { to: "/", label: "Home" },
   { to: "/services", label: "Services" },
-  { to: "/projects", label: "Inventory" },
+  { to: "/inventory", label: "Used Cars for Sale" },
   { to: "/about", label: "About Us" },
   { to: "/reviews", label: "Reviews" },
   { to: "/financing/apply", label: "Financing" },
+  { to: "/faq", label: "FAQ" },
   { to: "/contact", label: "Contact Us" },
 ];
 
@@ -1459,8 +1480,9 @@ export const FAQ_BY_CATEGORY: Record<FaqTabId, { question: string; answer: strin
       answer: "Yes — share vehicle details via form, phone, or AI chat and we’ll discuss a fair offer.",
     },
     {
-      question: "Do you help with payment estimates?",
-      answer: "We provide financing guidance and budget estimates so you can plan confidently.",
+      question: "Do you offer financing?",
+      answer:
+        "Yes. Apply online with your information and the vehicle you want. We submit the application for bank approval and call you with the result.",
     },
   ],
   appointments: [
@@ -1621,7 +1643,7 @@ export const ABOUT_HERO_BADGES = [
 export const CTA_SECTION = {
   headline: "Ready To Buy Or Sell?",
   subheadline: "Browse inventory, get a cash offer, or schedule a visit — Mon–Sat hours.",
-  primaryCta: { label: "View Inventory", to: "/projects" },
+  primaryCta: { label: "View Inventory", to: "/inventory" },
   secondaryCta: { label: "Call 689-252-4265", to: "tel:6892524265" },
 };
 

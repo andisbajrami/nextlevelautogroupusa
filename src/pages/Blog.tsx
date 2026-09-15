@@ -1,5 +1,5 @@
 import { useMemo, useState, useEffect, useRef } from "react";
-import { Helmet } from "react-helmet-async";
+import { SeoHead } from "@/components/seo/SeoHead";
 import { Link, useSearchParams } from "react-router-dom";
 import Layout from "@/components/layout/Layout";
 import ElectricalPageHero from "@/components/sections/ElectricalPageHero";
@@ -15,6 +15,7 @@ import { Input } from "@/components/ui/input";
 import { ArrowRight, Search } from "lucide-react";
 import { clampPage, parsePageParam, slicePage, totalPages as totalPagesCount } from "@/lib/pagination";
 import { useSiteContent } from "@/contexts/SiteContentContext";
+import { staticPageSeo } from "@/lib/seo";
 
 const Blog = () => {
   const { sectionVisibility, company: COMPANY, blogTags: BLOG_TAGS } = useSiteContent();
@@ -71,13 +72,12 @@ const Blog = () => {
 
   return (
     <Layout>
-      <Helmet>
-        <title>{docTitle}</title>
-        <meta
-          name="description"
-          content={`Buying, selling, and trade-in tips from the ${COMPANY.name} team in Orlando.`}
-        />
-      </Helmet>
+      <SeoHead
+        title={docTitle}
+        description={staticPageSeo()["/blog"].description}
+        path="/blog"
+        noindex={listPage > 1}
+      />
 
       <ElectricalPageHero
         eyebrow="Dealership Blog"

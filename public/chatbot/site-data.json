@@ -21,7 +21,7 @@
   "pages": [
     { "id": "home", "label": "Home", "path": "/", "description": "Orlando buy & sell vehicles homepage" },
     { "id": "services", "label": "Services", "path": "/services", "description": "Vehicle sales, we buy cars, trade-ins, financing" },
-    { "id": "projects", "label": "Inventory", "path": "/projects", "description": "Vehicles for sale" },
+    { "id": "projects", "label": "Inventory", "path": "/inventory", "description": "Used vehicles for sale in Orlando" },
     { "id": "about", "label": "About", "path": "/about", "description": "Our story and values" },
     { "id": "reviews", "label": "Reviews", "path": "/reviews", "description": "Customer reviews" },
     { "id": "contact", "label": "Contact", "path": "/contact", "description": "Schedule a visit" },
@@ -76,6 +76,6 @@
   },
   "actions": [
     { "id": "open_contact_form", "description": "Open the contact form." },
-    { "id": "navigate", "description": "Navigate to an internal path.", "args": { "path": "/projects" } }
+    { "id": "navigate", "description": "Navigate to an internal path.", "args": { "path": "/inventory" } }
   ]
 }

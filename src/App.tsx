@@ -1,6 +1,6 @@
 import { lazy, Suspense } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes, useLocation, useParams } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
@@ -37,6 +37,13 @@ const RouteLoading = () => (
   </div>
 );
 
+const RedirectLegacyInventory = () => {
+  const { id } = useParams();
+  const location = useLocation();
+  const target = id ? `/inventory/${id}${location.search}` : `/inventory${location.search}`;
+  return <Navigate to={target} replace />;
+};
+
 const AnimatedRoutes = () => {
   const location = useLocation();
   const routeKey = `${location.pathname}${location.search}`;
@@ -48,8 +55,10 @@ const AnimatedRoutes = () => {
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
         <Route path="/services/:id" element={<ServiceDetail />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/projects/:id" element={<ProjectDetail />} />
+        <Route path="/inventory" element={<Projects />} />
+        <Route path="/inventory/:id" element={<ProjectDetail />} />
+        <Route path="/projects" element={<RedirectLegacyInventory />} />
+        <Route path="/projects/:id" element={<RedirectLegacyInventory />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:id" element={<BlogPost />} />
         <Route path="/team" element={<Team />} />

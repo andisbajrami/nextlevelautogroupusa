@@ -115,7 +115,11 @@ const HomeHero = () => {
         <div className="relative min-h-[280px] sm:min-h-[360px] lg:min-h-full">
           <img
             src={heroImage}
-            alt={`${COMPANY.name} vehicle inventory`}
+            alt={`Used vehicles at ${COMPANY.name} in Orlando, FL`}
+            width={1600}
+            height={1200}
+            fetchPriority="high"
+            decoding="async"
             className="absolute inset-0 h-full w-full object-cover minhs-clip-diagonal"
           />
           <div

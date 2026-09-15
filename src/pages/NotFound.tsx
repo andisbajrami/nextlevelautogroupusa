@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet-async";
+import { SeoHead } from "@/components/seo/SeoHead";
 import { Link, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import { ArrowRight, Home, Phone, Wrench, CircleDot, Cpu } from "lucide-react";
@@ -14,7 +14,7 @@ const QUICK_LINKS = [
   },
   {
     label: "Inventory",
-    to: "/projects",
+    to: "/inventory",
     description: "Browse vehicles for sale on our Orlando lot.",
   },
   {
@@ -35,14 +35,12 @@ const NotFound = () => {
 
   return (
     <Layout>
-      <Helmet>
-        <title>Page not found | {COMPANY.name}</title>
-        <meta name="robots" content="noindex, nofollow" />
-        <meta
-          name="description"
-          content={`This page doesn’t exist. Return to ${COMPANY.name} to buy or sell vehicles in Orlando.`}
-        />
-      </Helmet>
+      <SeoHead
+        title={`Page not found | ${COMPANY.name}`}
+        description={`This page doesn’t exist. Return to ${COMPANY.name} to browse used cars for sale in Orlando.`}
+        path={location.pathname}
+        noindex
+      />
 
       <section className="relative overflow-hidden bg-[hsl(var(--primary))] text-white">
         <div

@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet-async";
+import { SeoHead } from "@/components/seo/SeoHead";
 import { Link } from "react-router-dom";
 import { MapPin, Phone, ArrowRight } from "lucide-react";
 import Layout from "@/components/layout/Layout";
@@ -8,6 +8,7 @@ import CTASection from "@/components/sections/CTASection";
 import { useSiteContent } from "@/contexts/SiteContentContext";
 import { SERVICE_AREAS } from "@/data/siteData";
 import { Button } from "@/components/ui/button";
+import { buildAutoDealerSchema, staticPageSeo } from "@/lib/seo";
 
 const ServiceAreas = () => {
   const { company: COMPANY, mapEmbedUrl } = useSiteContent();
@@ -15,13 +16,12 @@ const ServiceAreas = () => {
 
   return (
     <Layout>
-      <Helmet>
-        <title>Service Areas | {COMPANY.name}</title>
-        <meta
-          name="description"
-          content={`${COMPANY.name} serves Orlando and surrounding areas — buy and sell vehicles with confidence.`}
-        />
-      </Helmet>
+      <SeoHead
+        title={staticPageSeo()["/service-areas"].title}
+        description={staticPageSeo()["/service-areas"].description}
+        path="/service-areas"
+        jsonLd={[buildAutoDealerSchema()]}
+      />
 
       <ElectricalPageHero
         eyebrow="Coverage"

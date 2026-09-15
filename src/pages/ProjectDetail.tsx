@@ -1,14 +1,22 @@
-import { useEffect, useState } from "react";
-import { Helmet } from "react-helmet-async";
-import { useParams, Link } from "react-router-dom";
-import { MapPin, Calendar, User, ArrowLeft, Gauge, Tag, X, ChevronLeft, ChevronRight } from "lucide-react";
+import { useEffect, useMemo, useState } from "react";
+import { Link, useParams } from "react-router-dom";
+import { MapPin, Calendar, User, ArrowLeft, Gauge, Tag, X, ChevronLeft, ChevronRight, Phone } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import CTASection from "@/components/sections/CTASection";
+import { SeoHead } from "@/components/seo/SeoHead";
 import { useSiteContent } from "@/contexts/SiteContentContext";
 import { useTheme } from "@/contexts/ThemeContext";
+import {
+  INVENTORY_PATH,
+  inventoryPath,
+  vehicleDocumentTitle,
+  vehicleImageAlt,
+  vehicleMetaDescription,
+  vehiclePageSeo,
+} from "@/lib/seo";
 
 const ProjectDetail = () => {
-  const { projects, company: COMPANY } = useSiteContent();
+  const { projects, company: COMPANY, services } = useSiteContent();
   const { resolveProjectImage } = useTheme();
   const { id } = useParams();
   const project = projects.find(p => p.id === id);
@@ -38,12 +46,25 @@ const ProjectDetail = () => {
     };
   }, [lightboxIndex, gallery.length]);
 
+  const related = useMemo(() => {
+    if (!project) return [];
+    return projects
+      .filter(p => p.id !== project.id && p.category === project.category)
+      .slice(0, 3);
+  }, [project, projects]);
+
   if (!project) {
     return (
       <Layout>
+        <SeoHead
+          title={`Vehicle not found | ${COMPANY.name}`}
+          description="That vehicle is no longer listed. Browse current used cars for sale in Orlando, FL."
+          path={inventoryPath(id)}
+          noindex
+        />
         <div className="py-20 max-w-7xl mx-auto px-4 sm:px-6 text-center">
           <h1 className="font-display text-2xl font-bold text-[hsl(var(--primary))]">Vehicle not found</h1>
-          <Link to="/projects" className="text-[hsl(var(--secondary))] hover:underline mt-4 inline-block">
+          <Link to={INVENTORY_PATH} className="text-[hsl(var(--secondary))] hover:underline mt-4 inline-block">
             Back to Inventory
           </Link>
         </div>
@@ -57,13 +78,21 @@ const ProjectDetail = () => {
   const closeLightbox = () => setLightboxIndex(null);
   const showPrev = () => setLightboxIndex(i => (i === null ? i : (i - 1 + gallery.length) % gallery.length));
   const showNext = () => setLightboxIndex(i => (i === null ? i : (i + 1) % gallery.length));
+  const seo = vehiclePageSeo(project);
+  const relatedService = services.find(s => s.id === project.serviceId);
+  const phoneHref = `tel:${COMPANY.phone.replace(/\D/g, "")}`;
+  const primaryImage = resolveProjectImage(project.id, project.image);
 
   return (
     <Layout>
-      <Helmet>
-        <title>{project.title} | {COMPANY.name}</title>
-        <meta name="description" content={project.description} />
-      </Helmet>
+      <SeoHead
+        title={vehicleDocumentTitle(project)}
+        description={vehicleMetaDescription(project)}
+        path={seo.path}
+        image={project.image}
+        imageAlt={vehicleImageAlt(project)}
+        jsonLd={seo.jsonLd}
+      />
 
       <section className="relative h-[380px] md:h-[480px] overflow-hidden">
         <button
@@ -73,15 +102,30 @@ const ProjectDetail = () => {
           aria-label={`View ${project.title} photos`}
         >
           <img
-            src={resolveProjectImage(project.id, project.image)}
-            alt={project.title}
+            src={primaryImage}
+            alt={vehicleImageAlt(project)}
+            width={1600}
+            height={900}
+            fetchPriority="high"
+            decoding="async"
             className="absolute inset-0 h-full w-full object-cover"
           />
         </button>
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[hsl(var(--primary))]/95 via-[hsl(var(--primary))]/50 to-[hsl(var(--primary))]/30" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 h-full flex flex-col justify-end pb-10 text-white">
+          <nav className="mb-4 flex flex-wrap items-center gap-1.5 text-xs font-display uppercase tracking-wider text-white/80">
+            <Link to="/" className="hover:text-[hsl(var(--secondary))]">
+              Home
+            </Link>
+            <span>/</span>
+            <Link to={INVENTORY_PATH} className="hover:text-[hsl(var(--secondary))]">
+              Inventory
+            </Link>
+            <span>/</span>
+            <span className="text-white">{project.title}</span>
+          </nav>
           <Link
-            to="/projects"
+            to={INVENTORY_PATH}
             className="inline-flex items-center gap-1 text-sm text-white/80 hover:text-[hsl(var(--secondary))] mb-4 w-fit"
           >
             <ArrowLeft className="h-4 w-4" />
@@ -141,12 +185,50 @@ const ProjectDetail = () => {
                     >
                       <img
                         src={resolveProjectImage(project.id, src)}
-                        alt={`${project.title} — photo ${idx + 1}`}
+                        alt={vehicleImageAlt(project, idx)}
+                        width={1600}
+                        height={1200}
                         className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
                         loading="lazy"
+                        decoding="async"
                       />
                       <span className="pointer-events-none absolute inset-0 bg-black/0 transition-colors group-hover:bg-black/15" />
                     </button>
+                  ))}
+                </div>
+              </div>
+            ) : null}
+
+            {related.length > 0 ? (
+              <div className="mt-12">
+                <h2 className="font-display text-2xl font-bold uppercase tracking-wide text-[hsl(var(--primary))] mb-4">
+                  Similar Vehicles
+                </h2>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  {related.map(item => (
+                    <Link
+                      key={item.id}
+                      to={inventoryPath(item.id)}
+                      className="group overflow-hidden rounded-lg bg-white ring-1 ring-slate-200 hover:ring-[hsl(var(--secondary))]/60 transition"
+                    >
+                      <img
+                        src={resolveProjectImage(item.id, item.image)}
+                        alt={vehicleImageAlt(item)}
+                        width={800}
+                        height={500}
+                        loading="lazy"
+                        decoding="async"
+                        className="h-36 w-full object-cover"
+                      />
+                      <div className="p-3">
+                        <p className="font-display text-sm font-bold uppercase tracking-wide text-[hsl(var(--primary))] group-hover:text-[hsl(var(--secondary))]">
+                          {item.title}
+                        </p>
+                        {item.value ? (
+                          <p className="mt-1 text-sm font-semibold text-[hsl(var(--secondary))]">{item.value}</p>
+                        ) : null}
+                      </div>
+                    </Link>
                   ))}
                 </div>
               </div>
@@ -157,12 +239,12 @@ const ProjectDetail = () => {
             <h3 className="font-display font-bold uppercase tracking-wide text-[hsl(var(--secondary))]">
               Vehicle Specs
             </h3>
-            {"serviceId" in project && project.serviceId ? (
+            {relatedService ? (
               <Link
-                to={`/services/${project.serviceId}`}
+                to={`/services/${relatedService.id}`}
                 className="inline-flex items-center gap-2 text-sm font-semibold text-[hsl(var(--secondary))] hover:underline"
               >
-                View related service →
+                {relatedService.title} →
               </Link>
             ) : null}
             {[
@@ -180,6 +262,27 @@ const ProjectDetail = () => {
                 </div>
               </div>
             ))}
+            <div className="pt-2 space-y-2">
+              <Link
+                to={`/financing/apply?vehicle=${project.id}`}
+                className="flex items-center justify-center rounded-md bg-[hsl(var(--secondary))] px-4 py-2.5 text-xs font-display font-bold uppercase tracking-wider text-[hsl(var(--secondary-foreground))] hover:brightness-110"
+              >
+                Apply for Financing
+              </Link>
+              <Link
+                to="/contact"
+                className="flex items-center justify-center rounded-md border border-white/20 px-4 py-2.5 text-xs font-display font-bold uppercase tracking-wider text-white hover:bg-white/10"
+              >
+                Contact the Dealership
+              </Link>
+              <a
+                href={phoneHref}
+                className="flex items-center justify-center gap-2 text-sm font-semibold text-[hsl(var(--secondary))] hover:underline"
+              >
+                <Phone className="h-4 w-4" />
+                Call {COMPANY.phone}
+              </a>
+            </div>
           </aside>
         </div>
       </section>
@@ -243,7 +346,7 @@ const ProjectDetail = () => {
           >
             <img
               src={resolveProjectImage(project.id, gallery[lightboxIndex])}
-              alt={`${project.title} — photo ${lightboxIndex + 1}`}
+              alt={vehicleImageAlt(project, lightboxIndex)}
               className="max-h-[85vh] w-auto max-w-full object-contain"
             />
             <figcaption className="mt-3 text-sm text-white/70">

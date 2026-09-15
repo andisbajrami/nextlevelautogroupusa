@@ -1,5 +1,5 @@
 import { FormEvent, useRef, useState } from "react";
-import { Helmet } from "react-helmet-async";
+import { SeoHead } from "@/components/seo/SeoHead";
 import { Link } from "react-router-dom";
 import { ArrowRight, Briefcase, Users, Heart } from "lucide-react";
 import Layout from "@/components/layout/Layout";
@@ -9,6 +9,7 @@ import { useSiteContent } from "@/contexts/SiteContentContext";
 import { submitSiteForm, SubmitFormError } from "@/lib/submitForm";
 import FormSubmitHiddenFields from "@/components/forms/FormSubmitHiddenFields";
 import { toast } from "sonner";
+import { staticPageSeo } from "@/lib/seo";
 
 const ROLES = [
   {
@@ -60,13 +61,11 @@ const Careers = () => {
 
   return (
     <Layout>
-      <Helmet>
-        <title>Careers | {COMPANY.name}</title>
-        <meta
-          name="description"
-          content={`Join ${COMPANY.name} in Orlando — sales, purchase, and customer care roles for a growing buy & sell dealership.`}
-        />
-      </Helmet>
+      <SeoHead
+        title={staticPageSeo()["/careers"].title}
+        description={staticPageSeo()["/careers"].description}
+        path="/careers"
+      />
 
       <section className="bg-[hsl(var(--primary))] text-white py-14 lg:py-20 relative overflow-hidden">
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6">

@@ -1,6 +1,7 @@
-import { Helmet } from "react-helmet-async";
+import { SeoHead } from "@/components/seo/SeoHead";
 import Layout from "@/components/layout/Layout";
 import { useSiteContent } from "@/contexts/SiteContentContext";
+import { staticPageSeo } from "@/lib/seo";
 
 const Terms = () => {
   const { company: COMPANY } = useSiteContent();
@@ -8,13 +9,11 @@ const Terms = () => {
 
   return (
     <Layout>
-      <Helmet>
-        <title>Terms of Service | {COMPANY.name}</title>
-        <meta
-          name="description"
-          content={`Terms of Service for ${COMPANY.name} — website use and service guidelines.`}
-        />
-      </Helmet>
+      <SeoHead
+        title={staticPageSeo()["/terms"].title}
+        description={staticPageSeo()["/terms"].description}
+        path="/terms"
+      />
 
       <section className="bg-[hsl(var(--primary))] text-white py-14 lg:py-20">
         <div className="max-w-3xl mx-auto px-4 sm:px-6">

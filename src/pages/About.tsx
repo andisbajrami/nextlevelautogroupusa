@@ -1,4 +1,3 @@
-import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import {
   ArrowRight,
@@ -15,10 +14,12 @@ import {
 import Layout from "@/components/layout/Layout";
 import ElectricalPageHero from "@/components/sections/ElectricalPageHero";
 import LeadContactSection from "@/components/home/LeadContactSection";
+import { SeoHead } from "@/components/seo/SeoHead";
 import { useSiteContent } from "@/contexts/SiteContentContext";
 import { useTheme } from "@/contexts/ThemeContext";
 import { ABOUT_HERO_BADGES, MINHS_IMAGES } from "@/data/siteData";
 import { Button } from "@/components/ui/button";
+import { buildAutoDealerSchema, staticPageSeo } from "@/lib/seo";
 
 const badgeIconMap = { HomeIcon, ShieldCheck, Award, Tag, Home: HomeIcon } as const;
 const valueIconMap = { ShieldCheck, Award, Users, Handshake, Eye, Heart, Sparkles } as const;
@@ -27,13 +28,16 @@ const About = () => {
   const { company: COMPANY, coreValues, certifications, aboutStats, team } = useSiteContent();
   const { resolveTeamImage } = useTheme();
   const previewTeam = team.slice(0, 4);
+  const seo = staticPageSeo()["/about"];
 
   return (
     <Layout>
-      <Helmet>
-        <title>About Us | {COMPANY.name}</title>
-        <meta name="description" content={COMPANY.tagline} />
-      </Helmet>
+      <SeoHead
+        title={seo.title}
+        description={seo.description}
+        path={seo.path}
+        jsonLd={[buildAutoDealerSchema()]}
+      />
 
       <ElectricalPageHero
         eyebrow="Our Story"

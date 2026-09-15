@@ -2,6 +2,7 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
+import { seoPrerenderPlugin } from "./vite.seo-plugin";
 
 function siteUrl(): string {
   const fromEnv = (process.env.VITE_SITE_URL || process.env.SITE_URL || "").replace(/\/$/, "");
@@ -12,13 +13,13 @@ function siteUrl(): string {
   if (process.env.VERCEL_URL) {
     return `https://${process.env.VERCEL_URL.replace(/\/$/, "")}`;
   }
-  return "";
+  return "https://www.nextlevelautogroupusa.com";
 }
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
   const origin = siteUrl();
-  const ogImage = origin ? `${origin}/og-image.png` : "/og-image.png";
+  const ogImage = `${origin}/og-image.png`;
 
   return {
     cacheDir: path.resolve(__dirname, ".vite"),
@@ -43,9 +44,10 @@ export default defineConfig(({ mode }) => {
         transformIndexHtml(html) {
           return html
             .replaceAll("%OG_IMAGE_URL%", ogImage)
-            .replaceAll("%SITE_URL%", origin || "/");
+            .replaceAll("%SITE_URL%", origin);
         },
       },
+      seoPrerenderPlugin(),
     ].filter(Boolean),
     resolve: {
       alias: {
